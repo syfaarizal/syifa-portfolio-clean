@@ -86,7 +86,7 @@ const DotsPattern = () => {
   }
 
   return (
-    <svg width="100" height="80" viewBox="0 0 100 80" className="opacity-60">
+    <svg width="150" height="130" viewBox="0 0 100 80" className="opacity-60">
       {dots}
     </svg>
   )
@@ -123,10 +123,10 @@ export default function Hero() {
         <div className="absolute bottom-0 left-1/2 h-40 w-[32rem] -translate-x-1/2 rounded-full bg-burgundy/5 blur-3xl animate-[pulse_14s_ease-in-out_infinite]" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 sm:px-8">
+      <div className="mx-auto max-w-7xl px-0 sm:px-0">
         <div className="grid min-h-[calc(100vh-4rem)] items-center gap-14 py-12 lg:grid-cols-[1fr_0.98fr] lg:gap-8 lg:py-0">
           <div className="relative z-10 max-w-2xl">
-            <p className="mb-4 font-sans text-[1rem] tracking-wide text-gray-600">
+            <p className="mb-4 font-sans text-[1.5rem] tracking-wide text-gray-600">
               Hello, I&apos;m
             </p>
 
@@ -147,7 +147,7 @@ export default function Hero() {
               </span>
             </div>
 
-            <p className="mt-6 max-w-[34rem] font-sans text-[0.98rem] leading-7 text-gray-600 sm:text-[1.05rem]">
+            <p className="mt-6 max-w-[34rem] font-sans text-[2rem] leading-7 text-gray-600 sm:text-[1.3rem]">
               I build products, systems, and AI experiences that help people turn ideas into reality.
             </p>
 
@@ -165,7 +165,7 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-burgundy/25" />
                 <span className="relative h-2 w-2 rounded-full bg-burgundy" />
               </span>
-              <span className="font-sans text-sm text-gray-500">Open to Front-End Opportunities</span>
+              <span className="font-sans sm:text-[1rem] text-gray-500">Open to Front-End Opportunities</span>
             </div>
 
             <div className="mt-12 flex flex-wrap items-center gap-4">
@@ -188,7 +188,7 @@ export default function Hero() {
 
           <div className="relative flex min-h-[620px] items-end justify-center lg:min-h-[760px] lg:justify-end">
             <div
-              className="absolute left-1/2 top-8 h-[580px] w-[350px] -translate-x-[54%] rounded-t-[170px] rounded-b-[0] bg-burgundy shadow-[0_24px_60px_rgba(122,15,22,0.18)] transition-transform duration-500 ease-out hover:-translate-y-1 sm:h-[704px] sm:w-[400px] lg:left-[8%] lg:top-14 lg:-translate-x-0 lg:rounded-t-[190px]"
+              className="absolute left-1/2 top-3 h-[580px] w-[350px] -translate-x-[54%] rounded-t-[170px] rounded-b-[0] bg-burgundy shadow-[0_24px_60px_rgba(122,15,22,0.18)] transition-transform duration-500 ease-out hover:-translate-y-1 sm:h-[640px] sm:w-[380px] lg:left-[8%] lg:top-14 lg:-translate-x-0 lg:rounded-t-[190px]"
               aria-hidden="true"
             />
 
@@ -201,7 +201,7 @@ export default function Hero() {
               <DotsPattern />
             </div>
 
-            <div className="absolute bottom-0 left-1/2 z-10 -translate-x-[58%] transition-transform duration-500 ease-out sm:-translate-x-[48%] lg:left-[10%] lg:translate-x-0">
+            <div className="absolute top-[18.9%] left-1/2 z-10 -translate-x-[54%] transition-transform duration-500 ease-out sm:-translate-x-[45%] lg:left-[8%] lg:translate-x-0">
               <img
                 src="/assets/syifa-hero.png"
                 alt="Syifa Fauziyah Arizal"
@@ -219,8 +219,8 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="absolute bottom-5 left-[10%] z-20 flex h-14 w-14 items-center justify-center rounded-full bg-burgundy shadow-float ring-4 ring-white transition-transform duration-300 hover:scale-105 lg:left-[14%] lg:bottom-8">
-              <BrandMark />
+            <div className="absolute bottom-5 left-[10%] z-20 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-float ring-4 ring-red-700 transition-transform duration-300 hover:scale-105 lg:left-[6%] lg:bottom-10">
+              <img src="/assets/logo-libr.png" alt="Logo" className="w-12 h-12 object-contain" />
             </div>
           </div>
         </div>
