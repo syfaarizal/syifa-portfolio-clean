@@ -36,27 +36,6 @@ const ArrowRightIcon = () => (
   </svg>
 )
 
-const BrandMark = () => (
-  <svg width="22" height="24" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path
-      d="M16 1L30 9V27L16 35L2 27V9L16 1Z"
-      fill="white"
-      stroke="white"
-      strokeWidth="1.4"
-    />
-    <path
-      d="M11 10.5L16 7.5L21 10.5V15.5L16 18.5L11 15.5V10.5Z"
-      fill="#7A0F16"
-    />
-    <path
-      d="M12.7 12L16 10L19.3 12V14.6L16 16.6L12.7 14.6V12Z"
-      fill="none"
-      stroke="#7A0F16"
-      strokeWidth="1.2"
-    />
-  </svg>
-)
-
 const socialLinks = [
   { icon: GithubIcon, href: '#', label: 'GitHub' },
   { icon: LinkedinIcon, href: '#', label: 'LinkedIn' },
