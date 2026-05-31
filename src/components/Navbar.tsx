@@ -3,18 +3,7 @@ import { useState } from 'react'
 const navItems = ['Home', 'About', 'Skills', 'Projects', 'Blog', 'Contact'] as const
 
 const LogoIcon = () => (
-  <svg width="32" height="36" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M16 1L30 9V27L16 35L2 27V9L16 1Z"
-      fill="#7A0F16"
-      stroke="#7A0F16"
-      strokeWidth="1.5"
-    />
-    <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle"
-      fill="white" fontSize="11" fontWeight="700" fontFamily="DM Sans, sans-serif">
-      SF
-    </text>
-  </svg>
+  <img src="/public/assets/logo-libr.png" alt="LIBR Logo" className="w-8 h-8 object-contain" />
 )
 
 const ExternalArrow = () => (
@@ -37,7 +26,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#EAEAEA]">
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-16">
         {/* Logo */}
-        <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => handleNav('Home')}>
+        <div className="flex items-center gap-1 cursor-pointer" onClick={() => handleNav('Home')}>
           <LogoIcon />
           <span className="font-serif font-bold text-xl tracking-wide text-gray-900">LIBR</span>
         </div>
