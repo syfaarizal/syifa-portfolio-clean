@@ -3,7 +3,7 @@ import { useState } from 'react'
 const navItems = ['Home', 'About', 'Skills', 'Projects', 'Blog', 'Contact'] as const
 
 const LogoIcon = () => (
-  <img src="/public/assets/logo-libr.png" alt="LIBR Logo" className="w-8 h-8 object-contain" />
+  <img src="/public/assets/logo-libr.png" alt="LIBR Logo" className="w-10 h-10 object-contain" />
 )
 
 const ExternalArrow = () => (
@@ -28,7 +28,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-1 cursor-pointer" onClick={() => handleNav('Home')}>
           <LogoIcon />
-          <span className="font-serif font-bold text-xl tracking-wide text-gray-900">LIBR</span>
+          <span className="font-serif font-bold sm:text-[1.7rem] tracking-wide text-gray-900">LIBR</span>
         </div>
 
         {/* Navigation */}
@@ -37,7 +37,7 @@ export default function Navbar() {
             <button
               key={item}
               onClick={() => handleNav(item)}
-              className={`relative font-sans text-sm font-medium pb-0.5 transition-colors duration-200 ${
+              className={`relative font-sans sm:text-[1.2rem] font-medium pb-0.5 transition-colors duration-200 ${
                 active === item
                   ? 'text-burgundy'
                   : 'text-gray-600 hover:text-gray-900'
@@ -54,7 +54,7 @@ export default function Navbar() {
         {/* CTA */}
         <button
           onClick={() => handleNav('Contact')}
-          className="bg-burgundy text-white font-sans font-medium text-sm px-5 py-2 rounded-xl flex items-center gap-1.5 hover:bg-burgundy-900 transition-colors duration-200"
+          className="bg-burgundy text-white font-sans font-medium sm:text-[1.05rem] px-5 py-2 rounded-xl flex items-center gap-1.5 hover:bg-burgundy-900 transition-colors duration-200"
         >
           Let's Talk
           <ExternalArrow />

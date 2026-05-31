@@ -43,13 +43,14 @@ const socialLinks = [
   { icon: EmailIcon, href: 'mailto:syifaarizal@gmail.com', label: 'Email' },
 ]
 
+const title = 'Front-End Developer';
+
 const valueProps = [
-  'Front-End Developer',
-  'AI Systems Builder',
-  'Digital Problem Solver',
-  'Automation Thinker',
-  'Intelegent System Builder',
-]
+  'Responsive Interfaces',
+  'Clean UI Systems',
+  'AI-Ready Experiences',
+  'Ideas Into Products',
+];
 
 const Dot = ({ cx, cy }: { cx: number; cy: number }) => (
   <circle cx={cx} cy={cy} r="2.5" fill="#D1D5DB" />
@@ -113,17 +114,23 @@ export default function Hero() {
               Syifa Fauziyah Arizal
             </h1>
 
-            <div className="mt-2 flex items-start gap-3">
-              <span className="mt-1 h-[54px] w-[3px] rounded-full bg-burgundy" aria-hidden="true" />
-              <span
-                className="font-serif text-[clamp(1.9rem,3.9vw,3.15rem)] leading-none font-semibold text-burgundy transition-all duration-200 ease-out"
-                style={{
-                  opacity: valuePropVisible ? 1 : 0,
-                  transform: valuePropVisible ? 'translateY(0)' : 'translateY(8px)',
-                }}
-              >
-                {valueProps[valuePropIndex]}
-              </span>
+            <div className="mt-3">
+              <p className="font-sans text-[1.05rem] font-semibold uppercase tracking-[0.28em] text-gray-500 sm:text-[1.1rem]">
+                {title}
+              </p>
+
+              <div className="mt-3 flex items-start gap-3">
+                <span className="mt-1 h-[54px] w-[3px] rounded-full bg-burgundy" aria-hidden="true" />
+                <span
+                  className="font-serif text-[clamp(1.8rem,3.7vw,3.05rem)] leading-none font-semibold text-burgundy transition-all duration-200 ease-out"
+                  style={{
+                    opacity: valuePropVisible ? 1 : 0,
+                    transform: valuePropVisible ? 'translateY(0)' : 'translateY(8px)',
+                  }}
+                >
+                  {valueProps[valuePropIndex]}
+                </span>
+              </div>
             </div>
 
             <p className="mt-6 max-w-[34rem] font-sans text-[2rem] leading-7 text-gray-600 sm:text-[1.3rem]">
@@ -131,10 +138,10 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <button className="btn-primary min-w-[148px] justify-center shadow-sm">
+              <button className="btn-primary min-w-[148px] justify-center shadow-sm sm:text-[1.05rem]">
                 View My Work <ArrowRightIcon />
               </button>
-              <button className="btn-outline min-w-[148px] justify-center">
+              <button className="btn-outline min-w-[148px] justify-center sm:text-[1.05rem]">
                 Download CV <DownloadIcon />
               </button>
             </div>
@@ -182,7 +189,7 @@ export default function Hero() {
 
             <div className="absolute top-[18.9%] left-1/2 z-10 -translate-x-[54%] transition-transform duration-500 ease-out sm:-translate-x-[45%] lg:left-[8%] lg:translate-x-0">
               <img
-                src="/assets/syifa-hero.png"
+                src="/assets/gambar-syifa-nobg.png"
                 alt="Syifa Fauziyah Arizal"
                 className="w-[250px] select-none object-contain sm:w-[300px] lg:w-[405px]"
                 draggable={false}
