@@ -56,8 +56,8 @@ const infoCards = [
   },
   {
     icon: CalendarIcon,
-    title: '500+',
-    lines: ['Hours Coding'],
+    title: '4+',
+    lines: ['Core Technologies'],
   },
   {
     icon: LocationIcon,
@@ -66,8 +66,8 @@ const infoCards = [
   },
   {
     icon: MailIcon,
-    title: 'React',
-    lines: ['Learning Path'],
+    title: 'Modern Stack',
+    lines: ['React & Next.js'],
   },
   {
     icon: briefcaseIcon,
@@ -76,8 +76,8 @@ const infoCards = [
   },
   {
     icon: cubesIcon,
-    title: 'Products &',
-    lines: ['Systems Builder'],
+    title: 'Building AI-Powered',
+    lines: ['Digital Products'],
   },
 ]
 

@@ -1,14 +1,20 @@
-import { useId } from 'react'
+import type { ReactNode } from 'react'
 
 type SkillItem = {
   name: string
   description: string
-  icon: React.ReactNode
+  icon: ReactNode
   accent: string
 }
 
-// ─── SVG Brand Icons ──────────────────────────────────────────────────────────
+type SkillGroup = {
+  title: string
+  items: SkillItem[]
+  reverse?: boolean
+  duration: string
+}
 
+/* SVG Icons */
 const Icons = {
   HTML5: (
     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
@@ -53,21 +59,9 @@ const Icons = {
       <line x1="10" y1="10" x2="20" y2="10" stroke="white" strokeWidth="2" strokeLinecap="round"/>
     </svg>
   ),
-  Vue: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <path d="M16 26L3 5h5l8 14 8-14h5L16 26z" fill="#42b883"/>
-      <path d="M16 26l-6-10h3l3 5 3-5h3L16 26z" fill="#35495e"/>
-    </svg>
-  ),
-  Nuxt: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <path d="M12.5 25H27l-7.5-13-3.5 6-2-3.5L8 25h4.5z" fill="#00dc82"/>
-      <path d="M5 25h8L9 18 5 25z" fill="#00b368"/>
-    </svg>
-  ),
   Tailwind: (
     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <path d="M16 7c-3.5 0-5.7 1.75-6.7 5.25C10.6 10.5 11.95 9.875 13.5 10.25c.86.22 1.48.84 2.16 1.53C16.84 12.99 18.22 14.5 21 14.5c3.5 0 5.7-1.75 6.7-5.25-1.3 1.75-2.65 2.375-4.2 2-0.86-.22-1.48-.84-2.16-1.53C20.16 8.51 18.78 7 16 7zM9.3 14.5C5.8 14.5 3.6 16.25 2.6 19.75c1.3-1.75 2.65-2.375 4.2-2 .86.22 1.48.84 2.16 1.53 1.18 1.21 2.56 2.72 5.34 2.72 3.5 0 5.7-1.75 6.7-5.25-1.3 1.75-2.65 2.375-4.2 2-.86-.22-1.48-.84-2.16-1.53C13.46 16.01 12.08 14.5 9.3 14.5z" fill="#38bdf8"/>
+      <path d="M16 7c-3.5 0-5.7 1.75-6.7 5.25C10.6 10.5 11.95 9.875 13.5 10.25c.86.22 1.48.84 2.16 1.53C16.84 12.99 18.22 14.5 21 14.5c3.5 0 5.7-1.75 6.7-5.25-1.3 1.75-2.65 2.375-4.2 2-.86-.22-1.48-.84-2.16-1.53C20.16 8.51 18.78 7 16 7zM9.3 14.5C5.8 14.5 3.6 16.25 2.6 19.75c1.3-1.75 2.65-2.375 4.2-2 .86.22 1.48.84 2.16 1.53 1.18 1.21 2.56 2.72 5.34 2.72 3.5 0 5.7-1.75 6.7-5.25-1.3 1.75-2.65 2.375-4.2 2-.86-.22-1.48-.84-2.16-1.53C13.46 16.01 12.08 14.5 9.3 14.5z" fill="#38bdf8"/>
     </svg>
   ),
   GSAP: (
@@ -200,60 +194,75 @@ const Icons = {
   ),
 }
 
-const languages: SkillItem[] = [
-  { name: 'HTML5', description: 'Semantic structure and accessibility-first markup.', icon: Icons.HTML5, accent: '#e34f26' },
-  { name: 'CSS3', description: 'Layouts, animations, and design systems at scale.', icon: Icons.CSS3, accent: '#1572b6' },
-  { name: 'JavaScript', description: 'Dynamic logic, async flows, and browser APIs.', icon: Icons.JavaScript, accent: '#f7df1e' },
-  { name: 'TypeScript', description: 'Type-safe code that catches bugs before runtime.', icon: Icons.TypeScript, accent: '#3178c6' },
+const groups: SkillGroup[] = [
+  {
+    title: 'Core Technologies',
+    duration: '34s',
+    items: [
+      { name: 'HTML5', description: 'Semantic and accessible markup for modern web applications.', icon: Icons.HTML5, accent: '#e34f26' },
+      { name: 'CSS3', description: 'Responsive layouts, animations, and polished user interfaces.', icon: Icons.CSS3, accent: '#1572b6' },
+      { name: 'JavaScript', description: 'Interactive web experiences, APIs, and application logic.', icon: Icons.JavaScript, accent: '#f7df1e' },
+      { name: 'TypeScript', description: 'Scalable and maintainable code with strong type safety.', icon: Icons.TypeScript, accent: '#3178c6' },
+    ],
+  },
+  {
+    title: 'Front-End Ecosystem',
+    reverse: true,
+    duration: '38s',
+    items: [
+      { name: 'React', description: 'Building reusable components and scalable user interfaces.', icon: Icons.React, accent: '#61dafb' },
+      { name: 'Next.js', description: 'Full-stack React applications with SSR and modern routing.', icon: Icons.NextJS, accent: '#000000' },
+      { name: 'Tailwind CSS', description: 'Rapid UI development with consistent and maintainable styling.', icon: Icons.Tailwind, accent: '#38bdf8' },
+      { name: 'GSAP', description: 'Advanced animations and interactive user experiences.', icon: Icons.GSAP, accent: '#88ce02' },
+      { name: 'Lucide React', description: 'Clean and consistent icon systems for modern interfaces.', icon: Icons.Lucide, accent: '#e11d48' },
+    ],
+  },
+  {
+    title: 'Development & Deployment',
+    duration: '42s',
+    items: [
+      { name: 'Node.js', description: 'Backend services, APIs, automations, and AI integrations.', icon: Icons.NodeJS, accent: '#339933' },
+      { name: 'Git', description: 'Version control and collaborative development workflows.', icon: Icons.Git, accent: '#f05032' },
+      { name: 'GitHub', description: 'Repository management, code reviews, and project collaboration.', icon: Icons.GitHub, accent: '#1b1f23' },
+      { name: 'Vite', description: 'Fast development environment with instant feedback loops.', icon: Icons.Vite, accent: '#646cff' },
+      { name: 'Vercel', description: 'Deployment and hosting for modern web applications.', icon: Icons.Vercel, accent: '#000000' },
+      { name: 'Linux VPS', description: 'Server management, SSH workflows, and self-hosted deployments.', icon: Icons.VPS, accent: '#0f172a' },
+    ],
+  },
+  {
+    title: 'AI & Automation',
+    reverse: true,
+    duration: '40s',
+    items: [
+      { name: 'OpenAI API', description: 'Building AI-powered features and intelligent workflows.', icon: Icons.OpenAI, accent: '#10a37f' },
+      { name: 'Discord.js', description: 'Creating bots, automations, and community tools.', icon: Icons.DiscordJS, accent: '#5865f2' },
+      { name: 'ChatGPT', description: 'Research, ideation, documentation, and productivity support.', icon: Icons.ChatGPT, accent: '#10a37f' },
+      { name: 'Claude', description: 'Long-context reasoning and structured content generation.', icon: Icons.Claude, accent: '#cc785c' },
+      { name: 'Gemini', description: 'Research assistance and multimodal problem solving.', icon: Icons.Gemini, accent: '#4285f4' },
+      { name: 'Grok', description: 'Alternative perspectives and real-time information gathering.', icon: Icons.Grok, accent: '#0ea5e9' },
+    ],
+  },
+  {
+    title: 'Design & Productivity',
+    duration: '36s',
+    items: [
+      { name: 'VS Code', description: 'Primary editor for daily development and debugging.', icon: Icons.VSCode, accent: '#007acc' },
+      { name: 'Canva', description: 'Creating visual assets, presentations, and marketing materials.', icon: Icons.Canva, accent: '#00c4cc' },
+      { name: 'Notion', description: 'Knowledge management, planning, and project documentation.', icon: Icons.Notion, accent: '#111111' },
+      { name: 'Cursor', description: 'AI-assisted development and rapid prototyping workflows.', icon: Icons.Cursor, accent: '#8b5cf6' },
+      { name: 'CapCut', description: 'Editing short-form content and social media videos.', icon: Icons.CapCut, accent: '#10b981' },
+      { name: 'Nano Banana', description: 'Visual exploration and creative concept development.', icon: Icons.NanoBanana, accent: '#f59e0b' },
+    ],
+  },
 ]
-
-const frameworks: SkillItem[] = [
-  { name: 'React 18', description: 'Component-driven UIs with hooks and concurrent features.', icon: Icons.React, accent: '#61dafb' },
-  { name: 'Next.js', description: 'Full-stack React with SSR, routing, and edge functions.', icon: Icons.NextJS, accent: '#000000' },
-  { name: 'Vue 3', description: 'Reactive SPAs with clean composition and templates.', icon: Icons.Vue, accent: '#42b883' },
-  { name: 'Nuxt', description: 'Production-ready Vue with file-based routing and auto-imports.', icon: Icons.Nuxt, accent: '#00dc82' },
-  { name: 'Tailwind CSS', description: 'Utility-first styling that ships fast and stays consistent.', icon: Icons.Tailwind, accent: '#38bdf8' },
-  { name: 'GSAP', description: 'Precision animations for timeline-based UI sequences.', icon: Icons.GSAP, accent: '#88ce02' },
-  { name: 'Lucide React', description: 'Crisp, consistent icons that feel native to any UI.', icon: Icons.Lucide, accent: '#e11d48' },
-  { name: 'Discord.js v14', description: 'Building bots and Discord automations from scratch.', icon: Icons.DiscordJS, accent: '#5865f2' },
-]
-
-const platforms: SkillItem[] = [
-  { name: 'VS Code', description: 'Primary editor for daily development and debugging.', icon: Icons.VSCode, accent: '#007acc' },
-  { name: 'Cursor', description: 'AI-native editor for rapid code generation and refactors.', icon: Icons.Cursor, accent: '#8b5cf6' },
-  { name: 'Vite', description: 'Near-instant dev server with HMR that never slows me down.', icon: Icons.Vite, accent: '#646cff' },
-  { name: 'Node.js', description: 'Server-side JS for APIs, scripts, and CLI tools.', icon: Icons.NodeJS, accent: '#339933' },
-  { name: 'Git', description: 'Version control with clean commit history and branch discipline.', icon: Icons.Git, accent: '#f05032' },
-  { name: 'GitHub', description: 'Code reviews, PRs, and open-source collaboration.', icon: Icons.GitHub, accent: '#1b1f23' },
-  { name: 'Vercel', description: 'Zero-config deployment with preview URLs on every push.', icon: Icons.Vercel, accent: '#000000' },
-  { name: 'VPS (Linux)', description: 'Self-hosted servers, reverse proxies, and SSH workflows.', icon: Icons.VPS, accent: '#0f172a' },
-  { name: 'Notion', description: 'Personal knowledge base and project documentation hub.', icon: Icons.Notion, accent: '#111111' },
-  { name: 'CapCut', description: 'Quick video edits and content clips for social formats.', icon: Icons.CapCut, accent: '#10b981' },
-]
-
-const designTools: SkillItem[] = [
-  { name: 'Canva', description: 'Visual assets and design mockups without a long setup.', icon: Icons.Canva, accent: '#00c4cc' },
-  { name: 'Nano Banana', description: 'Visual exploration and experimental concept work.', icon: Icons.NanoBanana, accent: '#f59e0b' },
-]
-
-const aiTools: SkillItem[] = [
-  { name: 'OpenAI API', description: 'Integrating GPT models into real product features.', icon: Icons.OpenAI, accent: '#10a37f' },
-  { name: 'ChatGPT', description: 'Brainstorming, drafting, and unblocking creative work.', icon: Icons.ChatGPT, accent: '#10a37f' },
-  { name: 'Claude', description: 'Long-context reasoning and high-quality writing assistance.', icon: Icons.Claude, accent: '#cc785c' },
-  { name: 'Gemini', description: 'Multimodal research tasks and cross-referencing sources.', icon: Icons.Gemini, accent: '#4285f4' },
-  { name: 'Grok', description: 'Alternative perspectives and real-time web-aware queries.', icon: Icons.Grok, accent: '#0ea5e9' },
-]
-
-const rowTop = [...languages, ...frameworks, ...platforms.slice(0, 5)]
-const rowBottom = [...platforms.slice(5), ...designTools, ...aiTools]
 
 const SkillCard = ({ skill }: { skill: SkillItem }) => (
   <article
-    className="skill-card group w-[290px] shrink-0 rounded-2xl border border-[#ece4e1] bg-white/90 p-4 shadow-[0_10px_30px_rgba(17,24,39,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-card"
+    className="skill-card group w-[286px] shrink-0 rounded-2xl border border-[#ece4e1] bg-white/90 p-4 shadow-[0_10px_30px_rgba(17,24,39,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-card"
   >
     <div className="flex items-start gap-4">
       <div
-        className="skill-icon-wrap shrink-0 w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.06]"
+        className="skill-icon-wrap shrink-0 flex h-11 w-11 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-[1.06]"
         style={{ backgroundColor: `${skill.accent}14`, border: `1.5px solid ${skill.accent}30` }}
       >
         {skill.icon}
@@ -270,14 +279,29 @@ const SkillCard = ({ skill }: { skill: SkillItem }) => (
   </article>
 )
 
-const MarqueeRow = ({ items, reverse = false }: { items: SkillItem[]; reverse?: boolean }) => (
-  <div className="skill-row group relative overflow-hidden py-2">
-    <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-white to-transparent" />
-    <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-white to-transparent" />
-    <div className={`marquee-track ${reverse ? 'reverse' : ''} gap-4`}>
-      {[...items, ...items].map((skill, index) => (
-        <SkillCard key={`${skill.name}-${index}`} skill={skill} />
-      ))}
+const MarqueeRow = ({ title, items, reverse = false, duration }: SkillGroup) => (
+  <div className="skill-row rounded-[28px] mt-0 bg-[#fffdfd] px-4 shadow-[0_8px_24px_rgba(17,24,39,0.03)] sm:px-5">
+    <div className="mb-4 flex items-end justify-between gap-4">
+      <div>
+        <p className="section-label !mb-1 sm:text-[1.03rem]">{title}</p>
+        <div className="h-0.5 w-10 rounded-full bg-burgundy" />
+      </div>
+      <p className="hidden font-sans text-xs uppercase tracking-[0.18em] text-gray-400 sm:block">
+        Smooth auto scroll
+      </p>
+    </div>
+
+    <div className="relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-[#fffdfd] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-[#fffdfd] to-transparent" />
+      <div
+        className={`marquee-track ${reverse ? 'reverse' : ''}`}
+        style={{ animationDuration: duration }}
+      >
+        {[...items, ...items].map((skill, index) => (
+          <SkillCard key={`${title}-${skill.name}-${index}`} skill={skill} />
+        ))}
+      </div>
     </div>
   </div>
 )
@@ -287,19 +311,18 @@ export default function Skills() {
     <section id="skills" className="overflow-hidden bg-white py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <div className="mb-10">
-          <p className="section-label">My Skills</p>
-          <h2 className="section-heading">Skills &amp; Technologies</h2>
+          <p className="section-label sm:text-[1.2rem]">My Skills</p>
+          <h2 className="section-heading sm:text-[3rem]">Tech Stack &amp; Expertise</h2>
           <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
-          <p className="mt-4 max-w-2xl font-sans text-sm leading-6 text-gray-500">
-            A curated set of languages, frameworks, and tools I rely on to build
-            products, automate workflows, and maintain quality across every layer
-            of a project.
+          <p className="mt-4 max-w-2xl font-sans sm:text-[1.3rem] leading-6 text-gray-500">
+            I use modern web technologies to build responsive interfaces, scalable products, and efficient workflows.
           </p>
         </div>
 
         <div className="space-y-5">
-          <MarqueeRow items={rowTop} />
-          <MarqueeRow items={rowBottom} reverse />
+          {groups.map((group) => (
+            <MarqueeRow key={group.title} {...group} />
+          ))}
         </div>
       </div>
     </section>

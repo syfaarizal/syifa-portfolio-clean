@@ -64,6 +64,7 @@
     display: flex;
     width: max-content;
     gap: 1rem;
+    padding-block: 0.75rem;
     will-change: transform;
     animation: marquee-left 34s linear infinite;
   }
