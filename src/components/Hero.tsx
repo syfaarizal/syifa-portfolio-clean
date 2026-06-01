@@ -46,11 +46,11 @@ const socialLinks = [
 const title = 'Front-End Developer';
 
 const valueProps = [
-  'Responsive Interfaces',
-  'Clean UI Systems',
-  'AI-Ready Experiences',
-  'Ideas Into Products',
-];
+  'Building Responsive Interfaces',
+  'Creating Digital Experiences',
+  'AI-Powered Products',
+  'Designing Smart Automations',
+]
 
 const Dot = ({ cx, cy }: { cx: number; cy: number }) => (
   <circle cx={cx} cy={cy} r="2.5" fill="#D1D5DB" />
@@ -122,7 +122,7 @@ export default function Hero() {
               <div className="mt-3 flex items-start gap-3">
                 <span className="mt-1 h-[54px] w-[3px] rounded-full bg-burgundy" aria-hidden="true" />
                 <span
-                  className="font-serif text-[clamp(1.8rem,3.7vw,3.05rem)] leading-none font-semibold text-burgundy transition-all duration-200 ease-out"
+                  className="pt-[6px] font-serif text-[clamp(1.8rem,3.7vw,3.05rem)] leading-none font-semibold text-burgundy transition-all duration-200 ease-out"
                   style={{
                     opacity: valuePropVisible ? 1 : 0,
                     transform: valuePropVisible ? 'translateY(0)' : 'translateY(8px)',

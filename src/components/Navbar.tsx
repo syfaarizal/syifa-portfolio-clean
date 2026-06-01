@@ -3,7 +3,7 @@ import { useState } from 'react'
 const navItems = ['Home', 'About', 'Skills', 'Projects', 'Blog', 'Contact'] as const
 
 const LogoIcon = () => (
-  <img src="/public/assets/logo-libr.png" alt="LIBR Logo" className="w-10 h-10 object-contain" />
+  <img src="/public/assets/logo-libr.png" alt="LIBR Logo" className="w-11 h-11 object-contain" />
 )
 
 const ExternalArrow = () => (
