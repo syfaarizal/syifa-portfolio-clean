@@ -73,11 +73,11 @@ export default function Blog() {
       {/* Header */}
       <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-2xl">
-          <p className="section-label sm:text-[1.2rem]">Latest Insights</p>
-          <h2 className="section-heading sm:text-[3rem]">My Blog</h2>
+          <p className="section-label sm:text-[1.2rem]">Latest from Blog</p>
+          <h2 className="section-heading sm:text-[3rem]">Recent Articles</h2>
           <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
           <p className="mt-4 max-w-2xl font-sans text-[1.1rem] leading-6 text-gray-500">
-            Writing About Development, AI, and Product Building
+            Writing about development, AI, and product building.
           </p>
         </div>
         <a
@@ -88,30 +88,37 @@ export default function Blog() {
         </a>
       </div>
 
-      {/* Article list */}
-      <div className="flex flex-col gap-0 divide-y divide-[#EAEAEA] border border-[#EAEAEA] rounded-2xl overflow-hidden">
+      {/* Article cards */}
+      <div className="grid gap-4 md:grid-cols-3">
         {posts.map(({ id, Thumb, title, desc, date, readTime }) => (
           <article
             key={id}
-            className="flex gap-4 p-4 bg-white hover:bg-burgundy-50 transition-colors duration-200 cursor-pointer group"
+            className="group flex gap-4 rounded-2xl border border-[#EAEAEA] bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card"
           >
             {/* Thumbnail */}
-            <div className="w-20 h-16 flex-shrink-0 rounded-xl overflow-hidden bg-gray-100">
+            <div className="h-[94px] w-[96px] flex-shrink-0 overflow-hidden rounded-xl bg-gray-100">
               <Thumb />
             </div>
 
             {/* Content */}
-            <div className="flex-1 min-w-0">
-              <h3 className="font-sans font-semibold text-gray-900 text-sm leading-snug mb-1 group-hover:text-burgundy transition-colors line-clamp-2">
+            <div className="min-w-0 flex-1">
+              <span className="mb-2 block font-sans text-[10px] uppercase tracking-[0.14em] text-gray-400">
+                {date}
+              </span>
+              <h3 className="mb-2 font-serif text-[1.15rem] leading-tight font-semibold text-gray-900 transition-colors group-hover:text-burgundy">
                 {title}
               </h3>
-              <p className="font-sans text-gray-400 text-xs leading-relaxed mb-2 line-clamp-2">
+              <p className="mb-3 font-sans text-sm leading-6 text-gray-500">
                 {desc}
               </p>
-              <div className="flex items-center gap-3">
-                <span className="font-sans text-[10px] text-gray-400">{date}</span>
-                <span className="w-1 h-1 rounded-full bg-gray-300" />
-                <span className="font-sans text-[10px] text-gray-400">{readTime}</span>
+              <div className="flex items-center gap-2 font-sans text-sm font-medium text-burgundy">
+                Read article
+                <span className="transition-transform duration-200 group-hover:translate-x-1">
+                  <ArrowIcon />
+                </span>
+                <span className="ml-1 text-[10px] font-normal text-gray-400">
+                  {readTime}
+                </span>
               </div>
             </div>
           </article>
