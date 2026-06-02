@@ -37,13 +37,13 @@ export default function Projects() {
           <p className="section-label sm:text-[1.2rem]">Featured Projects</p>
           <h2 className="section-heading sm:text-[3rem]">Projects That Solve Real Problems</h2>
           <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
-          <p className="mt-4 max-w-2xl font-sans text-[1.1rem] leading-6 text-gray-500">
+          <p className="mt-4 max-w-2xl font-sans text-[1.3rem] leading-6 text-gray-500">
             A selection of products, tools, and systems I've built.
           </p>
         </div>
         <a
           href="#"
-          className="flex items-center gap-1.5 self-start font-sans text-sm font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
+          className="flex items-center gap-1.5 self-start font-sans sm:text-[1rem] font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
         >
           View All Projects <ArrowIcon />
         </a>
@@ -63,13 +63,13 @@ export default function Projects() {
 
             {/* Info */}
             <div className="p-4">
-              <h3 className="font-sans font-semibold text-gray-900 text-sm mb-0.5">{title}</h3>
-              <p className="font-sans text-gray-400 text-xs mb-3">{desc}</p>
+              <h3 className="font-sans font-semibold text-gray-900 sm:text-[1.25rem] mb-0.5">{title}</h3>
+              <p className="font-sans text-gray-400 sm:text-[0.95rem] mb-3">{desc}</p>
               <div className="flex flex-wrap gap-1.5">
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-sans text-[10px] font-medium text-gray-500 bg-gray-100 rounded-md px-2 py-0.5 border border-[#EAEAEA]"
+                    className="font-sans text-[13px] font-medium text-gray-500 bg-gray-100 rounded-md px-2 py-0.5 border border-[#EAEAEA]"
                   >
                     {tag}
                   </span>
