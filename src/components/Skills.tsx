@@ -17,19 +17,17 @@ type SkillGroup = {
 /* SVG Icons */
 const Icons = {
   HTML5: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <path d="M5 3l2.1 23.5L16 29l8.9-2.5L27 3H5z" fill="#e34f26"/>
-      <path d="M16 27.1l7.2-2L25 6.5H16v20.6z" fill="#ef652a"/>
-      <path d="M16 13.5H11.6l-.3-3.5H16V6.5H7.7l.9 10H16v-3zm0 8.5l-4.8-1.3-.3-3.5H7.5l.6 6.8L16 26.3V22z" fill="white"/>
-      <path d="M16 13.5v3h4l-.4 4.5-3.6 1V25.3l7.1-2-.1-1-1-11.8H16z" fill="white"/>
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#E44D26"/>
+      <path d="M26 5H16V29.5L24 27L26 5Z" fill="#F16529"/>
+      <path d="M9.5 17.5L8.5 8H24L23.5 11H11.5L12 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5H9.5Z" fill="white"/>
     </svg>
   ),
   CSS3: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <path d="M5 3l2.1 23.5L16 29l8.9-2.5L27 3H5z" fill="#1572b6"/>
-      <path d="M16 27.1l7.2-2L25 6.5H16v20.6z" fill="#33a9dc"/>
-      <path d="M16 13.5h-4.4l-.3-3.5H16V6.5H7.7l.9 10H16v-3zm0 8.5-4.8-1.3-.3-3.5H7.5l.6 6.8L16 26.3V22z" fill="white"/>
-      <path d="M16 13.5v3h3.8l-.4 4.5-3.4 1V25.3l7.1-2-.1-1L24 6.5H16v3h7.3l-.4 4H16z" fill="white"/>
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#1172B8"/>
+      <path d="M26 5H16V29.5L24 27L26 5Z" fill="#33AADD"/>
+      <path d="M19.5 17.5H9.5L9 14L17 11.5H9L8.5 8.5H24L23.5 12L17 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5Z" fill="white"/>
     </svg>
   ),
   JavaScript: (
@@ -53,10 +51,9 @@ const Icons = {
     </svg>
   ),
   NextJS: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <circle cx="16" cy="16" r="14" fill="black"/>
-      <path d="M10 22V10l12 14V10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-      <line x1="10" y1="10" x2="20" y2="10" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg"role="img">
+      <title>Next.js icon</title>
+      <path d="M17.813 22.502c-.089.047-.084.066.005.021a.228.228 0 0 0 .07-.047c0-.016-.002-.014-.075.026zm.178-.094c-.042.033-.042.035.009.009.028-.014.052-.03.052-.035 0-.019-.012-.014-.061.026zm.117-.071c-.042.033-.042.035.009.009.028-.014.052-.03.052-.035 0-.019-.012-.014-.061.026zm.117-.07c-.042.033-.042.035.009.009.028-.014.052-.03.052-.035 0-.019-.012-.014-.061.026zm.162-.105c-.082.052-.108.087-.035.047.052-.03.136-.094.122-.096a.466.466 0 0 0-.087.049zM11.214.006c-.052.005-.216.021-.364.033-3.408.307-6.601 2.146-8.623 4.973a11.876 11.876 0 0 0-2.118 5.243c-.096.659-.108.854-.108 1.748s.012 1.088.108 1.748c.652 4.506 3.859 8.292 8.208 9.695.779.251 1.6.422 2.533.525.364.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.206-.106.246-.134.218-.157a231.73 231.73 0 0 1-1.954-2.62l-1.919-2.592-2.404-3.558a332.01 332.01 0 0 0-2.421-3.556c-.009-.002-.019 1.579-.023 3.509-.007 3.38-.009 3.516-.052 3.596a.424.424 0 0 1-.206.213c-.075.038-.141.045-.495.045H7.81l-.108-.068a.442.442 0 0 1-.157-.171l-.049-.106.005-4.703.007-4.705.073-.091a.637.637 0 0 1 .174-.143c.096-.047.134-.052.54-.052.479 0 .558.019.683.155a466.83 466.83 0 0 1 2.895 4.361c1.558 2.362 3.687 5.587 4.734 7.171l1.9 2.878.096-.063a12.34 12.34 0 0 0 2.465-2.163 11.94 11.94 0 0 0 2.824-6.134c.096-.659.108-.854.108-1.748s-.012-1.088-.108-1.748c-.652-4.506-3.859-8.292-8.208-9.695a12.552 12.552 0 0 0-2.498-.523c-.225-.023-1.776-.049-1.97-.03zm4.912 7.258a.471.471 0 0 1 .237.277c.019.061.023 1.365.019 4.304l-.007 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.009-3.096.023-3.15a.484.484 0 0 1 .232-.296c.096-.049.131-.054.5-.054.347 0 .408.005.486.047z" />
     </svg>
   ),
   Tailwind: (
@@ -65,17 +62,11 @@ const Icons = {
     </svg>
   ),
   GSAP: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <rect width="32" height="32" fill="#0e0e0e" rx="4"/>
-      <path d="M6 16c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="#88ce02" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-      <path d="M16 6v4M6 16h4M26 16h-4" stroke="#88ce02" strokeWidth="2" strokeLinecap="round"/>
-      <circle cx="16" cy="16" r="2.5" fill="#88ce02"/>
-    </svg>
-  ),
-  Lucide: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <circle cx="16" cy="16" r="13" stroke="#e11d48" strokeWidth="1.5" fill="none"/>
-      <path d="M10 16l4 4 8-8" stroke="#e11d48" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg width="30" height="30" viewBox="0 0 280 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="280" height="120" rx="13" fill="#1c1c1c"/>
+      <text x="12" y="88" font-family="Arial Black, Impact, sans-serif" font-size="95" font-weight="900" letter-spacing="-4" fill="#00ff9f">GSAP</text>
+      <path d="M12 98 Q80 88 140 98 Q200 88 268 98" stroke="#00ff9f" stroke-width="9" stroke-linecap="round" opacity="0.85"/>
+      <path d="M15 94 Q75 87 138 94" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
     </svg>
   ),
   DiscordJS: (
@@ -84,36 +75,34 @@ const Icons = {
     </svg>
   ),
   VSCode: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <path d="M23 4L7 17l4 4 12-7v-6l-3 2-9 6-3-3L23 4z" fill="#007acc"/>
-      <path d="M23 4v6l-12 7-4-4L23 4zM23 28V22l-12-7-4 4 16 9z" fill="#1f9cf0"/>
-      <path d="M7 17l4 4v-8L7 17z" fill="#0065a9"/>
-      <path d="M23 4l3 2.5v19L23 28V4z" fill="#007acc" opacity=".5"/>
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21.0016 3.11679C21.0016 2.23783 20.0175 2.23782 19.5801 2.34769C20.1924 1.86426 20.9105 1.98147 21.1656 2.12796L27.079 5.02747C27.6424 5.30375 27.9998 5.8786 27.9998 6.50857V25.5831C27.9998 26.2215 27.6329 26.8025 27.058 27.0743L21.4937 29.7054C21.1109 29.8701 20.2799 30.2767 19.5801 29.7053C20.4549 29.8702 20.9287 29.2476 21.0016 28.8264V3.11679Z" fill="url(#paint0)"/>
+      <path d="M19.6512 2.3319C20.1154 2.24017 21.0018 2.28271 21.0018 3.11685V9.68254L3.07359 23.2453C2.76022 23.4824 2.3192 23.443 2.05229 23.1542L0.204532 21.1548C-0.0849358 20.8416 -0.0646824 20.3513 0.249624 20.0633L19.5802 2.34775L19.6512 2.3319Z" fill="url(#paint1)"/>
+      <path d="M21.0018 22.3708L3.07359 8.80801C2.76022 8.57094 2.3192 8.61028 2.05229 8.8991L0.204532 10.8985C-0.0849358 11.2117 -0.0646824 11.702 0.249624 11.9901L19.5802 29.7056C20.455 29.8704 20.9289 29.2478 21.0018 28.8266V22.3708Z" fill="url(#paint2)"/>
+      <defs>
+        <linearGradient id="paint0" x1="23.79" y1="2" x2="23.79" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#32B5F1"/><stop offset="1" stop-color="#2B9FED"/></linearGradient>
+        <linearGradient id="paint1" x1="21.0018" y1="5.53398" x2="1.0217" y2="22.3051" gradientUnits="userSpaceOnUse"><stop stop-color="#0F6FB3"/><stop offset="0.270551" stop-color="#1279B7"/><stop offset="0.421376" stop-color="#1176B5"/><stop offset="0.618197" stop-color="#0E69AC"/><stop offset="0.855344" stop-color="#0F70AF"/><stop offset="1" stop-color="#0F6DAD"/></linearGradient>
+        <linearGradient id="paint2" x1="1.15522" y1="9.98389" x2="21.0791" y2="26.4808" gradientUnits="userSpaceOnUse"><stop stop-color="#1791D2"/><stop offset="1" stop-color="#1173C5"/></linearGradient>
+      </defs>
     </svg>
   ),
   Cursor: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <rect width="32" height="32" rx="6" fill="#1c1c1c"/>
-      <path d="M8 8l16 8-7 2-2 7-7-17z" fill="white"/>
-      <path d="M19 18l5 6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-    </svg>
-  ),
-  Vite: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <path d="M29 5.5L16.3 27.7a.8.8 0 01-1.4 0L3 5.5a.8.8 0 01.8-1.2l12.1 2.1 12.3-2.1A.8.8 0 0129 5.5z" fill="#646cff"/>
-      <path d="M20.7 4.3l-4.5 8L11.8 5a.4.4 0 01.6-.5l8 .3a.4.4 0 01.3.5z" fill="#ffbd44"/>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" >
+      <title>Cursor</title>    
+      <path d="M22.106 5.68L12.5.135a.998.998 0 00-.998 0L1.893 5.68a.84.84 0 00-.419.726v11.186c0 .3.16.577.42.727l9.607 5.547a.999.999 0 00.998 0l9.608-5.547a.84.84 0 00.42-.727V6.407a.84.84 0 00-.42-.726zm-.603 1.176L12.228 22.92c-.063.108-.228.064-.228-.061V12.34a.59.59 0 00-.295-.51l-9.11-5.26c-.107-.062-.063-.228.062-.228h18.55c.264 0 .428.286.296.514z"/>
     </svg>
   ),
   NodeJS: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <path d="M16 3L4 9.5v13L16 29l12-6.5v-13L16 3z" fill="#339933"/>
-      <path d="M16 3v26M4 9.5l12 7M28 9.5l-12 7" stroke="#fff" strokeWidth="1" opacity=".3" fill="none"/>
-      <text x="16" y="18" textAnchor="middle" fill="white" fontSize="7.5" fontWeight="700" fontFamily="system-ui">node</text>
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+      <g id="SVGRepo_iconCarrier"> <path d="M17.1725 2.29872C16.4627 1.89953 15.5373 1.90132 14.8269 2.29872C11.2689 4.26227 7.71082 6.22641 4.15216 8.18906C3.45969 8.55335 2.99264 9.29698 3.00009 10.0688V21.9328C2.99509 22.7197 3.48622 23.4705 4.19655 23.8298C5.21871 24.3736 6.2118 24.9726 7.25244 25.4802C8.45451 26.0709 9.95843 26.2015 11.1752 25.5855C12.1629 25.075 12.6016 23.9395 12.6003 22.896C12.6083 18.9806 12.6016 15.0651 12.6034 11.1496C12.6269 10.9756 12.4962 10.7896 12.3064 10.7938C11.8517 10.7866 11.3964 10.7896 10.9417 10.7926C10.7699 10.7764 10.6022 10.9191 10.6152 11.0918C10.6091 14.982 10.6164 18.8734 10.6115 22.7642C10.6214 23.3024 10.2578 23.8196 9.73913 24.0014C8.5412 24.4213 5.12198 22.2012 5.12198 22.2012C4.9965 22.1431 4.91682 22.007 4.92912 21.8718C4.92912 17.9576 4.92973 14.0433 4.92912 10.1297C4.91187 9.97191 5.00912 9.8298 5.15402 9.76538C8.70033 7.8134 12.2448 5.85654 15.7911 3.90336C15.9143 3.82115 16.086 3.8214 16.2089 3.90396C19.7552 5.85654 23.3003 7.81161 26.8472 9.76368C26.9926 9.828 27.0857 9.9725 27.0709 10.1297C27.0703 14.0433 27.0721 17.9576 27.0697 21.8713C27.0802 22.0098 27.0086 22.144 26.8793 22.2048C23.3661 24.1462 19.8129 26.025 16.3315 28.0228C16.1796 28.1099 16.0075 28.2086 15.8373 28.1126C14.9218 27.6062 14.0174 27.0801 13.1049 26.5688C13.0057 26.5069 12.8794 26.4803 12.7759 26.5496C12.3668 26.7652 11.982 26.9398 11.5122 27.1258C10.8524 27.387 10.9578 27.4938 11.5529 27.8405C12.62 28.4444 13.6889 29.0459 14.756 29.6504C15.4585 30.0888 16.4024 30.12 17.1275 29.7149C20.6861 27.7538 24.2436 25.7904 27.8029 23.8293C28.5113 23.468 29.0049 22.7202 28.9999 21.9327V10.0688C29.0068 9.31264 28.5576 8.58227 27.886 8.21259C24.3156 6.23947 20.7435 4.27064 17.1725 2.29872Z" fill="#497718"/> <path d="M22.5419 11.2062C21.1452 10.459 19.4836 10.4192 17.9315 10.5169C16.8102 10.6277 15.6309 10.9371 14.814 11.7409C13.9761 12.5489 13.7937 13.8537 14.1917 14.9085C14.4769 15.6539 15.1948 16.1386 15.9372 16.395C16.8935 16.7326 17.8979 16.837 18.9026 16.9414C19.819 17.0366 20.7357 17.1319 21.6165 17.4042C21.9763 17.5234 22.3953 17.7058 22.5055 18.0973C22.6073 18.5609 22.4957 19.0998 22.1193 19.4219C20.9237 20.3682 17.5979 20.2232 16.4166 19.4784C15.939 19.1611 15.7332 18.5994 15.6495 18.0641C15.6402 17.8973 15.5059 17.7443 15.3248 17.757C14.8713 17.7516 14.4178 17.7528 13.9643 17.7564C13.8061 17.7431 13.6416 17.8557 13.6329 18.0172C13.5397 20.4689 15.7914 21.5377 17.9039 21.773C19.1108 21.888 20.3442 21.8814 21.5327 21.6224C22.4261 21.419 23.3219 21.0444 23.9369 20.3563C24.6953 19.52 24.8444 18.2749 24.5043 17.2332C24.2443 16.4559 23.5012 15.9573 22.7416 15.7008C21.7086 15.3466 20.4844 15.1562 19.5488 15.0671C18.1889 14.9376 16.5729 14.9905 16.188 14.0969C16.0345 13.629 16.1651 13.048 16.5951 12.7602C17.7328 11.9885 20.0483 12.091 21.2265 12.6675C21.7675 12.9384 22.081 13.4948 22.2104 14.0565C22.2344 14.2215 22.3454 14.3937 22.5364 14.3865C22.9868 14.3955 23.4372 14.3889 23.8875 14.3895C24.0422 14.4003 24.2116 14.313 24.2418 14.1546C24.2227 12.9806 23.6232 11.7788 22.5419 11.2062Z" fill="#497718"/> </g>
     </svg>
   ),
   Git: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <path d="M29.5 14.8L17.2 2.5a1.7 1.7 0 00-2.4 0L12.4 5l3 3a2 2 0 012.5 2.5l2.9 2.9a2 2 0 012.1 3.3 2 2 0 01-2.7-2.9L17.7 12v7.5a2 2 0 11-2.5.2L12 16.6a2 2 0 10-1 1.7v7.6a2 2 0 101.8.1l3.3 3.3a1.7 1.7 0 002.4 0l12.1-12a1.7 1.7 0 000-2.5z" fill="#f05032"/>
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2.58536 17.4132C1.80488 16.6327 1.80488 15.3673 2.58536 14.5868L14.5868 2.58536C15.3673 1.80488 16.6327 1.80488 17.4132 2.58536L29.4146 14.5868C30.1951 15.3673 30.1951 16.6327 29.4146 17.4132L17.4132 29.4146C16.6327 30.1951 15.3673 30.1951 14.5868 29.4146L2.58536 17.4132Z" fill="#EE513B"/>
+      <path d="M12.1489 5.06152L10.9336 6.27686L14.0725 9.41577C13.9455 9.68819 13.8746 9.99201 13.8746 10.3124C13.8746 11.222 14.4461 11.9981 15.2496 12.3012V19.9798C14.4461 20.2829 13.8746 21.059 13.8746 21.9686C13.8746 23.1422 14.826 24.0936 15.9996 24.0936C17.1732 24.0936 18.1246 23.1422 18.1246 21.9686C18.1246 21.144 17.6549 20.429 16.9684 20.0768V12.3117L19.9689 15.3122C19.8481 15.5791 19.7809 15.8754 19.7809 16.1874C19.7809 17.361 20.7323 18.3124 21.9059 18.3124C23.0795 18.3124 24.0309 17.361 24.0309 16.1874C24.0309 15.0138 23.0795 14.0624 21.9059 14.0624C21.6778 14.0624 21.4582 14.0983 21.2522 14.1648L18.0297 10.9423C18.0914 10.7433 18.1246 10.5317 18.1246 10.3124C18.1246 9.13878 17.1732 8.18738 15.9996 8.18738C15.7803 8.18738 15.5688 8.22061 15.3697 8.2823L12.1489 5.06152Z" fill="white"/>
     </svg>
   ),
   GitHub: (
@@ -137,35 +126,47 @@ const Icons = {
     </svg>
   ),
   Notion: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <path d="M6 5.5c1-.8 2.3-.7 3.4-.7l14.7.1c1.5.1 3 .6 4 1.7v18c-.2 1.2-1.2 2-2.4 2.2l-15.2.3c-1.3 0-2.6-.4-3.5-1.4-.7-.8-.9-2-.9-3V7.5c0-.8.4-1.6.9-2zm5.5 2.3L9.8 9.5c-.3.2-.4.5-.4.9v13.7c0 .5.1 1 .5 1.3l.5.3 10.2-.2c1.2-.1 2.1-.8 2.1-2V10c0-.5-.2-1-.7-1.2l-2.2-1.3c-.8-.5-1.8-.5-2.7-.3l-5.6.6z" fill="#111111"/>
-      <path d="M12 13h8M12 17h6" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-    </svg>
-  ),
-  CapCut: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <rect width="32" height="32" rx="8" fill="#1c1c1e"/>
-      <path d="M9 10v12l5-6-5-6zM15 10v12l5-6-5-6z" fill="white"/>
-      <rect x="21" y="10" width="3" height="12" rx="1.5" fill="white"/>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <title>Notion</title>
+      <path clip-rule="evenodd" fill-rule="evenodd" d="M15.257.055l-13.31.98C.874 1.128.5 1.83.5 2.667v14.559c0 .654.233 1.213.794 1.96l3.129 4.06c.513.653.98.794 1.962.745l15.457-.932c1.307-.093 1.681-.7 1.681-1.727V4.954c0-.53-.21-.684-.829-1.135l-.106-.078L18.34.755c-1.027-.746-1.45-.84-3.083-.7zm-8.521 4.63c-1.263.086-1.549.105-2.266-.477L2.647 2.76c-.186-.187-.092-.42.375-.466l12.796-.933c1.074-.094 1.634.28 2.054.606l2.195 1.587c.093.047.326.326.047.326l-13.216.794-.162.01zM5.263 21.193V7.287c0-.606.187-.886.748-.933l15.176-.886c.515-.047.748.28.748.886v13.81c0 .609-.093 1.122-.934 1.168l-14.523.84c-.842.047-1.215-.232-1.215-.98zm14.338-13.16c.093.422 0 .842-.422.89l-.699.139v10.264c-.608.327-1.168.513-1.635.513-.747 0-.934-.232-1.495-.932l-4.576-7.185v6.952l1.448.327s0 .84-1.169.84l-3.221.186c-.094-.187 0-.654.327-.747l.84-.232V9.853L7.832 9.76c-.093-.42.14-1.026.794-1.073l3.456-.232 4.763 7.279v-6.44l-1.214-.14c-.094-.513.28-.887.747-.933l3.223-.187z"/>
     </svg>
   ),
   Canva: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <circle cx="16" cy="16" r="14" fill="#00c4cc"/>
-      <path d="M21 11.5c0-2-1.4-3.5-3.3-3.5a5.5 5.5 0 00-5.2 5.4c0 1.7 1 3 2.4 3.3.1.7.2 1.4.3 2.2.1.5.2 1.3.4 1.7.5 1.3 1.4 2.4 2.7 2.4 1.8 0 3.2-1.8 3.2-3.9 0-.7-.2-1.4-.6-2.1.8-.8 1.1-1.8 1.1-3.1 0-.8-.3-1.6-.8-2.1.4-.4.8-1 .8-1.7v-.6z" fill="white"/>
+    <svg width="26" height="26" viewBox="0 0 508 508" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g transform="matrix(.26718 0 0 .26718 0 0)">
+        <circle cx="950" cy="950" r="950" fill="#7d2ae7"/>
+        <circle cx="950" cy="950" r="950" fill="url(#r1)"/>
+        <circle cx="950" cy="950" r="950" fill="url(#r2)"/>
+        <circle cx="950" cy="950" r="950" fill="url(#r3)"/>
+        <circle cx="950" cy="950" r="950" fill="url(#r4)"/>
+      </g>      
+      <path d="M446.744 276.845c-.665 0-1.271.43-1.584 1.33-4.011 11.446-9.43 18.254-13.891 18.254-2.563 0-3.6-2.856-3.6-7.336 0-11.21 6.71-34.982 10.095-45.82.392-1.312.646-2.485.646-3.483 0-3.15-1.722-4.696-5.987-4.696-4.598 0-9.547 1.8-14.36 10.233-1.663-7.435-6.691-10.683-13.715-10.683-8.12 0-15.965 5.224-22.421 13.696-6.456 8.471-14.048 11.25-19.76 9.88 4.108-10.057 5.634-17.57 5.634-23.145 0-8.746-4.324-14.028-11.308-14.028-10.624 0-16.747 10.134-16.747 20.797 0 8.237 3.736 16.708 11.954 20.817-6.887 15.573-16.943 29.66-20.758 29.66-4.93 0-6.379-24.123-6.105-41.38.176-9.9.998-10.408.998-13.401 0-1.722-1.115-2.896-5.595-2.896-10.448 0-13.676 8.844-14.165 18.998a50.052 50.052 0 01-1.8 11.406c-4.363 15.573-13.363 27.39-19.232 27.39-2.72 0-3.463-2.72-3.463-6.28 0-11.21 6.28-25.219 6.28-37.173 0-8.784-3.854-14.34-11.112-14.34-8.55 0-19.858 10.173-30.56 29.229 3.521-14.595 4.97-28.721-5.459-28.721a14.115 14.115 0 00-6.476 1.683 3.689 3.689 0 00-2.113 3.56c.998 15.535-12.521 55.329-25.336 55.329-2.328 0-3.463-2.524-3.463-6.593 0-11.23 6.691-34.943 10.056-45.801.43-1.409.666-2.622.666-3.678 0-2.974-1.84-4.5-6.007-4.5-4.578 0-9.547 1.741-14.34 10.174-1.683-7.435-6.711-10.683-13.735-10.683-11.523 0-24.397 12.19-30.051 28.076-7.572 21.208-22.832 41.692-43.375 41.692-18.645 0-28.486-15.515-28.486-40.03 0-35.392 25.982-64.308 45.253-64.308 9.215 0 13.617 5.869 13.617 14.869 0 10.897-6.085 15.964-6.085 20.112 0 1.272 1.057 2.524 3.15 2.524 8.374 0 18.234-9.841 18.234-23.262 0-13.422-10.897-23.243-30.168-23.243-31.851 0-63.898 32.047-63.898 73.113 0 32.673 16.121 52.374 44 52.374 19.017 0 35.628-14.79 44.588-32.047 1.018 14.302 7.513 21.776 17.413 21.776 8.804 0 15.925-5.243 21.364-14.458 2.094 9.645 7.65 14.36 14.87 14.36 8.275 0 15.201-5.243 21.794-14.986-.097 7.65 1.644 14.85 8.276 14.85 3.13 0 6.867-.725 7.533-3.464 6.984-28.877 24.24-52.453 29.523-52.453 1.565 0 1.995 1.507 1.995 3.287 0 7.846-5.537 23.928-5.537 34.2 0 11.092 4.716 18.43 14.459 18.43 10.8 0 21.775-13.227 29.092-32.556 2.29 18.058 7.24 32.633 14.987 32.633 9.508 0 26.392-20.014 36.625-41.203 4.01.509 10.036.372 15.827-3.717-2.465 6.241-3.912 13.07-3.912 19.897 0 19.663 9.39 25.18 17.47 25.18 8.785 0 15.907-5.243 21.365-14.458 1.8 8.315 6.398 14.34 14.85 14.34 13.225 0 24.71-13.519 24.71-24.612 0-2.934-1.252-4.715-2.72-4.715zm-274.51 18.547c-5.342 0-7.435-5.38-7.435-13.401 0-13.93 9.528-37.193 19.604-37.193 4.402 0 6.065 5.185 6.065 11.524 0 14.145-9.059 39.07-18.235 39.07zm182.948-41.574c-3.189-3.796-4.343-8.961-4.343-13.559 0-5.673 2.074-10.467 4.558-10.467 2.485 0 3.248 2.446 3.248 5.85 0 5.693-2.035 14.008-3.463 18.176zm41.418 41.574c-5.34 0-7.434-6.182-7.434-13.401 0-13.441 9.528-37.193 19.682-37.193 4.402 0 5.967 5.146 5.967 11.524 0 14.145-8.902 39.07-18.215 39.07z" fill="#fff"/>      
+      <defs>
+        <radialGradient id="r1" cx="0" cy="0" r="1" gradientTransform="scale(1469.491) rotate(-49.416 1.37 .302)"><stop offset="0" stop-color="#6420ff"/><stop offset="1" stop-color="#6420ff" stop-opacity="0"/></radialGradient>
+        <radialGradient id="r2" cx="0" cy="0" r="1" gradientTransform="rotate(54.703 42.717 594.194) scale(1657.122)"><stop offset="0" stop-color="#00c4cc"/><stop offset="1" stop-color="#00c4cc" stop-opacity="0"/></radialGradient>
+        <radialGradient id="r3" cx="0" cy="0" r="1" gradientTransform="matrix(1023 -1030 473.711 470.491 367 1684)"><stop offset="0" stop-color="#6420ff"/><stop offset="1" stop-color="#6420ff" stop-opacity="0"/></radialGradient>
+        <radialGradient id="r4" cx="0" cy="0" r="1" gradientTransform="matrix(595.999 1372 -2298.41 998.431 777 256)"><stop offset="0" stop-color="#00c4cc"/><stop offset="1" stop-color="#00c4cc" stop-opacity="0"/></radialGradient>
+      </defs>
     </svg>
   ),
   NanoBanana: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <rect width="32" height="32" rx="8" fill="#1c1c1e"/>
-      <path d="M8 22C8 14 12 9 20 9" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-      <path d="M12 24C12 17 15 13 23 12" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity=".5"/>
-      <circle cx="23" cy="9" r="2.5" fill="#f59e0b"/>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <title>NanoBanana</title>
+      <path d="M1.5 19.824c0-.548.444-.992.991-.992h.744a.991.991 0 010 1.983H2.49a.991.991 0 01-.991-.991z" fill="#F3AD61"/>
+      <path d="M14.837 13.5h7.076c.522 0 .784-.657.413-1.044l-1.634-1.704a3.183 3.183 0 00-4.636 0l-1.633 1.704c-.37.385-.107 1.044.414 1.044zM3.587 13.5h7.076c.521 0 .784-.659.414-1.044l-1.635-1.704a3.183 3.183 0 00-4.636 0l-1.633 1.704c-.37.385-.107 1.044.414 1.044z" fill="#F9C23C"/> 
+      <path d="M12.525 1.521c3.69-.53 5.97 8.923 4.309 12.744-1.662 3.82-5.248 4.657-9.053 6.152a3.49 3.49 0 01-1.279.244c-1.443 0-2.227 1.187-2.774-.282-.707-1.9.22-4.031 2.069-4.757 2.014-.79 3.084-2.308 3.89-4.364.82-2.096.877-2.956.873-5.241-.003-1.827-.123-4.195 1.965-4.496z" fill="#FEEFC2"/>
+      <path d="M16.834 14.264l-7.095-3.257c-.815 1.873-2.29 3.308-4.156 4.043-2.16.848-3.605 3.171-2.422 5.54 2.364 4.727 13.673-.05 13.673-6.325z" fill="#FCD53F"/>
+      <path clip-rule="evenodd" fill-rule="evenodd" d="M13.68 12.362c.296.094.46.41.365.707-1.486 4.65-5.818 6.798-9.689 6.997a.562.562 0 11-.057-1.124c3.553-.182 7.372-2.138 8.674-6.216a.562.562 0 01.707-.364z" fill="#F9C23C"/>
+      <path d="M17.43 19.85l-7.648-8.835h6.753c1.595.08 2.846 1.433 2.846 3.073v5.664c0 .997-.898 1.302-1.95.098z" fill="#FFF478"/>
     </svg>
   ),
   OpenAI: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <path d="M29.1 13a8.1 8.1 0 00-.7-6.6 8.2 8.2 0 00-8.8-3.9A8.1 8.1 0 0013.5 1 8.2 8.2 0 005.7 6a8.1 8.1 0 00-5.4 3.9 8.2 8.2 0 001 9.6 8.1 8.1 0 00.7 6.6 8.2 8.2 0 008.8 3.9 8.1 8.1 0 006.1 2.7 8.2 8.2 0 007.8-5.7 8.1 8.1 0 005.4-3.9 8.2 8.2 0 00-1-9.1zm-13.6 9a4.5 4.5 0 01-2.9-1 .1.1 0 010-.1l7.3-4.2.1.2v8.5a4.5 4.5 0 01-4.5-3.4zm-8.8-4.1a4.5 4.5 0 01.5-4.6l7.2 4.2-.1.2H5.8a4.5 4.5 0 01.9-3.8zm-.8-9.4a4.5 4.5 0 012.9-2.2v8.5l-.1.2-7.3-4.2a4.5 4.5 0 014.5-2.3zm10.8 9.1L13 13.5l4.7-2.7 4.7 2.7v5.4l-4.7 2.7zm2.1-9.8a4.5 4.5 0 012.9 1v.1L14.4 13v-.4V4.1a4.5 4.5 0 014.4 3.7zm7.1 8.5h-8.5l-.1-.2 7.2-4.2a4.5 4.5 0 011.4 4.4zm-1.8 4.9l-7.2-4.2.1-.2h8.5a4.5 4.5 0 01-1.4 4.4z" fill="#10a37f"/>
+    <svg fill="#000000" width="26" height="26" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+      <g id="SVGRepo_iconCarrier">
+      <title>OpenAI icon</title>
+      <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/> </g>
     </svg>
   ),
   ChatGPT: (
@@ -175,21 +176,28 @@ const Icons = {
     </svg>
   ),
   Claude: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <rect width="32" height="32" rx="6" fill="#cc785c"/>
-      <path d="M11 22l5-14 5 14M13 18h6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 640 640" fill="none">
+      <path fill="rgb(211, 94, 0)" d="M164.4 404.5L265.1 348L266.8 343.1L265.1 340.4L260.2 340.4L243.4 339.4L185.9 337.8L136 335.7L87.7 333.1L75.5 330.5L64.1 315.5L65.3 308L75.5 301.1L90.2 302.4C109.1 303.7 136.1 305.5 171.2 308L206.4 310.1L258.6 315.5L266.9 315.5L268.1 312.1L265.3 310L263.1 307.9L212.8 273.8L158.4 237.8L129.9 217.1L114.5 206.6L106.7 196.8L103.3 175.3L117.3 159.9L136.1 161.2L140.9 162.5L159.9 177.2L200.6 208.7L253.7 247.8L261.5 254.3L264.6 252.1L265 250.5L261.5 244.7L232.6 192.5L201.8 139.4L188.1 117.4L184.5 104.2C183.2 98.8 182.3 94.2 182.3 88.7L198.2 67.1L207 64.3L228.2 67.1L237.1 74.9L250.3 105.1L271.7 152.6L304.9 217.2L314.6 236.4L319.8 254.2L321.7 259.6L325.1 259.6L325.1 256.5L327.8 220.1L332.8 175.4L337.7 117.9L339.4 101.7L347.4 82.3L363.3 71.8L375.7 77.7L385.9 92.4L384.5 101.9L378.4 141.4L366.5 203.3L358.7 244.8L363.2 244.8L368.4 239.6L389.4 211.8L424.6 167.7L440.1 150.2L458.2 130.9L469.8 121.7L491.8 121.7L508 145.8L500.7 170.7L478 199.4L459.2 223.8L432.2 260.1L415.4 289.1L417 291.4L421 291L481.9 278L514.8 272.1L554.1 265.4L571.9 273.7L573.8 282.1L566.8 299.3L524.8 309.7L475.6 319.5L402.3 336.8L401.4 337.5L402.4 338.8L435.4 341.9L449.5 342.7L484.1 342.7L548.5 347.5L565.3 358.6L575.4 372.2L573.7 382.6L547.8 395.8C532.3 392.1 493.4 382.9 431.2 368.1L403.2 361.1L399.3 361.1L399.3 363.4L422.6 386.2L465.3 424.8L518.8 474.6L521.5 486.9L514.6 496.6L507.3 495.6L460.3 460.2L442.2 444.3L401.1 409.7L398.4 409.7L398.4 413.3L407.9 427.2L457.9 502.4L460.5 525.4L456.9 532.9L443.9 537.4L429.7 534.8L400.4 493.7L370.2 447.4L345.8 405.9L342.8 407.6L328.4 562.4L321.7 570.3L306.2 576.2L293.2 566.4L286.3 550.5L293.2 519L301.5 477.9L308.2 445.2L314.3 404.6L317.9 391.1L317.7 390.2L314.7 390.6L284.1 432.6L237.6 495.5L200.8 534.9L192 538.4L176.7 530.5L178.1 516.4L186.6 503.8L237.5 439L268.2 398.8L288 375.6L287.9 372.2L286.7 372.2L151.4 460L127.3 463.1L116.9 453.4L118.2 437.5L123.1 432.3L163.8 404.3L163.7 404.4L163.7 404.5z"/>
     </svg>
   ),
   Gemini: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <path d="M16 4C16 4 11 12 11 16s5 12 5 12 5-8 5-12S16 4 16 4z" fill="#4285f4"/>
-      <path d="M4 16c0 0 8-5 12-5s12 5 12 5-8 5-12 5S4 16 4 16z" fill="#db4437"/>
+    <svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <title>Gemini</title>     
+      <path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="#3186FF"/>      
+      <path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#g0)"/>
+      <path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#g1)"/>
+      <path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#g2)"/>
+      <defs>
+        <linearGradient id="g0" x1="7" y1="15.5" x2="11" y2="12" gradientUnits="userSpaceOnUse"><stop stop-color="#08B962"/><stop offset="1" stop-color="#08B962" stop-opacity="0"/></linearGradient>
+        <linearGradient id="g1" x1="8" y1="5.5" x2="11.5" y2="11" gradientUnits="userSpaceOnUse"><stop stop-color="#F94543"/><stop offset="1" stop-color="#F94543" stop-opacity="0"/></linearGradient>
+        <linearGradient id="g2" x1="3.5" y1="13.5" x2="17.5" y2="12" gradientUnits="userSpaceOnUse"><stop stop-color="#FABC12"/><stop offset=".46" stop-color="#FABC12" stop-opacity="0"/></linearGradient>
+      </defs>
     </svg>
   ),
-  Grok: (
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-      <rect width="32" height="32" rx="6" fill="#1a1a1a"/>
-      <path d="M8 8l10 8-10 8M16 22h8" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+  Codex: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <title>Codex</title>      
+      <path clip-rule="evenodd" fill-rule="evenodd" d="M8.086.457a6.105 6.105 0 013.046-.415c1.333.153 2.521.72 3.564 1.7a.117.117 0 00.107.029c1.408-.346 2.762-.224 4.061.366l.063.03.154.076c1.357.703 2.33 1.77 2.918 3.198.278.679.418 1.388.421 2.126a5.655 5.655 0 01-.18 1.631.167.167 0 00.04.155 5.982 5.982 0 011.578 2.891c.385 1.901-.01 3.615-1.183 5.14l-.182.22a6.063 6.063 0 01-2.934 1.851.162.162 0 00-.108.102c-.255.736-.511 1.364-.987 1.992-1.199 1.582-2.962 2.462-4.948 2.451-1.583-.008-2.986-.587-4.21-1.736a.145.145 0 00-.14-.032c-.518.167-1.04.191-1.604.185a5.924 5.924 0 01-2.595-.622 6.058 6.058 0 01-2.146-1.781c-.203-.269-.404-.522-.551-.821a7.74 7.74 0 01-.495-1.283 6.11 6.11 0 01-.017-3.064.166.166 0 00.008-.074.115.115 0 00-.037-.064 5.958 5.958 0 01-1.38-2.202 5.196 5.196 0 01-.333-1.589 6.915 6.915 0 01.188-2.132c.45-1.484 1.309-2.648 2.577-3.493.282-.188.55-.334.802-.438.286-.12.573-.22.861-.304a.129.129 0 00.087-.087A6.016 6.016 0 015.635 2.31C6.315 1.464 7.132.846 8.086.457zm-.804 7.85a.848.848 0 00-1.473.842l1.694 2.965-1.688 2.848a.849.849 0 001.46.864l1.94-3.272a.849.849 0 00.007-.854l-1.94-3.393zm5.446 6.24a.849.849 0 000 1.695h4.848a.849.849 0 000-1.696h-4.848z"/>
     </svg>
   ),
 }
@@ -199,10 +207,10 @@ const groups: SkillGroup[] = [
     title: 'Core Technologies',
     duration: '34s',
     items: [
-      { name: 'HTML5', description: 'Semantic and accessible markup for modern web applications.', icon: Icons.HTML5, accent: '#e34f26' },
-      { name: 'CSS3', description: 'Responsive layouts, animations, and polished user interfaces.', icon: Icons.CSS3, accent: '#1572b6' },
-      { name: 'JavaScript', description: 'Interactive web experiences, APIs, and application logic.', icon: Icons.JavaScript, accent: '#f7df1e' },
-      { name: 'TypeScript', description: 'Scalable and maintainable code with strong type safety.', icon: Icons.TypeScript, accent: '#3178c6' },
+      { name: 'HTML5', description: 'Building semantic and accessible web structures.', icon: Icons.HTML5, accent: '#e34f26' },
+      { name: 'CSS3', description: 'Creating responsive layouts and polished interfaces.', icon: Icons.CSS3, accent: '#1572b6' },
+      { name: 'JavaScript', description: 'Powering interactive experiences and application logic.', icon: Icons.JavaScript, accent: '#f7df1e' },
+      { name: 'TypeScript', description: 'Used in 5+ production projects.', icon: Icons.TypeScript, accent: '#3178c6' },
     ],
   },
   {
@@ -210,23 +218,21 @@ const groups: SkillGroup[] = [
     reverse: true,
     duration: '38s',
     items: [
-      { name: 'React', description: 'Building reusable components and scalable user interfaces.', icon: Icons.React, accent: '#61dafb' },
-      { name: 'Next.js', description: 'Full-stack React applications with SSR and modern routing.', icon: Icons.NextJS, accent: '#000000' },
-      { name: 'Tailwind CSS', description: 'Rapid UI development with consistent and maintainable styling.', icon: Icons.Tailwind, accent: '#38bdf8' },
-      { name: 'GSAP', description: 'Advanced animations and interactive user experiences.', icon: Icons.GSAP, accent: '#88ce02' },
-      { name: 'Lucide React', description: 'Clean and consistent icon systems for modern interfaces.', icon: Icons.Lucide, accent: '#e11d48' },
+      { name: 'React', description: 'Building reusable components and scalable interfaces.', icon: Icons.React, accent: '#61dafb' },
+      { name: 'Next.js', description: 'Developing full-stack applications with modern React.', icon: Icons.NextJS, accent: '#000000' },
+      { name: 'Tailwind CSS', description: 'Designing fast and consistent user interfaces.', icon: Icons.Tailwind, accent: '#38bdf8' },
+      { name: 'GSAP', description: 'Crafting smooth animations and engaging interactions.', icon: Icons.GSAP, accent: '#88ce02' },
     ],
   },
   {
     title: 'Development & Deployment',
     duration: '42s',
     items: [
-      { name: 'Node.js', description: 'Backend services, APIs, automations, and AI integrations.', icon: Icons.NodeJS, accent: '#339933' },
-      { name: 'Git', description: 'Version control and collaborative development workflows.', icon: Icons.Git, accent: '#f05032' },
-      { name: 'GitHub', description: 'Repository management, code reviews, and project collaboration.', icon: Icons.GitHub, accent: '#1b1f23' },
-      { name: 'Vite', description: 'Fast development environment with instant feedback loops.', icon: Icons.Vite, accent: '#646cff' },
-      { name: 'Vercel', description: 'Deployment and hosting for modern web applications.', icon: Icons.Vercel, accent: '#000000' },
-      { name: 'Linux VPS', description: 'Server management, SSH workflows, and self-hosted deployments.', icon: Icons.VPS, accent: '#0f172a' },
+      { name: 'Node.js', description: 'Building APIs, automations, and backend services.', icon: Icons.NodeJS, accent: '#339933' },
+      { name: 'Git', description: 'Managing version control across projects.', icon: Icons.Git, accent: '#f05032' },
+      { name: 'GitHub', description: 'Hosting code and collaborating through pull requests.', icon: Icons.GitHub, accent: '#1b1f23' },
+      { name: 'Vercel', description: 'Deploying and maintaining production web applications.', icon: Icons.Vercel, accent: '#000000' },
+      { name: 'Linux VPS', description: 'Managing servers and self-hosted deployments.', icon: Icons.VPS, accent: '#0f172a' },
     ],
   },
   {
@@ -234,24 +240,23 @@ const groups: SkillGroup[] = [
     reverse: true,
     duration: '40s',
     items: [
-      { name: 'OpenAI API', description: 'Building AI-powered features and intelligent workflows.', icon: Icons.OpenAI, accent: '#10a37f' },
-      { name: 'Discord.js', description: 'Creating bots, automations, and community tools.', icon: Icons.DiscordJS, accent: '#5865f2' },
-      { name: 'ChatGPT', description: 'Research, ideation, documentation, and productivity support.', icon: Icons.ChatGPT, accent: '#10a37f' },
-      { name: 'Claude', description: 'Long-context reasoning and structured content generation.', icon: Icons.Claude, accent: '#cc785c' },
-      { name: 'Gemini', description: 'Research assistance and multimodal problem solving.', icon: Icons.Gemini, accent: '#4285f4' },
-      { name: 'Grok', description: 'Alternative perspectives and real-time information gathering.', icon: Icons.Grok, accent: '#0ea5e9' },
+      { name: 'OpenAI API', description: 'Integrated into chatbot and automation projects.', icon: Icons.OpenAI, accent: '#10a37f' },
+      { name: 'Discord.js', description: 'Building bots and workflow automations.', icon: Icons.DiscordJS, accent: '#5865f2' },
+      { name: 'Codex', description: 'Accelerating development through AI-assisted coding.', icon: Icons.Codex, accent: '#1a1a1a' },
+      { name: 'Claude', description: 'Supporting research and long-form reasoning tasks.', icon: Icons.Claude, accent: '#cc785c' },
+      { name: 'Gemini', description: 'Exploring multimodal workflows and research.', icon: Icons.Gemini, accent: '#4285f4' },
     ],
   },
   {
     title: 'Design & Productivity',
     duration: '36s',
     items: [
-      { name: 'VS Code', description: 'Primary editor for daily development and debugging.', icon: Icons.VSCode, accent: '#007acc' },
-      { name: 'Canva', description: 'Creating visual assets, presentations, and marketing materials.', icon: Icons.Canva, accent: '#00c4cc' },
-      { name: 'Notion', description: 'Knowledge management, planning, and project documentation.', icon: Icons.Notion, accent: '#111111' },
-      { name: 'Cursor', description: 'AI-assisted development and rapid prototyping workflows.', icon: Icons.Cursor, accent: '#8b5cf6' },
-      { name: 'CapCut', description: 'Editing short-form content and social media videos.', icon: Icons.CapCut, accent: '#10b981' },
-      { name: 'Nano Banana', description: 'Visual exploration and creative concept development.', icon: Icons.NanoBanana, accent: '#f59e0b' },
+      { name: 'VS Code', description: 'Primary environment for daily development.', icon: Icons.VSCode, accent: '#007acc' },
+      { name: 'Canva', description: 'Creating visual assets and presentation materials.', icon: Icons.Canva, accent: '#00c4cc' },
+      { name: 'Notion', description: 'Organizing projects, notes, and documentation.', icon: Icons.Notion, accent: '#111111' },
+      { name: 'Cursor', description: 'AI-assisted coding and rapid prototyping.', icon: Icons.Cursor, accent: '#8b5cf6' },
+      { name: 'Nano Banana', description: 'Generating concepts and visual explorations.', icon: Icons.NanoBanana, accent: '#f59e0b' },
+      { name: 'ChatGPT', description: 'Research, ideation, content, and visual references.', icon: Icons.OpenAI, accent: '#10a37f' },
     ],
   },
 ]
