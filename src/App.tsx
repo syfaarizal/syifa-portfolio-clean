@@ -22,11 +22,17 @@ function App() {
         {/* Skills */}
         <Skills />
 
-        {/* Projects + Blog side by side */}
-        <section className="py-20 bg-white border-t border-[#EAEAEA]">
-          <div className="max-w-7xl mx-auto px-8">
-            <div className="grid grid-cols-[55fr_45fr] gap-14">
-              <Projects />
+        {/* Projects */}
+        <section className="border-t border-[#EAEAEA] bg-white py-20">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8">
+            <Projects />
+          </div>
+        </section>
+
+        {/* Blog */}
+        <section className="bg-white pb-20">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8">
+            <div className="mt-4">
               <Blog />
             </div>
           </div>

@@ -288,7 +288,7 @@ const MarqueeRow = ({ title, items, reverse = false, duration }: SkillGroup) => 
   <div className="skill-row rounded-[28px] mt-0 bg-[#fffdfd] px-4 shadow-[0_8px_24px_rgba(17,24,39,0.03)] sm:px-5">
     <div className="mb-4 flex items-end justify-between gap-4">
       <div>
-        <p className="section-label !mb-1 sm:text-[1.03rem]">{title}</p>
+        <p className="section-label !mb-1 sm:text-[1rem]">{title}</p>
         <div className="h-0.5 w-10 rounded-full bg-burgundy" />
       </div>
       <p className="hidden font-sans text-xs uppercase tracking-[0.18em] text-gray-400 sm:block">

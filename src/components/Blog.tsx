@@ -70,15 +70,19 @@ const posts = [
 export default function Blog() {
   return (
     <div id="blog">
-      {/* Header row */}
-      <div className="flex items-end justify-between mb-6">
-        <div>
-          <p className="section-label">Latest Blog</p>
-          <h2 className="font-serif text-[1.9rem] font-semibold text-gray-900">Insights &amp; Thoughts</h2>
+      {/* Header */}
+      <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-2xl">
+          <p className="section-label sm:text-[1.2rem]">My Blog</p>
+          <h2 className="section-heading sm:text-[3rem]">Latest from Blog</h2>
+          <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
+          <p className="mt-4 max-w-2xl font-sans text-[1.1rem] leading-6 text-gray-500">
+            Thoughts, notes, and practical lessons from building frontend projects, refining performance, and exploring modern web tooling.
+          </p>
         </div>
         <a
           href="#"
-          className="font-sans text-sm font-medium text-burgundy flex items-center gap-1.5 hover:gap-2.5 transition-all duration-200"
+          className="flex items-center gap-1.5 self-start font-sans text-sm font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
         >
           View All Blog <ArrowIcon />
         </a>

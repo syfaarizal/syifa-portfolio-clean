@@ -84,15 +84,19 @@ const projects = [
 export default function Projects() {
   return (
     <div id="projects">
-      {/* Header row */}
-      <div className="flex items-end justify-between mb-6">
-        <div>
-          <p className="section-label">Featured Projects</p>
-          <h2 className="font-serif text-[1.9rem] font-semibold text-gray-900">Selected Work</h2>
+      {/* Header */}
+      <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div className="max-w-2xl">
+          <p className="section-label sm:text-[1.2rem]">My Projects</p>
+          <h2 className="section-heading sm:text-[3rem]">Featured Projects</h2>
+          <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
+          <p className="mt-4 max-w-2xl font-sans text-[1.1rem] leading-6 text-gray-500">
+            A curated selection of work focused on clean interfaces, practical interactions, and thoughtful frontend execution.
+          </p>
         </div>
         <a
           href="#"
-          className="font-sans text-sm font-medium text-burgundy flex items-center gap-1.5 hover:gap-2.5 transition-all duration-200"
+          className="flex items-center gap-1.5 self-start font-sans text-sm font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
         >
           View All Projects <ArrowIcon />
         </a>
