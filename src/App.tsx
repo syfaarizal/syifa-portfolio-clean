@@ -8,6 +8,7 @@ import Blog from './components/Blog'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ProjectsPage from './pages/projects/ProjectsPage'
+import BlogPage from './pages/blog/BlogPage'
 import { scrollToHash } from './lib/navigation'
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
   useEffect(() => {
     const { pathname, hash } = window.location
 
-    if (pathname === '/projects') {
+    if (pathname === '/projects' || pathname.startsWith('/blog')) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
       return
     }
@@ -42,6 +43,10 @@ function App() {
 
   if (window.location.pathname === '/projects') {
     return <ProjectsPage />
+  }
+
+  if (window.location.pathname.startsWith('/blog')) {
+    return <BlogPage />
   }
 
   return (

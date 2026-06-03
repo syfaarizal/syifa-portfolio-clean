@@ -1,3 +1,5 @@
+import { navigateTo } from '../lib/navigation'
+
 const ArrowIcon = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -9,7 +11,7 @@ const posts = [
     id: 1,
     img:  '/assets/blog/blog-day1.png',
     title: 'Day 1: Print Name and Status',
-    desc: 'Today I learned about template literals in JavaScript. You know, that thing where you...',
+    desc: 'Today I learned about template literals in JavaScript...',
     date: 'June 5, 2025',
     readTime: '5 min read',
   },
@@ -17,7 +19,7 @@ const posts = [
     id: 2,
     img: '/assets/blog/blog-day2.png',
     title: 'Day 2: Simple Age Calculator',
-    desc: 'Today\'s challenge really made my brain curl 😅 We were asked to create a JavaScript...',
+    desc: 'Today\'s challenge really made my brain curl...',
     date: 'June 6, 2025',
     readTime: '7 min read',
   },
@@ -25,7 +27,7 @@ const posts = [
     id: 3,
     img: '/assets/blog/blog-day3.png',
     title: 'Day 3: Interactive Calculator',
-    desc: 'Day 3 of this coding challenge really made me frown but also smile when I finally got...',
+    desc: 'Day 3 of this coding challenge really made me...',
     date: 'June 9, 2025',
     readTime: '9 min read',
   },
@@ -41,15 +43,16 @@ export default function Blog() {
           <h2 className="section-heading sm:text-[3rem]">Recent Articles</h2>
           <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
           <p className="mt-4 max-w-2xl font-sans text-[1.3rem] leading-6 text-gray-500">
-            Writing about development, AI, and product building.
+            My blog in learning, building and growing.
           </p>
         </div>
-        <a
-          href="#"
+        <button
+          type="button"
+          onClick={() => navigateTo('/blog')}
           className="flex items-center gap-1.5 self-start font-sans text-[1rem] font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
         >
           View All Blog <ArrowIcon />
-        </a>
+        </button>
       </div>
 
       {/* Article cards */}
