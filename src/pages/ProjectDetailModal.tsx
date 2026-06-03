@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useEffect, type ReactNode } from 'react'
 import type { Project } from '../data/projects'
 
 type ProjectDetailModalProps = {
@@ -40,6 +40,24 @@ function SectionCard({
 }
 
 export default function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps) {
+  useEffect(() => {
+    if (!project) return
+
+    const previousOverflow = document.body.style.overflow
+    const previousPaddingRight = document.body.style.paddingRight
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+
+    document.body.style.overflow = 'hidden'
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`
+    }
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      document.body.style.paddingRight = previousPaddingRight
+    }
+  }, [project])
+
   if (!project) return null
 
   return (
