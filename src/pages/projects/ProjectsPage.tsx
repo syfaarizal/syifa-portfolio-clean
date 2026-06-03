@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react'
 import { useState } from 'react'
-import Footer from '../components/Footer'
+import Footer from '../../components/Footer'
 import ProjectDetailModal from './ProjectDetailModal'
-import { projects, type Project } from '../data/projects'
-import { navigateWithTransition } from '../lib/navigation'
+import { projects, type Project } from '../../data/projects'
+import { navigateWithTransition } from '../../lib/navigation'
 
 const ArrowIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

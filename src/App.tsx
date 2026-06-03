@@ -7,7 +7,7 @@ import Projects from './components/Projects'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import ProjectsPage from './pages/ProjectsPage'
+import ProjectsPage from './pages/projects/ProjectsPage'
 import { scrollToHash } from './lib/navigation'
 
 function App() {

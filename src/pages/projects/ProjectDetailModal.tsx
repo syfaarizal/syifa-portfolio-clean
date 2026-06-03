@@ -1,5 +1,5 @@
 import { useEffect, type ReactNode } from 'react'
-import type { Project } from '../data/projects'
+import type { Project } from '../../data/projects'
 
 type ProjectDetailModalProps = {
   project: Project | null
