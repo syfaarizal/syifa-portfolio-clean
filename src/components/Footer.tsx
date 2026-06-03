@@ -171,7 +171,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
-          <p className="font-sans text-xs text-white/40">© 2024 LIBR. All rights reserved.</p>
+          <p className="font-sans text-xs text-white/40">© 2026 LIBR. All rights reserved.</p>
           <p className="font-sans text-xs text-white/40">
             Built with <span className="text-red-400">♥</span> by Syifa Fauziyah Arizal
           </p>

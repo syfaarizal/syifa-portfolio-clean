@@ -291,9 +291,6 @@ const MarqueeRow = ({ title, items, reverse = false, duration }: SkillGroup) => 
         <p className="section-label !mb-1 sm:text-[1rem]">{title}</p>
         <div className="h-0.5 w-10 rounded-full bg-burgundy" />
       </div>
-      <p className="hidden font-sans text-xs uppercase tracking-[0.18em] text-gray-400 sm:block">
-        Smooth auto scroll
-      </p>
     </div>
 
     <div className="relative overflow-hidden">

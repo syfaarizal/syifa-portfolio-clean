@@ -135,27 +135,6 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
               <SectionCard title="Design Process">{project.detail.designProcess}</SectionCard>
               <SectionCard title="Lessons Learned">{project.detail.lessonsLearned}</SectionCard>
 
-              {/* <section className="rounded-[24px] border border-[#E8DDD9] bg-[#fffaf9] p-5">
-                <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-gray-500">
-                  Demo & Source
-                </p>
-                <div className="mt-3 space-y-2 font-sans text-[0.98rem] leading-7 text-gray-600">
-                  <p>
-                    <a href={project.demoUrl} target="_blank" rel="noreferrer" className="font-semibold text-burgundy hover:underline">
-                      Demo
-                    </a>
-                    {' '} - {project.demoUrl}
-                  </p>
-                  <p>
-                    <a href={project.sourceUrl} target="_blank" rel="noreferrer" className="font-semibold text-burgundy hover:underline">
-                      Source
-                    </a>
-                    {' '} - {project.sourceUrl.replace('https://github.com/', '')}
-                  </p>
-                  <p>{project.detail.demoSource}</p>
-                </div>
-              </section> */}
-
               <section className="rounded-[24px] border border-[#E8DDD9] bg-[#4a0810] p-5 text-white">
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-white/65">
                   Problem → Process → Outcome
