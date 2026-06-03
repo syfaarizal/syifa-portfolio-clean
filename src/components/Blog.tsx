@@ -4,66 +4,30 @@ const ArrowIcon = () => (
   </svg>
 )
 
-const BlogThumb1 = () => (
-  <svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-    <rect width="80" height="60" fill="#e8eaf6" rx="6"/>
-    <rect x="8" y="10" width="30" height="5" rx="2.5" fill="#7A0F16" opacity="0.7"/>
-    <rect x="8" y="20" width="64" height="4" rx="2" fill="#9e9e9e" opacity="0.5"/>
-    <rect x="8" y="28" width="54" height="4" rx="2" fill="#9e9e9e" opacity="0.4"/>
-    <rect x="8" y="38" width="16" height="14" rx="4" fill="#7A0F16" opacity="0.15"/>
-    <rect x="28" y="38" width="16" height="14" rx="4" fill="#7A0F16" opacity="0.25"/>
-    <rect x="48" y="38" width="16" height="14" rx="4" fill="#7A0F16" opacity="0.4"/>
-  </svg>
-)
-
-const BlogThumb2 = () => (
-  <svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-    <rect width="80" height="60" fill="#e3f2fd" rx="6"/>
-    <rect x="8" y="8" width="64" height="5" rx="2.5" fill="#1565c0" opacity="0.3"/>
-    <rect x="8" y="18" width="64" height="32" rx="4" fill="#fff" opacity="0.7"/>
-    <rect x="14" y="24" width="40" height="3" rx="1.5" fill="#9e9e9e" opacity="0.5"/>
-    <rect x="14" y="31" width="52" height="3" rx="1.5" fill="#9e9e9e" opacity="0.4"/>
-    <rect x="14" y="38" width="36" height="3" rx="1.5" fill="#7A0F16" opacity="0.5"/>
-    <circle cx="60" cy="32" r="10" fill="#7A0F16" opacity="0.2"/>
-  </svg>
-)
-
-const BlogThumb3 = () => (
-  <svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-    <rect width="80" height="60" fill="#f3e5f5" rx="6"/>
-    <rect x="8" y="8" width="24" height="24" rx="5" fill="#7A0F16" opacity="0.2"/>
-    <rect x="12" y="12" width="16" height="16" rx="3" fill="#7A0F16" opacity="0.4"/>
-    <rect x="38" y="8" width="34" height="7" rx="3.5" fill="#9e9e9e" opacity="0.4"/>
-    <rect x="38" y="20" width="28" height="5" rx="2.5" fill="#9e9e9e" opacity="0.3"/>
-    <rect x="8" y="40" width="64" height="4" rx="2" fill="#9e9e9e" opacity="0.25"/>
-    <rect x="8" y="48" width="48" height="4" rx="2" fill="#9e9e9e" opacity="0.2"/>
-  </svg>
-)
-
 const posts = [
   {
     id: 1,
-    Thumb: BlogThumb1,
-    title: 'Membangun UI yang Konsisten dengan Design System',
-    desc: 'Design system membantu menjaga konsistensi UI/UX dalam proyek skala besar.',
-    date: '12 Mei 2024',
+    img:  '/assets/blog/blog-day1.png',
+    title: 'Day 1: Print Name and Status',
+    desc: 'Today I learned about template literals in JavaScript. You know, that thing where you...',
+    date: 'June 5, 2025',
     readTime: '5 min read',
   },
   {
     id: 2,
-    Thumb: BlogThumb2,
-    title: 'Tips Optimasi Performa Website untuk Pengalaman Terbaik',
-    desc: 'Optimasi performa adalah kunci untuk menjaga pengguna tetap engaged.',
-    date: '5 Mei 2024',
-    readTime: '6 min read',
+    img: '/assets/blog/blog-day2.png',
+    title: 'Day 2: Simple Age Calculator',
+    desc: 'Today\'s challenge really made my brain curl 😅 We were asked to create a JavaScript...',
+    date: 'June 6, 2025',
+    readTime: '7 min read',
   },
   {
     id: 3,
-    Thumb: BlogThumb3,
-    title: 'Mengapa Saya Memilih Next.js untuk Project Saya',
-    desc: 'Next.js memberikan banyak keuntungan untuk developer dan klien.',
-    date: '28 Apr 2024',
-    readTime: '4 min read',
+    img: '/assets/blog/blog-day3.png',
+    title: 'Day 3: Interactive Calculator',
+    desc: 'Day 3 of this coding challenge really made me frown but also smile when I finally got...',
+    date: 'June 9, 2025',
+    readTime: '9 min read',
   },
 ]
 
@@ -76,13 +40,13 @@ export default function Blog() {
           <p className="section-label sm:text-[1.2rem]">Latest from Blog</p>
           <h2 className="section-heading sm:text-[3rem]">Recent Articles</h2>
           <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
-          <p className="mt-4 max-w-2xl font-sans text-[1.1rem] leading-6 text-gray-500">
+          <p className="mt-4 max-w-2xl font-sans text-[1.3rem] leading-6 text-gray-500">
             Writing about development, AI, and product building.
           </p>
         </div>
         <a
           href="#"
-          className="flex items-center gap-1.5 self-start font-sans text-sm font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
+          className="flex items-center gap-1.5 self-start font-sans text-[1rem] font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
         >
           View All Blog <ArrowIcon />
         </a>
@@ -90,14 +54,14 @@ export default function Blog() {
 
       {/* Article cards */}
       <div className="grid gap-4 md:grid-cols-3">
-        {posts.map(({ id, Thumb, title, desc, date, readTime }) => (
+        {posts.map(({ id, img, title, desc, date, readTime }) => (
           <article
             key={id}
             className="group flex gap-4 rounded-2xl border border-[#EAEAEA] bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card"
           >
             {/* Thumbnail */}
             <div className="h-[94px] w-[96px] flex-shrink-0 overflow-hidden rounded-xl bg-gray-100">
-              <Thumb />
+              <img src={img} alt={title} className="w-full h-full object-cover" />
             </div>
 
             {/* Content */}
@@ -105,18 +69,18 @@ export default function Blog() {
               <span className="mb-2 block font-sans text-[10px] uppercase tracking-[0.14em] text-gray-400">
                 {date}
               </span>
-              <h3 className="mb-2 font-serif text-[1.15rem] leading-tight font-semibold text-gray-900 transition-colors group-hover:text-burgundy">
+              <h3 className="mb-2 font-serif text-[1.33rem] leading-tight font-bold text-gray-900 transition-colors group-hover:text-burgundy">
                 {title}
               </h3>
-              <p className="mb-3 font-sans text-sm leading-6 text-gray-500">
+              <p className="mb-3 font-sans text-[0.95rem] leading-6 text-gray-500">
                 {desc}
               </p>
-              <div className="flex items-center gap-2 font-sans text-sm font-medium text-burgundy">
+              <div className="flex items-center gap-2 font-sans text-[0.9rem] font-medium text-burgundy">
                 Read article
                 <span className="transition-transform duration-200 group-hover:translate-x-1">
                   <ArrowIcon />
                 </span>
-                <span className="ml-1 text-[10px] font-normal text-gray-400">
+                <span className="ml-1 text-[13px] font-normal text-gray-400">
                   {readTime}
                 </span>
               </div>
