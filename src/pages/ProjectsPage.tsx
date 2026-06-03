@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Footer from '../components/Footer'
 import ProjectDetailModal from './ProjectDetailModal'
 import { projects, type Project } from '../data/projects'
-import { navigateTo } from '../lib/navigation'
+import { navigateWithTransition } from '../lib/navigation'
 
 const ArrowIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -117,7 +117,7 @@ export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   return (
-    <div className="min-h-screen bg-[linear-gradient(180deg,#fffdfc_0%,#fff7f6_100%)] text-gray-900">
+    <div className="page-shell page-enter min-h-screen bg-[linear-gradient(180deg,#fffdfc_0%,#fff7f6_100%)] text-gray-900">
       <main className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute left-0 top-24 h-72 w-72 rounded-full bg-burgundy/10 blur-3xl" />
@@ -128,11 +128,11 @@ export default function ProjectsPage() {
           <div className="mb-8 flex items-center justify-between gap-4">
             <button
               type="button"
-              onClick={() => navigateTo('/')}
+              onClick={() => navigateWithTransition('/#projects')}
               className="inline-flex items-center gap-2 rounded-full border border-[#E6DAD7] bg-white/90 px-4 py-2 font-sans text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-burgundy hover:text-burgundy"
             >
               <ArrowIcon />
-              Back to Home
+              Back To Home
             </button>
           </div>
 

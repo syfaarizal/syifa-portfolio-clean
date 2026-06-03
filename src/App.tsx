@@ -45,7 +45,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="page-shell page-enter min-h-screen bg-white font-sans">
       <Navbar />
 
       <main>

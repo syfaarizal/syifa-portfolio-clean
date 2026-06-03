@@ -6,7 +6,6 @@ export type ProjectDetail = {
   keyFeatures: string[]
   designProcess: string
   lessonsLearned: string
-  demoSource: string
   problem: string
   process: string
   outcome: string
@@ -44,7 +43,6 @@ export const projects: Project[] = [
       keyFeatures: ['Brand-led layout', 'Responsive composition', 'Clean auth states', 'Simple conversion flow'],
       designProcess: 'Started from the brand tone, then refined spacing, typography, and panel balance until the screen felt calm and intentional.',
       lessonsLearned: 'Small adjustments in spacing and hierarchy have a large impact on perceived quality.',
-      demoSource: 'Demo: https://loginlab.vercel.app/  |  Source: syfaarizal/showcase-login-page',
       problem: 'The screen needed to feel modern and trustworthy without becoming visually noisy.',
       process: 'I iterated on layout balance, reduced unnecessary elements, and tuned the visual rhythm.',
       outcome: 'The final result reads as a premium login experience that is easy to extend into future auth flows.',
@@ -68,7 +66,6 @@ export const projects: Project[] = [
       keyFeatures: ['Responsive layout', 'Service highlights', 'Direct CTA flow', 'Mobile-friendly structure'],
       designProcess: 'The page was shaped around readability first, then refined with spacing and visual accents to keep it professional.',
       lessonsLearned: 'Travel and service landing pages work best when they stay clear and avoid over-decoration.',
-      demoSource: 'Demo: https://syfaarizal.github.io/cruishpoint-indonesia/  |  Source: syfaarizal/cruishpoint-indonesia',
       problem: 'The page needed to communicate trust and service value without a heavy interface.',
       process: 'I kept the layout focused, improved hierarchy, and adjusted the flow for responsive browsing.',
       outcome: 'The result is a straightforward landing page that feels polished and business-ready.',
@@ -92,7 +89,6 @@ export const projects: Project[] = [
       keyFeatures: ['Focus timer', 'Simple controls', 'Responsive UI', 'Minimal state display'],
       designProcess: 'The interface was reduced to only the essentials so the timer remains the main visual anchor.',
       lessonsLearned: 'A productivity tool becomes more useful when every visible element has a clear purpose.',
-      demoSource: 'Demo: https://pomodoro-focusflow.vercel.app/  |  Source: syfaarizal/pomodoro-focusflow',
       problem: 'The interface needed to support focus sessions without creating extra distraction.',
       process: 'I stripped the layout down, tuned spacing, and emphasized the timer state with a clear visual hierarchy.',
       outcome: 'The final design feels calm, practical, and easy to use for repeat focus sessions.',

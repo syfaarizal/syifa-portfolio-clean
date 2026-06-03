@@ -1,5 +1,5 @@
 import { projects } from '../data/projects'
-import { navigateTo } from '../lib/navigation'
+import { navigateWithTransition } from '../lib/navigation'
 
 const ArrowIcon = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -21,7 +21,7 @@ export default function Projects() {
         </div>
         <button
           type="button"
-          onClick={() => navigateTo('/projects')}
+          onClick={() => navigateWithTransition('/projects')}
           className="group flex items-center gap-2 self-start font-sans font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
         >
           <span className="flex items-center gap-2">

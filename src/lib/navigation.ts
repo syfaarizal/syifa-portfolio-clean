@@ -7,6 +7,26 @@ export function navigateTo(url: string) {
   window.dispatchEvent(new PopStateEvent('popstate'))
 }
 
+let navigationDelayId: number | undefined
+
+export function navigateWithTransition(url: string) {
+  if (window.location.pathname + window.location.hash === url) {
+    return
+  }
+
+  const root = document.documentElement
+  root.dataset.navTransition = 'out'
+
+  if (navigationDelayId !== undefined) {
+    window.clearTimeout(navigationDelayId)
+  }
+
+  navigationDelayId = window.setTimeout(() => {
+    delete root.dataset.navTransition
+    navigateTo(url)
+  }, 180)
+}
+
 export function scrollToHash(hash: string) {
   const targetId = hash.replace(/^#/, '')
   if (!targetId) {
