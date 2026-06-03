@@ -101,8 +101,8 @@ export default function About() {
             <div className="w-[4.5rem] h-0.5 bg-burgundy mb-6 rounded-full" />
 
             <p className="font-sans text-gray-500 text-[1.2rem] leading-relaxed mb-4">
-              I'm a Front-End Developer and digital builder focused on creating modern web experiences. <br /> <br />
-              I enjoy turning ideas into scalable products through code, design, and system thinking. <br /> <br />
+              I'm a Front-End Developer and digital builder focused on creating modern web experiences. <br/> <br/>
+              I enjoy turning ideas into scalable products through code, design, and system thinking. <br/> <br/>
               Currently exploring React, AI workflows, and product development.
             </p>
 
@@ -111,7 +111,6 @@ export default function About() {
             </button>
           </div>
 
-          {/* ── Right – 2×2 info grid ── */}
           <div className="flex-1 grid grid-cols-2 gap-4">
             {infoCards.map(({ icon: Icon, title, lines }) => (
               <div

@@ -53,7 +53,7 @@ export const projects: Project[] = [
   {
     id: 2,
     title: 'CruisePoint Indonesia',
-    desc: 'A responsive landing page for a travel brand.',
+    desc: 'Designed to improve user engagement and showcase tourism services effectively.',
     tags: ['HTML', 'CSS', 'JavaScript'],
     category: 'Landing Page',
     img: '/assets/projects/cruisePoint-preview.png',
@@ -76,7 +76,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Pomodoro Timer FocusFlow',
+    title: 'Doro Timer FocusFlow',
     desc: 'A minimal productivity timer for focused sessions.',
     tags: ['React', 'TypeScript', 'Tailwind CSS'],
     category: 'Productivity',
