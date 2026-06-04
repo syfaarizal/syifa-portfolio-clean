@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom'
 import { useEffect, type ReactNode } from 'react'
 import type { Project } from '../../data/projects'
 
@@ -60,7 +61,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
 
   if (!project) return null
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/55 px-4 py-6 backdrop-blur-sm"
       onClick={onClose}
@@ -247,5 +248,5 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
         </div>
       </div>
     </div>
-  )
+  , document.body)
 }
