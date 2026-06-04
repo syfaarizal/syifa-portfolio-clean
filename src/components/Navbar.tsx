@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { scrollToSection } from '../lib/navigation'
 
 const navItems = ['Home', 'About', 'Skills', 'Projects', 'Blog', 'Contact'] as const
 
@@ -18,8 +19,7 @@ export default function Navbar() {
   const handleNav = (item: string) => {
     setActive(item)
     const id = item.toLowerCase()
-    const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    scrollToSection(id)
   }
 
   return (
