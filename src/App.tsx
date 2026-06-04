@@ -9,6 +9,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ProjectsPage from './pages/projects/ProjectsPage'
 import BlogPage from './pages/blog/BlogPage'
+import Day1Page from './pages/blog/days-challenge/day1Page'
 import { scrollToHash } from './lib/navigation'
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
 
   if (window.location.pathname === '/projects') {
     return <ProjectsPage />
+  }
+
+  if (window.location.pathname === '/blog/days-challenge/day1') {
+    return <Day1Page />
   }
 
   if (window.location.pathname.startsWith('/blog')) {

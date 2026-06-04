@@ -14,6 +14,7 @@ const posts = [
     desc: 'Today I learned about template literals in JavaScript...',
     date: 'June 5, 2025',
     readTime: '5 min read',
+    path: '/blog/days-challenge/day1',
   },
   {
     id: 2,
@@ -72,7 +73,7 @@ export default function Blog() {
 
       {/* Article cards */}
       <div className="grid gap-4 md:grid-cols-3">
-        {posts.map(({ id, img, title, desc, date, readTime }) => (
+        {posts.map(({ id, img, title, desc, date, readTime, path }) => (
           <article
             key={id}
             className="group flex gap-4 rounded-2xl border border-[#EAEAEA] bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card"
@@ -93,11 +94,26 @@ export default function Blog() {
               <p className="mb-3 font-sans text-[0.95rem] leading-6 text-gray-500">
                 {desc}
               </p>
-              <div className="flex items-center gap-2 font-sans text-[0.9rem] font-medium text-burgundy">
-                Read article
-                <span className="transition-transform duration-200 group-hover:translate-x-1">
-                  <ArrowIcon />
-                </span>
+              <div className="flex items-center gap-2">
+                {path ? (
+                  <button
+                    type="button"
+                    onClick={() => navigateTo(path)}
+                    className="flex items-center gap-2 font-sans text-[0.9rem] font-medium text-burgundy transition-transform duration-200 hover:translate-x-0.5"
+                  >
+                    Read more
+                    <span className="transition-transform duration-200 group-hover:translate-x-1">
+                      <ArrowIcon />
+                    </span>
+                  </button>
+                ) : (
+                  <span className="flex items-center gap-2 font-sans text-[0.9rem] font-medium text-burgundy">
+                    Read more
+                    <span className="transition-transform duration-200 group-hover:translate-x-1">
+                      <ArrowIcon />
+                    </span>
+                  </span>
+                )}
                 <span className="ml-1 text-[13px] font-normal text-gray-400">
                   {readTime}
                 </span>
