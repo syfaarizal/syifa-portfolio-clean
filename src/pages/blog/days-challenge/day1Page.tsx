@@ -30,7 +30,7 @@ export default function Day1Page() {
       ]}
       conclusion={
         <>
-          <h3>Key Takeaways</h3>
+          <h3 className="mb-3 font-bold">Key Takeaways</h3>
           <p>
             Use <code>new Date()</code> to get the current time, break it into date components, and style the output
             using a <code>ternary operator</code> for a cleaner result. Template literals with <code>${'{}'}</code>{' '}
@@ -57,7 +57,7 @@ console.log(\`Hari ini tanggal \${currentDate}\`);`}
       </section>
 
       <section>
-        <h2>Better Date Format</h2>
+        <h2 className= "mb-5 font-bold">Better Date Format</h2>
         <p>
           The default output feels a bit messy and not very personal. So I looked for a more flexible way to format
           it. Here's an example:

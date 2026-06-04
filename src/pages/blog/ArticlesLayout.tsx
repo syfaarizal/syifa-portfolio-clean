@@ -51,7 +51,7 @@ export function CodeBlock({ lang, langIcon, children }: CodeBlockProps) {
   }
 
   return (
-    <div className="overflow-hidden rounded-[24px] border border-[#E6DAD7] bg-[#fffdfc] shadow-[0_16px_40px_rgba(122,15,22,0.06)]">
+    <div className="overflow-hidden rounded-[24px] border border-[#E6DAD7] bg-[#fffdfc] shadow-[0_16px_40px_rgba(122,15,22,0.06)] my-5">
       <div className="flex items-center justify-between gap-4 border-b border-[#E6DAD7] bg-white/80 px-5 py-4">
         <div className="flex items-center gap-3 text-sm font-semibold text-gray-700">
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#E6DAD7] bg-[#fff7f5] text-burgundy">
@@ -81,7 +81,7 @@ export function CodeBlock({ lang, langIcon, children }: CodeBlockProps) {
 
 export function Output({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-[22px] border border-dashed border-[#E4D5D0] bg-[#fffaf9] px-5 py-4 font-sans text-[0.98rem] leading-7 text-gray-700">
+    <div className="rounded-[22px] border border-dashed border-[#E4D5D0] bg-[#fffaf9] px-5 py-4 font-sans text-[0.98rem] leading-7 text-gray-700 mt-5">
       {children}
     </div>
   )
@@ -89,7 +89,7 @@ export function Output({ children }: { children: ReactNode }) {
 
 export function HighlightBox({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-[24px] border border-[#E6DAD7] bg-white p-5 shadow-[0_14px_34px_rgba(122,15,22,0.05)] sm:p-6">
+    <div className="rounded-[24px] border border-[#E6DAD7] bg-white p-5 shadow-[0_14px_34px_rgba(122,15,22,0.05)] sm:p-6 mt-5">
       {children}
     </div>
   )
