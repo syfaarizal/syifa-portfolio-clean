@@ -63,7 +63,7 @@ export function CodeBlock({ lang, langIcon, children }: CodeBlockProps) {
         <button
           type="button"
           onClick={handleCopy}
-          className="inline-flex items-center gap-2 rounded-full border border-[#E6DAD7] bg-white px-4 py-2 text-sm font-semibold text-gray-700 transition-colors hover:border-burgundy hover:text-burgundy"
+          className="inline-flex items-center text-center rounded-full border border-[#E6DAD7] bg-white px-4 py-2 text-sm font-semibold text-gray-700 transition-colors hover:border-burgundy hover:text-burgundy"
         >
           <i className="fas fa-copy" />
           Copy
@@ -81,7 +81,7 @@ export function CodeBlock({ lang, langIcon, children }: CodeBlockProps) {
 
 export function Output({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-[22px] border border-dashed border-[#E4D5D0] bg-[#fffaf9] px-5 py-4 font-sans text-[0.98rem] leading-7 text-gray-700 mt-5">
+    <div className="rounded-[22px] border border-dashed border-[#E4D5D0] bg-[#fffaf9] px-5 py-4 font-sans text-[0.98rem] leading-7 text-gray-700 mt-5 mb-1">
       {children}
     </div>
   )

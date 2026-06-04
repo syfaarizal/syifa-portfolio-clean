@@ -10,6 +10,8 @@ import Footer from './components/Footer'
 import ProjectsPage from './pages/projects/ProjectsPage'
 import BlogPage from './pages/blog/BlogPage'
 import Day1Page from './pages/blog/days-challenge/day1Page'
+import Day2Page from './pages/blog/days-challenge/day2Page'
+import Day3Page from './pages/blog/days-challenge/day3Page'
 import { scrollToHash } from './lib/navigation'
 
 function App() {
@@ -48,6 +50,14 @@ function App() {
 
   if (window.location.pathname === '/blog/days-challenge/day1') {
     return <Day1Page />
+  }
+
+  if (window.location.pathname === '/blog/days-challenge/day2') {
+    return <Day2Page />
+  }
+
+  if (window.location.pathname === '/blog/days-challenge/day3') {
+    return <Day3Page />
   }
 
   if (window.location.pathname.startsWith('/blog')) {

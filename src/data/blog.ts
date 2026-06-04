@@ -38,7 +38,7 @@ export const blogSections: BlogSection[] = [
         badge: 'Calculator',
         title: 'Day 2: Simple Age Calculator',
         excerpt:
-          "Today's challenge really made my brain curl 😅 We were asked to create a JavaScript program that calculates age based on birth year...",
+          "Today's challenge really made my brain curl. We were asked to create a JavaScript program that calculates age based on birth year...",
         tags: 'javascript calculator age math',
         path: '/blog/days-challenge/day2',
       },

@@ -40,7 +40,7 @@ export default function Day1Page() {
       }
     >
       <section>
-        <p>
+        <p className="mb-5">
           Today I learned about <code>template literals</code> in JavaScript - the feature where you can insert
           variables directly into strings using <code>${'{}'}</code>. It feels simple, but once you use it, it makes
           string building much cleaner.
