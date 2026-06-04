@@ -49,9 +49,24 @@ export default function Blog() {
         <button
           type="button"
           onClick={() => navigateTo('/blog')}
-          className="flex items-center gap-1.5 self-start font-sans text-[1rem] font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
+          className="group flex items-center gap-2 self-start font-sans font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
         >
-          View All Blog <ArrowIcon />
+          <span className="flex items-center gap-2">
+            <span
+              aria-hidden="true"
+              className="h-2 w-2 rounded-full bg-burgundy shadow-[0_0_0_0_rgba(122,15,22,0.35)] motion-safe:animate-attention-pulse motion-reduce:animate-none"
+            />
+            <span className="relative">
+              View All Blog
+              <span
+                aria-hidden="true"
+                className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-burgundy/70 transition-transform duration-300 group-hover:scale-x-100"
+              />
+            </span>
+          </span>
+          <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+            <ArrowIcon />
+          </span>
         </button>
       </div>
 
