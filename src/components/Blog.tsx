@@ -23,6 +23,7 @@ const posts = [
     desc: 'Today\'s challenge really made my brain curl...',
     date: 'June 6, 2025',
     readTime: '7 min read',
+    path: '/blog/days-challenge/day2',
   },
   {
     id: 3,
@@ -31,6 +32,7 @@ const posts = [
     desc: 'Day 3 of this coding challenge really made me...',
     date: 'June 9, 2025',
     readTime: '9 min read',
+    path: '/blog/days-challenge/day3',
   },
 ]
 
