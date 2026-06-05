@@ -12,7 +12,7 @@ import BlogPage from './pages/blog/BlogPage'
 import Day1Page from './pages/blog/days-challenge/day1Page'
 import Day2Page from './pages/blog/days-challenge/day2Page'
 import Day3Page from './pages/blog/days-challenge/day3Page'
-import { scrollToHash } from './lib/navigation'
+import { scrollToHash, scrollToTopInstant } from './lib/navigation'
 
 function App() {
   const [locationKey, setLocationKey] = useState(() => `${window.location.pathname}${window.location.hash}`)
@@ -36,7 +36,7 @@ function App() {
       return
     }
 
-    window.scrollTo({ top: 0, behavior: 'auto' })
+    scrollToTopInstant()
   }, [locationKey])
 
   if (window.location.pathname === '/projects') {

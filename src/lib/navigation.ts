@@ -8,6 +8,24 @@ export function navigateTo(url: string) {
 }
 
 let navigationDelayId: number | undefined
+let restoreScrollBehaviorId: number | undefined
+
+export function scrollToTopInstant() {
+  const root = document.documentElement
+  const previousScrollBehavior = root.style.scrollBehavior
+
+  root.style.scrollBehavior = 'auto'
+  window.scrollTo(0, 0)
+
+  if (restoreScrollBehaviorId !== undefined) {
+    window.cancelAnimationFrame(restoreScrollBehaviorId)
+  }
+
+  restoreScrollBehaviorId = window.requestAnimationFrame(() => {
+    root.style.scrollBehavior = previousScrollBehavior
+    restoreScrollBehaviorId = undefined
+  })
+}
 
 export function navigateWithTransition(url: string) {
   if (window.location.pathname + window.location.hash === url) {
@@ -23,7 +41,7 @@ export function navigateWithTransition(url: string) {
 
   navigationDelayId = window.setTimeout(() => {
     delete root.dataset.navTransition
-    window.scrollTo({ top: 0, behavior: 'auto' })
+    scrollToTopInstant()
     navigateTo(url)
   }, 180)
 }
