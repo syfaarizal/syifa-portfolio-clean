@@ -96,9 +96,8 @@
   .page-shell {
     transition:
       opacity 180ms ease-out,
-      transform 180ms ease-out,
       filter 180ms ease-out;
-    will-change: opacity, transform, filter;
+    will-change: opacity, filter;
   }
 
   .page-enter {
@@ -112,19 +111,19 @@
   @keyframes page-enter {
     from {
       opacity: 0;
-      transform: translateY(14px) scale(0.992);
+      transform: scale(0.992);
       filter: blur(5px);
     }
     to {
       opacity: 1;
-      transform: translateY(0) scale(1);
+      transform: scale(1);
       filter: blur(0);
     }
   }
 
   html[data-nav-transition='out'] .page-shell {
     opacity: 0;
-    transform: translateY(10px) scale(0.992);
+    transform: scale(0.992);
     filter: blur(4px);
     pointer-events: none;
   }
