@@ -1,4 +1,4 @@
-import { navigateTo } from '../lib/navigation'
+import { navigateTo, navigateWithTransition } from '../lib/navigation'
 
 const LogoIcon = () => (
   <svg width="28" height="32" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +72,12 @@ const socialIcons = [
 
 const handleLink = (href: string) => {
   if (href.startsWith('/')) {
-    navigateTo(href)
+    if (href.startsWith('/#')) {
+      navigateTo(href)
+      return
+    }
+
+    navigateWithTransition(href)
     return
   }
 

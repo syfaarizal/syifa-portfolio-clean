@@ -23,6 +23,7 @@ export function navigateWithTransition(url: string) {
 
   navigationDelayId = window.setTimeout(() => {
     delete root.dataset.navTransition
+    window.scrollTo({ top: 0, behavior: 'auto' })
     navigateTo(url)
   }, 180)
 }

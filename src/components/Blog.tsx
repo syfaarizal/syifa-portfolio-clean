@@ -1,4 +1,4 @@
-import { navigateTo } from '../lib/navigation'
+import { navigateWithTransition } from '../lib/navigation'
 
 const ArrowIcon = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -49,7 +49,7 @@ export default function Blog() {
         </div>
         <button
           type="button"
-          onClick={() => navigateTo('/blog')}
+          onClick={() => navigateWithTransition('/blog')}
           className="group flex items-center gap-2 self-start font-sans font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
         >
           <span className="flex items-center gap-2">
@@ -98,7 +98,7 @@ export default function Blog() {
                 {path ? (
                   <button
                     type="button"
-                    onClick={() => navigateTo(path)}
+                    onClick={() => navigateWithTransition(path)}
                     className="flex items-center gap-2 font-sans text-[0.9rem] font-medium text-burgundy transition-transform duration-200 hover:translate-x-0.5"
                   >
                     Read more

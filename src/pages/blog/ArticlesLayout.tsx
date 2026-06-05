@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, type ReactNode } from 'react'
-import { navigateTo } from '../../lib/navigation'
+import { navigateWithTransition } from '../../lib/navigation'
 
 type NavLink = {
   path: string
@@ -118,14 +118,14 @@ export default function ArticlesLayout({
   children,
 }: ArticlesLayoutProps) {
   return (
-    <div className="min-h-screen bg-[linear-gradient(180deg,#fffdfc_0%,#fff7f6_100%)] text-gray-900">
+    <div className="page-shell page-enter min-h-screen bg-[linear-gradient(180deg,#fffdfc_0%,#fff7f6_100%)] text-gray-900">
       <div className="sticky top-0 z-30 border-b border-[#EFE3DF]/80 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 sm:px-8">
           <a
             href="/blog"
             onClick={(event) => {
               event.preventDefault()
-              navigateTo('/blog')
+              navigateWithTransition('/blog')
             }}
             className="inline-flex items-center gap-2 rounded-full border border-[#E6DAD7] bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm transition-colors hover:border-burgundy hover:text-burgundy"
           >
@@ -201,7 +201,7 @@ export default function ArticlesLayout({
               href={prev.path}
               onClick={(event) => {
                 event.preventDefault()
-                navigateTo(prev.path)
+                navigateWithTransition(prev.path)
               }}
               className="rounded-[26px] border border-[#E8DDD9] bg-white p-5 shadow-[0_14px_36px_rgba(122,15,22,0.05)] transition-transform hover:-translate-y-0.5"
             >
@@ -224,7 +224,7 @@ export default function ArticlesLayout({
               href={next.path}
               onClick={(event) => {
                 event.preventDefault()
-                navigateTo(next.path)
+                navigateWithTransition(next.path)
               }}
               className="rounded-[26px] border border-[#E8DDD9] bg-white p-5 shadow-[0_14px_36px_rgba(122,15,22,0.05)] transition-transform hover:-translate-y-0.5"
             >
@@ -261,7 +261,7 @@ export default function ArticlesLayout({
                   href={post.path}
                   onClick={(event) => {
                     event.preventDefault()
-                    navigateTo(post.path)
+                    navigateWithTransition(post.path)
                   }}
                   className="group rounded-[24px] border border-[#E8DDD9] bg-[#fffdfc] p-5 transition-all hover:-translate-y-1 hover:shadow-[0_16px_42px_rgba(122,15,22,0.08)]"
                 >

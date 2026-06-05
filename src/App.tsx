@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -26,13 +26,8 @@ function App() {
     return () => window.removeEventListener('popstate', handlePopState)
   }, [])
 
-  useEffect(() => {
-    const { pathname, hash } = window.location
-
-    if (pathname === '/projects' || pathname.startsWith('/blog')) {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-      return
-    }
+  useLayoutEffect(() => {
+    const { hash } = window.location
 
     if (hash) {
       window.requestAnimationFrame(() => {
@@ -41,7 +36,7 @@ function App() {
       return
     }
 
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: 'auto' })
   }, [locationKey])
 
   if (window.location.pathname === '/projects') {
