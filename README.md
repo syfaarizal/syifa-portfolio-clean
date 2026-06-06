@@ -48,7 +48,7 @@ portfolio-syifa/
 ## 🎨 Design Tokens
 
 | Token | Value |
-|---|---|
+| --- | --- |
 | Primary (Burgundy) | `#7A0F16` |
 | Border | `#EAEAEA` |
 | Text | `#1a1a1a` |
@@ -68,6 +68,19 @@ The project is ready for deployment to:
 - **Vercel**: `vercel deploy`
 - **Netlify**: drag the `dist/` folder
 - **GitHub Pages**: use `gh-pages` package
+
+## 📮 Contact Form Email
+
+The contact form sends messages through a serverless backend endpoint at `api/contact.js`.
+
+Required environment variables:
+- `RESEND_API_KEY` - Resend API key for sending email
+
+Optional environment variables:
+- `CONTACT_TO_EMAIL` - destination email address for incoming messages
+- `CONTACT_FROM_EMAIL` - sender name/address shown in the email
+
+If you deploy to Vercel, you can install Resend from the Vercel Marketplace and let Vercel provision `RESEND_API_KEY` automatically. The form uses the sender email as `reply-to`, so you can reply directly to the visitor.
 
 ---
 Built with ♥ by Syifa Fauziyah Arizal

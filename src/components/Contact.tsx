@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type ChangeEvent, type FormEvent } from 'react'
 
 const SendIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -9,14 +9,51 @@ const SendIcon = () => (
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [status, setStatus] = useState<{ type: 'idle' | 'success' | 'error'; message: string }>({
+    type: 'idle',
+    message: '',
+  })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setForm((current) => ({ ...current, [name]: value }))
   }
 
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    alert('Pesan berhasil dikirim! (demo)')
+
+    setIsSubmitting(true)
+    setStatus({ type: 'idle', message: '' })
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      })
+
+      const payload = (await response.json().catch(() => null)) as { message?: string; error?: string } | null
+
+      if (!response.ok) {
+        throw new Error(payload?.error || 'Gagal mengirim pesan.')
+      }
+
+      setForm({ name: '', email: '', message: '' })
+      setStatus({
+        type: 'success',
+        message: payload?.message || 'Pesan berhasil dikirim.',
+      })
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Gagal mengirim pesan.',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -38,7 +75,8 @@ export default function Contact() {
 
           {/* ── Right: Form ── */}
           <div className="flex-1">
-            <div className="flex gap-3 items-stretch">
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div className="flex gap-3 items-stretch">
               {/* Name */}
               <input
                 type="text"
@@ -46,6 +84,7 @@ export default function Contact() {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Your Name"
+                required
                 className="flex-1 border border-[#EAEAEA] rounded-xl px-4 py-3 font-sans text-sm text-gray-700
                            placeholder:text-gray-400 focus:outline-none focus:border-burgundy focus:ring-1
                            focus:ring-burgundy/20 transition-colors duration-200 min-w-0"
@@ -57,31 +96,46 @@ export default function Contact() {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="Your Email"
+                required
                 className="flex-1 border border-[#EAEAEA] rounded-xl px-4 py-3 font-sans text-sm text-gray-700
                            placeholder:text-gray-400 focus:outline-none focus:border-burgundy focus:ring-1
                            focus:ring-burgundy/20 transition-colors duration-200 min-w-0"
               />
               {/* Message */}
-              <input
-                type="text"
+              <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Your Message"
-                className="flex-[1.5] border border-[#EAEAEA] rounded-xl px-4 py-3 font-sans text-sm text-gray-700
+                required
+                rows={1}
+                className="flex-[1.5] resize-none border border-[#EAEAEA] rounded-xl px-4 py-3 font-sans text-sm text-gray-700
                            placeholder:text-gray-400 focus:outline-none focus:border-burgundy focus:ring-1
                            focus:ring-burgundy/20 transition-colors duration-200 min-w-0"
               />
               {/* Send */}
               <button
-                onClick={handleSubmit}
+                type="submit"
+                disabled={isSubmitting}
                 className="bg-burgundy text-white font-sans font-medium text-sm px-5 py-3 rounded-xl
                            flex items-center gap-2 whitespace-nowrap hover:bg-burgundy-900
-                           transition-colors duration-200 flex-shrink-0"
+                           transition-colors duration-200 flex-shrink-0 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message <SendIcon />
+                {isSubmitting ? 'Sending...' : 'Send Message'} <SendIcon />
               </button>
-            </div>
+              </div>
+
+              {status.type !== 'idle' && (
+                <p
+                  className={`font-sans text-sm ${
+                    status.type === 'success' ? 'text-emerald-700' : 'text-red-600'
+                  }`}
+                  aria-live="polite"
+                >
+                  {status.message}
+                </p>
+              )}
+            </form>
           </div>
 
         </div>
