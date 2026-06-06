@@ -37,10 +37,10 @@ const ArrowRightIcon = () => (
 )
 
 const socialLinks = [
-  { icon: GithubIcon, href: '#', label: 'GitHub' },
-  { icon: LinkedinIcon, href: '#', label: 'LinkedIn' },
-  { icon: InstagramIcon, href: '#', label: 'Instagram' },
-  { icon: EmailIcon, href: 'mailto:syifaarizal@gmail.com', label: 'Email' },
+  { icon: GithubIcon, href: 'https://github.com/syfaarizal', label: 'GitHub' },
+  { icon: LinkedinIcon, href: 'https://linkedin.com/in/syifaarizal', label: 'LinkedIn' },
+  { icon: InstagramIcon, href: 'https://instagram.com/syfaarizal', label: 'Instagram' },
+  { icon: EmailIcon, href: 'mailto:syifairgi@gmail.com', label: 'Email' },
 ]
 
 const title = 'Front-End Developer';

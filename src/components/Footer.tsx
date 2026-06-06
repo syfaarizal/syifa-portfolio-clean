@@ -35,6 +35,12 @@ const MapPinIcon = () => (
   </svg>
 )
 
+const PhoneIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2.1 2.1 0 01-2.28 2A19.86 19.86 0 012 5.28 2.1 2.1 0 014.28 3h3a2.1 2.1 0 012.1 1.72c.12.81.29 1.6.53 2.35a2.1 2.1 0 01-.45 2L8.09 10a16.05 16.05 0 006.58 6.58l1.42-1.42a2.1 2.1 0 012-.45c.84.24 1.64.41 2.35.53A2.1 2.1 0 0122 16.92z" />
+  </svg>
+)
+
 const navLinks = [
   { label: 'Home', href: '/#home' },
   { label: 'About', href: '/#about' },
@@ -50,10 +56,10 @@ const projectLinks = [
 const services = ['Web Development', 'UI/UX Implementation', 'Responsive Design', 'Performance Optimization']
 
 const socialIcons = [
-  { Icon: GithubIcon, href: '#', label: 'GitHub' },
-  { Icon: LinkedinIcon, href: '#', label: 'LinkedIn' },
-  { Icon: InstagramIcon, href: '#', label: 'Instagram' },
-  { Icon: MailIcon, href: 'mailto:syifaarizal@gmail.com', label: 'Email' },
+  { Icon: GithubIcon, href: 'https://github.com/syfaarizal', label: 'GitHub' },
+  { Icon: LinkedinIcon, href: 'https://linkedin.com/in/syifaarizal', label: 'LinkedIn' },
+  { Icon: InstagramIcon, href: 'https://instagram.com/syfaarizal', label: 'Instagram' },
+  { Icon: MailIcon, href: 'mailto:syifairgi@gmail.com', label: 'Email' },
 ]
 
 const handleLink = (href: string) => {
@@ -78,7 +84,7 @@ export default function Footer() {
           <div>
             <div className="mb-4 flex items-center gap-1.5">
               <LogoIcon />
-              <span className="font-serif text-xl font-bold tracking-wide text-white">LIBR</span>
+              <span className="font-serif text-2xl font-bold tracking-wide text-white">LIBR</span>
             </div>
             <p className="mb-6 font-sans text-sm leading-relaxed text-white/50">
               Building elegant, functional, and impactful digital experiences.
@@ -143,8 +149,14 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-white/50">
                 <MailIcon />
-                <a href="mailto:syifaarizal@gmail.com" className="font-sans text-sm transition-colors duration-200 hover:text-white">
-                  syifaarizal@gmail.com
+                <a href="mailto:syifairgi@gmail.com" className="font-sans text-sm transition-colors duration-200 hover:text-white">
+                  syifairgi@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-white/50">
+                <PhoneIcon />
+                <a href="tel:+628123456789" className="font-sans text-sm transition-colors duration-200 hover:text-white">
+                  +62 858-6486-4931
                 </a>
               </li>
               <li className="flex items-center gap-2 text-white/50">
