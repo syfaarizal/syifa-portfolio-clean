@@ -1,6 +1,19 @@
 const DEFAULT_TO_EMAIL = 'syifairgi@gmail.com'
 const DEFAULT_FROM_EMAIL = 'Syifa Portfolio <onboarding@resend.dev>'
 
+function isValidFromField(value) {
+  if (typeof value !== 'string') {
+    return false
+  }
+
+  const trimmed = value.trim()
+
+  return (
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed) ||
+    /^.+ <[^\s@<>]+@[^\s@<>]+>$/.test(trimmed)
+  )
+}
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll('&', '&amp;')
@@ -63,7 +76,9 @@ export default async function handler(req, res) {
   }
 
   const toEmail = process.env.CONTACT_TO_EMAIL || DEFAULT_TO_EMAIL
-  const fromEmail = process.env.CONTACT_FROM_EMAIL || DEFAULT_FROM_EMAIL
+  const fromEmail = isValidFromField(process.env.CONTACT_FROM_EMAIL)
+    ? process.env.CONTACT_FROM_EMAIL.trim()
+    : DEFAULT_FROM_EMAIL
 
   let payload
   try {
