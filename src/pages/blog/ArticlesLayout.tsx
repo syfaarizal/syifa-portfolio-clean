@@ -89,7 +89,7 @@ export function Output({ children }: { children: ReactNode }) {
 
 export function HighlightBox({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-[24px] border border-[#E6DAD7] bg-white p-5 shadow-[0_14px_34px_rgba(122,15,22,0.05)] sm:p-6 mt-5">
+    <div className="rounded-[24px] border border-[#E6DAD7] bg-white p-5 shadow-[0_14px_34px_rgba(122,15,22,0.05)] sm:p-6 mt-3">
       {children}
     </div>
   )

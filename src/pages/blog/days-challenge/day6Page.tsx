@@ -30,7 +30,7 @@ export default function Day6Page() {
       ]}
       conclusion={
         <>
-          <h3 className="mb-3 font-bold">Key Takeaways</h3>
+          <h3 className="mb-3 font-bold text-[1.5rem]">Key Takeaways</h3>
           <p>
             This challenge taught me how to organize conditional logic,
             validate user input, handle special cases, and create a more

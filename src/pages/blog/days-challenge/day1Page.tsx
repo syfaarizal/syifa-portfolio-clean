@@ -30,7 +30,7 @@ export default function Day1Page() {
       ]}
       conclusion={
         <>
-          <h3 className="mb-3 font-bold">Key Takeaways</h3>
+          <h3 className="mb-3 font-bold text-[1.5rem]">Key Takeaways</h3>
           <p>
             Use <code>new Date()</code> to get the current time, break it into date components, and style the output
             using a <code>ternary operator</code> for a cleaner result. Template literals with <code>${'{}'}</code>{' '}
@@ -79,7 +79,7 @@ console.log(\`Today is \${day}/\${month}/\${year}, at \${hours}:\${minutes < 10 
       </section>
 
       <section>
-        <h3>Why do we use <code>minutes &lt; 10 ? "0" + minutes : minutes</code>?</h3>
+        <h3 className="mt-7">Why do we use <code>minutes &lt; 10 ? "0" + minutes : minutes</code>?</h3>
 
         <HighlightBox>
           <p>I was confused when I first saw this line:</p>

@@ -30,7 +30,7 @@ export default function Day4Page() {
       ]}
       conclusion={
         <>
-          <h3 className="mb-3 font-bold">Key Takeaways</h3>
+          <h3 className="mb-3 font-bold text-[1.5rem]">Key Takeaways</h3>
           <p>
             This challenge taught me how random number generation works, how to guide users
             with feedback, and how loops can be used to keep a game running until the correct

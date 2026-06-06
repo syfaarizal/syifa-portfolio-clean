@@ -30,7 +30,7 @@ export default function Day3Page() {
       ]}
       conclusion={
         <>
-          <h3 className="mb-3 font-bold">Key Takeaways</h3>
+          <h3 className="mb-3 font-bold text-[1.5rem]">Key Takeaways</h3>
           <p>
             Converting input using <code>parseFloat()</code>, validating data with
             <code> isNaN()</code>, and separating logic into functions makes programs easier

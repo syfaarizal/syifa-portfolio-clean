@@ -30,7 +30,7 @@ export default function Day5Page() {
       ]}
       conclusion={
         <>
-          <h3 className="mb-3 font-bold">Key Takeaways</h3>
+          <h3 className="mb-3 font-bold text-[1.5rem]">Key Takeaways</h3>
           <p>
             This challenge reinforced the importance of loops, input validation,
             array cycling with modulus, and building more engaging outputs with

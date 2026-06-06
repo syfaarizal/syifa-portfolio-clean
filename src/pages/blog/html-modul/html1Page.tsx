@@ -30,7 +30,7 @@ export default function Html1Page() {
       ]}
       conclusion={
         <>
-          <h3 className="mb-3 font-bold">Key Takeaways</h3>
+          <h3 className="mb-3 font-bold text-[1.5rem]">Key Takeaways</h3>
           <p>
             HTML is the foundation of all web development. Understanding structure,
             tags, attributes, links, images, and tables will make learning CSS and
