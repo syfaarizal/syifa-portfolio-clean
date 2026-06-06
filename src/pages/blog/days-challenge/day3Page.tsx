@@ -62,7 +62,7 @@ const num1 = prompt("Enter operator (+, -, *, /)");`}
       </section>
 
       <section>
-        <h2 className="mb-5 font-bold">Strings vs Numbers</h2>
+        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Strings vs Numbers</h2>
 
         <p>
           Another problem appeared when I started doing calculations. Values returned by
@@ -88,7 +88,7 @@ let result;`}
       </section>
 
       <section>
-        <h2 className="mb-5 font-bold">Refactoring the Calculator</h2>
+        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Refactoring the Calculator</h2>
 
         <p>
           After fixing the input conversion issue, I implemented the calculation logic using
@@ -142,7 +142,7 @@ const number2 = parseFloat(num2);`}
       </section>
 
       <section>
-        <h2 className="mb-5 font-bold">Input Validation</h2>
+        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Input Validation</h2>
 
         <p>
           To make the calculator more reliable, I added validation before performing any operation.
@@ -160,7 +160,7 @@ const number2 = parseFloat(num2);`}
       </section>
 
       <section>
-        <h2 className="mb-5 font-bold">Switch Case Version</h2>
+        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Switch Case Version</h2>
 
         <p>
           The calculator became cleaner after replacing multiple if-else statements with a
@@ -191,7 +191,7 @@ const number2 = parseFloat(num2);`}
       </section>
 
       <section>
-        <h2 className="mb-5 font-bold">Function and Looping</h2>
+        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Function and Looping</h2>
 
         <p>
           As a final improvement, I separated the calculation logic into a function and added a

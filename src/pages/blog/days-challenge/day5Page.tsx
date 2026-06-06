@@ -53,7 +53,7 @@ export default function Day5Page() {
       </section>
 
       <section>
-        <h2 className="mb-5 font-bold">Understanding N</h2>
+        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Understanding N</h2>
 
         <p>
           Here, <code>n</code> represents how many times the user wants their name
@@ -62,7 +62,7 @@ export default function Day5Page() {
       </section>
 
       <section>
-        <h2 className="mb-5 font-bold">First Attempt</h2>
+        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">First Attempt</h2>
 
         <CodeBlock lang="Initial Implementation" langIcon="fab fa-js">
 {`const input = prompt("How many times do you want to print your name? ");
@@ -76,7 +76,7 @@ for (let i = 1; i <= input; i++) {
       </section>
 
       <section>
-        <h2 className="mb-5 font-bold">Input Validation</h2>
+        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Input Validation</h2>
 
         <CodeBlock lang="Improved Version" langIcon="fab fa-js">
 {`const input = Number(prompt("How many times do you want to print your name? "));
@@ -99,7 +99,7 @@ if (!isNaN(input) && input > 0) {
       </section>
 
       <section>
-        <h2 className="mb-5 font-bold">Bonus Challenge</h2>
+        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Bonus Challenge</h2>
 
         <p>
           To make the output more fun, I added emojis and motivational quotes
@@ -107,14 +107,14 @@ if (!isNaN(input) && input > 0) {
         </p>
 
         <Output>
-          {`1. Syifa 🔥 — Keep going!
-2. Syifa 💡 — You're learning!
-3. Syifa 🌱 — Progress every day!`}
+          {`1. Syifa 🔥 — Keep going! 
+          2. Syifa 💡 — You're learning! 
+          3. Syifa 🌱 — Progress every day!`}
         </Output>
       </section>
 
       <section>
-        <h2 className="mb-5 font-bold">Using Arrays and Modulus</h2>
+        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Using Arrays and Modulus</h2>
 
         <CodeBlock lang="Arrays Setup" langIcon="fab fa-js">
 {`const emojis = ["🔥", "💡", "🌱", "🚀"];
@@ -134,19 +134,39 @@ const motivation = [
       </section>
 
       <section>
-        <h2 className="mb-5 font-bold">Final Solution</h2>
+        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Final Solution</h2>
 
         <CodeBlock lang="Complete Solution" langIcon="fab fa-js">
-{`let result = "";
+{`const input = Number(prompt("How many times do you want to print your name? "));
 
-for (let i = 0; i < input; i++) {
-  const emoji = emojis[i % emojis.length];
-  const quote = motivation[i % motivation.length];
+const emojis = ["🔥", "💡", "🌱", "🚀", "🎯", "💪", "🧠", "✨", "🔧", "🎉"];
+const motivation = [
+    "Keep going!",
+    "You can do it!",
+    "Believe in yourself!",
+    "Stay positive!",
+    "Never give up!",
+    "Dream big!",
+    "Stay focused!",
+    "Work hard!",
+    "Embrace challenges!",
+    "Success is yours!",
+];
 
-  result += \`\${i + 1}. Syifa \${emoji} - \${quote}\\n\`;
+let result = "";
+
+if (!isNaN(input) && input > 0) {
+    for (let i = 0; i < input; i++) {
+        const emoji = emojis[i % emojis.length];
+        const quote = motivation[i % motivation.length];
+        result += \`\${i + 1}. Syifa \`\${emoji} - \`\${quote}\n\`;
+    }
+    console.log(result);
+} else {
+    console.log("Please enter a valid number 😅");
 }`}
         </CodeBlock>
       </section>
     </ArticlesLayout>
   )
-}
+} 

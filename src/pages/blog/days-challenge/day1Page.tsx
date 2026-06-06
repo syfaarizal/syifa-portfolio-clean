@@ -57,7 +57,7 @@ console.log(\`Hari ini tanggal \${currentDate}\`);`}
       </section>
 
       <section>
-        <h2 className= "mb-5 font-bold">Better Date Format</h2>
+        <h2 className= "mt-7 mb-4 font-bold text-[1.8rem]">Better Date Format</h2>
         <p>
           The default output feels a bit messy and not very personal. So I looked for a more flexible way to format
           it. Here's an example:
