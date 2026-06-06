@@ -15,6 +15,7 @@ import Day3Page from './pages/blog/days-challenge/day3Page'
 import Day4Page from './pages/blog/days-challenge/day4Page'
 import Day5Page from './pages/blog/days-challenge/day5Page'
 import Day6Page from './pages/blog/days-challenge/day6Page'
+import Html1Page from './pages/blog/html-modul/html1Page'
 import { scrollToHash, scrollToTopInstant } from './lib/navigation'
 
 function App() {
@@ -68,6 +69,10 @@ function App() {
 
   if (window.location.pathname === '/blog/days-challenge/day6') {
     return <Day6Page />
+  }
+
+  if (window.location.pathname === '/blog/html-modul/html1') {
+    return <Html1Page />
   }
 
   if (window.location.pathname.startsWith('/blog')) {
