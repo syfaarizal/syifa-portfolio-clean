@@ -124,7 +124,7 @@ export default async function handler(req, res) {
   }
 
   return res.status(200).json({
-    message: 'Pesan berhasil dikirim ke email tujuan.',
+    message: 'Message sent successfully. I\'ll get back to you as soon as I can!',
     id: result?.id ?? null,
   })
 }
