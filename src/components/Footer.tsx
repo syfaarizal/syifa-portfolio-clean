@@ -1,21 +1,7 @@
 import { navigateTo, navigateWithTransition } from '../lib/navigation'
 
 const LogoIcon = () => (
-  <svg width="28" height="32" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 1L30 9V27L16 35L2 27V9L16 1Z" fill="white" opacity="0.15" stroke="white" strokeWidth="1.5" />
-    <text
-      x="50%"
-      y="55%"
-      dominantBaseline="middle"
-      textAnchor="middle"
-      fill="white"
-      fontSize="11"
-      fontWeight="700"
-      fontFamily="DM Sans, sans-serif"
-    >
-      SF
-    </text>
-  </svg>
+  <img src="/assets/logo-libr.png" alt="LIBR Logo" className="h-9 w-9 object-contain" />
 )
 
 const GithubIcon = () => (
@@ -90,12 +76,12 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-8 pb-10 pt-14">
         <div className="grid grid-cols-4 gap-10">
           <div>
-            <div className="mb-4 flex items-center gap-2.5">
+            <div className="mb-4 flex items-center gap-1.5">
               <LogoIcon />
               <span className="font-serif text-xl font-bold tracking-wide text-white">LIBR</span>
             </div>
             <p className="mb-6 font-sans text-sm leading-relaxed text-white/50">
-              Membangun pengalaman digital yang elegan, fungsional, dan berdampak.
+              Building elegant, functional, and impactful digital experiences.
             </p>
             <div className="flex items-center gap-3">
               {socialIcons.map(({ Icon, href, label }) => (

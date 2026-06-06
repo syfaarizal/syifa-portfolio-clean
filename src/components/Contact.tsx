@@ -26,14 +26,13 @@ export default function Contact() {
 
           {/* ── Left: Heading ── */}
           <div className="w-72 flex-shrink-0">
-            <p className="section-label">Get In Touch</p>
-            <h2 className="section-heading mb-3">
+            <p className="section-label sm:text-[1.2rem]">Get In Touch</p>
+            <h2 className="section-heading mb-3 sm:text-[2.2rem]">
               Let's Work Together
             </h2>
             <div className="w-10 h-0.5 bg-burgundy mb-4 rounded-full" />
-            <p className="font-sans text-gray-500 text-sm leading-relaxed">
-              Punya proyek atau ide menarik? Saya siap membantu
-              mewujudkannya menjadi solusi digital yang impactful.
+            <p className="font-sans text-gray-500 text-[1.2rem] leading-relaxed">
+              Have an interesting project or idea? I'm ready to help you turn it into an impactful digital solution.
             </p>
           </div>
 
