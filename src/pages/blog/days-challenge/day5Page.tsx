@@ -107,9 +107,11 @@ if (!isNaN(input) && input > 0) {
         </p>
 
         <Output>
-          {`1. Syifa 🔥 — Keep going! 
-          2. Syifa 💡 — You're learning! 
-          3. Syifa 🌱 — Progress every day!`}
+          <ol className="list-decimal list-inside space-y-1">
+            <li>Syifa 🔥 — Keep going!</li>
+            <li>Syifa 💡 — You're learning!</li>
+            <li>Syifa 🌱 — Progress every day!</li>
+          </ol>
         </Output>
       </section>
 

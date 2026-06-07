@@ -34,7 +34,7 @@ export default function Css2Page() {
         <>
           <h3 className="mb-3 font-bold text-[1.5rem]">Key Takeaways</h3>
 
-          <ul>
+          <ul className="list-disc list-inside space-y-1">
             <li>Can style text so it's not stiff</li>
             <li>Understand box model & how to manage spacing</li>
             <li>Play with background, border, shadow for aesthetics</li>
@@ -128,7 +128,7 @@ Content: actual content`}
           Explanation
         </h3>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li><b>Content</b>: main content (text/image)</li>
           <li><b>Padding</b>: space between content and border</li>
           <li><b>Border</b>: element edge line</li>
@@ -165,14 +165,14 @@ Content: actual content`}
           Important properties
         </h3>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li><code>width</code> → element width</li>
           <li><code>height</code> → element height</li>
         </ul>
 
-        <p>Units you can use:</p>
+        <p className="mt-3">Units you can use:</p>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li><code>px</code> → fixed</li>
           <li><code>%</code> → relative to parent</li>
           <li><code>vw</code>/<code>vh</code> → relative to screen size</li>
@@ -239,12 +239,12 @@ Content: actual content`}
 }`}
         </CodeBlock>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li><code>border</code>: edge line (solid, dashed, dotted)</li>
           <li><code>border-radius</code>: makes corners rounded</li>
         </ul>
 
-        <p>
+        <p className="mt-3">
           Perfect for styling cards so they feel more modern and approachable.
         </p>
       </section>

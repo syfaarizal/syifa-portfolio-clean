@@ -77,7 +77,7 @@ export default function Html2Page() {
 
         <h3 className="mt-5 mb-3 font-bold text-[1.5rem]">Functions:</h3>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li>Display YouTube videos</li>
           <li>Show Google Maps</li>
           <li>Embed external documents</li>
@@ -96,7 +96,7 @@ export default function Html2Page() {
 
         <h3 className="mt-5 mb-3 font-bold text-[1.5rem]">Tips:</h3>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li>Don't use too many iframes, they make pages heavy</li>
           <li>
             Use <code>width</code>, <code>height</code>, and{' '}
@@ -117,12 +117,12 @@ export default function Html2Page() {
 
         <h3 className="mt-5 mb-3 font-bold text-[1.5rem]">Its functions:</h3>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li>Divide content into sections</li>
           <li>Used with CSS for layout styling</li>
         </ul>
 
-        <p>
+        <p className="mt-3">
           Think of it like: <code>div</code> = big container (like a
           cardboard box holding many items)
         </p>
@@ -149,12 +149,12 @@ export default function Html2Page() {
 
         <h3 className="mt-5 mb-3 font-bold text-[1.5rem]">Its functions:</h3>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li>Highlight specific text</li>
           <li>Add style to words/sentences without disrupting paragraphs</li>
         </ul>
 
-        <p>
+        <p className="mt-3">
           Think of it like: <code>span</code> = text highlighter, not a box
         </p>
 
@@ -226,7 +226,7 @@ export default function Html2Page() {
 
         <h3 className="mt-5 mb-1 font-bold text-[1.5rem]">Purpose:</h3>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li>Clearer structure</li>
           <li>More accessible (for disabilities)</li>
           <li>SEO-friendly</li>
@@ -287,12 +287,12 @@ export default function Html2Page() {
 
         <h3 className="mt-5 mb-1 font-bold text-[1.5rem]">Examples:</h3>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li><code>&lt;div&gt;</code></li>
           <li><code>&lt;span&gt;</code></li>
         </ul>
 
-        <p>
+        <p className="mt-3">
           These don't say "hey I'm navigation" or "this is an article." They're
           just empty boxes without identity.
         </p>

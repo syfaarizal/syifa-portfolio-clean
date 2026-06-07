@@ -37,7 +37,7 @@ export default function Css3Page() {
             Key Takeaways
           </h3>
 
-          <ul>
+          <ul className="list-disc list-inside space-y-1">
             <li>
               Know all <code>position</code> types and how to use them
             </li>

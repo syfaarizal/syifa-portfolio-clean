@@ -34,7 +34,7 @@ export default function Css1Page() {
         <>
           <h3 className="mb-3 font-bold text-[1.5rem]">Key Takeaways</h3>
 
-          <ul>
+          <ul className="list-disc list-inside space-y-1">
             <li>CSS = Outfit for HTML</li>
             <li>Can be written: inline, internal, external</li>
             <li>
@@ -61,7 +61,7 @@ export default function Css1Page() {
           What can CSS do?
         </h3>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li>Colors, font sizes and types</li>
           <li>Spacing between elements</li>
           <li>Layout positioning</li>
