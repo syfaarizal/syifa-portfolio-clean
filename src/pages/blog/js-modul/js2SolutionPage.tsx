@@ -42,7 +42,7 @@ export default function Js2SolutionPage() {
             Final Notes
           </h3>
 
-          <ul>
+          <ul className="list-disc list-inside space-y-1">
             <li>Solutions are tools, not shortcuts</li>
             <li>If this felt hard — good, that's growth</li>
             <li>Logic skill comes from repetition</li>
@@ -65,7 +65,7 @@ export default function Js2SolutionPage() {
 
         <p>Rules recap:</p>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li>
             Multiple of 3 → <b>Fizz</b>
           </li>
@@ -106,7 +106,7 @@ if (number % 3 === 0 && number % 5 === 0) {
 
         <p>Loop from 1 to 10:</p>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li>Even numbers → "Even"</li>
           <li>Odd numbers → "Odd"</li>
         </ul>
@@ -134,7 +134,7 @@ if (number % 3 === 0 && number % 5 === 0) {
 
         <p>Conditions:</p>
 
-        <ul>
+        <ul className="list-disc list-inside space-y-1">
           <li>Correct username</li>
           <li>Correct password</li>
           <li>Error message if invalid</li>
