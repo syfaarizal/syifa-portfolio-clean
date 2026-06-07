@@ -62,7 +62,7 @@ const num1 = prompt("Enter operator (+, -, *, /)");`}
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Strings vs Numbers</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Strings vs Numbers</h2>
 
         <p>
           Another problem appeared when I started doing calculations. Values returned by
@@ -88,7 +88,7 @@ let result;`}
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Refactoring the Calculator</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Refactoring the Calculator</h2>
 
         <p>
           After fixing the input conversion issue, I implemented the calculation logic using
@@ -123,7 +123,7 @@ if (operator === "+") {
       </section>
 
       <section>
-        <h3>Why do we use <code>parseFloat()</code>?</h3>
+        <h3 className="mt-6 mb-1 font-bold text-[1.5rem]">Why do we use <code>parseFloat()</code>?</h3>
 
         <HighlightBox>
           <p>I wanted the calculator to support decimal numbers too.</p>
@@ -142,7 +142,7 @@ const number2 = parseFloat(num2);`}
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Input Validation</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Input Validation</h2>
 
         <p>
           To make the calculator more reliable, I added validation before performing any operation.
@@ -160,7 +160,7 @@ const number2 = parseFloat(num2);`}
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Switch Case Version</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Switch Case Version</h2>
 
         <p>
           The calculator became cleaner after replacing multiple if-else statements with a
@@ -191,7 +191,7 @@ const number2 = parseFloat(num2);`}
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Function and Looping</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Function and Looping</h2>
 
         <p>
           As a final improvement, I separated the calculation logic into a function and added a

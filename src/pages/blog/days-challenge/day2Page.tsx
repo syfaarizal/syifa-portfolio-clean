@@ -64,7 +64,7 @@ console.log(\`You are \${age} years old.\`);`}
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">My First Mistake</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">My First Mistake</h2>
 
         <p>
           At first, I accidentally mixed browser input methods with Node.js input methods. I tried writing
@@ -84,7 +84,7 @@ const birthYear = readline.question("Enter your birth year: ");`}
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Calculating Age</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Calculating Age</h2>
 
         <p>
           After fixing the input logic, I used the current year from JavaScript's Date object and subtracted
@@ -116,7 +116,7 @@ Next year you'll be \${nextYear} years old.\`);`}
       </section>
 
       <section>
-        <h3>Why do we use <code>parseInt()</code>?</h3>
+        <h3 className="mt-6 mb-1 font-bold text-[1.5rem]">Why do we use <code>parseInt()</code>?</h3>
 
         <HighlightBox>
           <p>I was curious why this line was necessary:</p>
@@ -136,7 +136,7 @@ Next year you'll be \${nextYear} years old.\`);`}
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Input Validation</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Input Validation</h2>
 
         <p>
           A calculator should not only work for valid input, but also handle unexpected cases gracefully.
@@ -156,7 +156,7 @@ Next year you'll be \${nextYear} years old.\`);`}
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Final Code</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Final Code</h2>
 
         <CodeBlock lang="Complete Solution" langIcon="fab fa-js">
 {`const birthYear = prompt("Enter your birth year: ");

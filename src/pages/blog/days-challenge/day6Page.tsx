@@ -58,7 +58,7 @@ Enter a number: 30
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">Challenge Goals</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Challenge Goals</h2>
 
         <p>
           This challenge focuses on nested conditions, number classification,
@@ -67,7 +67,7 @@ Enter a number: 30
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">Basic Implementation</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Basic Implementation</h2>
 
         <CodeBlock lang="Initial Version" langIcon="fab fa-js">
 {`const input = parseInt(prompt("Enter a number:"));
@@ -88,7 +88,7 @@ if (isNaN(input)) {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">Adding a Special Case</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Adding a Special Case</h2>
 
         <HighlightBox>
           <p>
@@ -103,7 +103,7 @@ if (isNaN(input)) {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">Version With Special Logic</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Version With Special Logic</h2>
 
         <CodeBlock lang="With Special Case" langIcon="fab fa-js">
 {`const input = parseInt(prompt("Enter a number:"));
@@ -121,7 +121,7 @@ if (isNaN(input)) {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">Bonus Challenge: Loop Version</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Bonus Challenge: Loop Version</h2>
 
         <p>
           To make the program more interactive, I added a loop that keeps asking
@@ -155,7 +155,7 @@ while (true) {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">Final Version</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Final Version</h2>
 
         <CodeBlock lang="Complete Solution" langIcon="fab fa-js">
 {`let input;

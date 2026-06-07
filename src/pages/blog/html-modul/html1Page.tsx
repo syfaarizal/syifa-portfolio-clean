@@ -47,7 +47,7 @@ export default function Html1Page() {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">What is HTML?</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">What is HTML?</h2>
 
         <p>
           HTML is not a programming language. It is a markup language used to
@@ -68,7 +68,7 @@ export default function Html1Page() {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">Basic HTML Terms</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Basic HTML Terms</h2>
 
         <CodeBlock lang="HTML Example" langIcon="fab fa-html5">
 {`<p>Hello World</p>`}
@@ -81,7 +81,7 @@ export default function Html1Page() {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">Meta Tags</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Meta Tags</h2>
 
         <CodeBlock lang="HTML" langIcon="fab fa-html5">
 {`<meta charset="UTF-8">
@@ -95,7 +95,7 @@ export default function Html1Page() {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">Text Formatting</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Text Formatting</h2>
 
         <CodeBlock lang="HTML" langIcon="fab fa-html5">
 {`<b>Bold</b>
@@ -109,7 +109,7 @@ export default function Html1Page() {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">Anchor Tags</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Anchor Tags</h2>
 
         <CodeBlock lang="HTML" langIcon="fab fa-html5">
 {`<a href="https://google.com" target="_blank">
@@ -123,7 +123,7 @@ export default function Html1Page() {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">Images</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Images</h2>
 
         <CodeBlock lang="HTML" langIcon="fab fa-html5">
 {`<img src="image.jpg" alt="Cute Cat Picture">`}
@@ -136,7 +136,7 @@ export default function Html1Page() {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-5 font-bold text-[1.8rem]">Tables</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Tables</h2>
 
         <CodeBlock lang="HTML" langIcon="fab fa-html5">
 {`<table>

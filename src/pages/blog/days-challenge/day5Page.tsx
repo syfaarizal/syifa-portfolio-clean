@@ -53,7 +53,7 @@ export default function Day5Page() {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Understanding N</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Understanding N</h2>
 
         <p>
           Here, <code>n</code> represents how many times the user wants their name
@@ -62,7 +62,7 @@ export default function Day5Page() {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">First Attempt</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">First Attempt</h2>
 
         <CodeBlock lang="Initial Implementation" langIcon="fab fa-js">
 {`const input = prompt("How many times do you want to print your name? ");
@@ -76,7 +76,7 @@ for (let i = 1; i <= input; i++) {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Input Validation</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Input Validation</h2>
 
         <CodeBlock lang="Improved Version" langIcon="fab fa-js">
 {`const input = Number(prompt("How many times do you want to print your name? "));
@@ -99,7 +99,7 @@ if (!isNaN(input) && input > 0) {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Bonus Challenge</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Bonus Challenge</h2>
 
         <p>
           To make the output more fun, I added emojis and motivational quotes
@@ -114,7 +114,7 @@ if (!isNaN(input) && input > 0) {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Using Arrays and Modulus</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Using Arrays and Modulus</h2>
 
         <CodeBlock lang="Arrays Setup" langIcon="fab fa-js">
 {`const emojis = ["🔥", "💡", "🌱", "🚀"];
@@ -134,7 +134,7 @@ const motivation = [
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Final Solution</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Final Solution</h2>
 
         <CodeBlock lang="Complete Solution" langIcon="fab fa-js">
 {`const input = Number(prompt("How many times do you want to print your name? "));

@@ -60,7 +60,7 @@ Congratulations! You guessed the number correctly in 3 attempts.`}
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Funny Debugging Moment</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Funny Debugging Moment</h2>
 
         <p>My first attempt contained a tiny syntax mistake:</p>
 
@@ -78,7 +78,7 @@ Math.floor(Math.random() * 10) + 1:`}
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Building the Core Logic</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Building the Core Logic</h2>
 
         <p>
           After fixing the syntax issue, I implemented the basic game loop using
@@ -117,7 +117,7 @@ while(repeat) {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Input Validation</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Input Validation</h2>
 
         <p>
           To prevent invalid input from causing problems, I added validation using
@@ -137,7 +137,7 @@ while(repeat) {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Adding a Scoring System</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Adding a Scoring System</h2>
 
         <p>
           To make the game more rewarding, I added different messages based on how many attempts
@@ -156,7 +156,7 @@ while(repeat) {
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Hard Mode</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Hard Mode</h2>
 
         <p>
           As a bonus challenge, I added a hard mode that expands the guessing range from
@@ -181,7 +181,7 @@ let randomNumber = Math.floor(Math.random() * (hardMode ? 50 : 10)) + 1;`}
       </section>
 
       <section>
-        <h2 className="mt-7 mb-4 font-bold text-[1.8rem]">Final Interactive Version</h2>
+        <h2 className="mt-6 mb-1 font-bold text-[1.8rem]">Final Interactive Version</h2>
 
         <p>
           The final version combines validation, scoring, difficulty selection, and looping

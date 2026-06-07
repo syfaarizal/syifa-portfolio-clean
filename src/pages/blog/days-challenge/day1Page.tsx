@@ -57,7 +57,7 @@ console.log(\`Hari ini tanggal \${currentDate}\`);`}
       </section>
 
       <section>
-        <h2 className= "mt-7 mb-4 font-bold text-[1.8rem]">Better Date Format</h2>
+        <h2 className= "mt-6 mb-1 font-bold text-[1.8rem]">Better Date Format</h2>
         <p>
           The default output feels a bit messy and not very personal. So I looked for a more flexible way to format
           it. Here's an example:
@@ -79,7 +79,7 @@ console.log(\`Today is \${day}/\${month}/\${year}, at \${hours}:\${minutes < 10 
       </section>
 
       <section>
-        <h3 className="mt-7">Why do we use <code>minutes &lt; 10 ? "0" + minutes : minutes</code>?</h3>
+        <h3 className="mt-6 mb-1 font-bold text-[1.5rem]">Why do we use <code>minutes &lt; 10 ? "0" + minutes : minutes</code>?</h3>
 
         <HighlightBox>
           <p>I was confused when I first saw this line:</p>
