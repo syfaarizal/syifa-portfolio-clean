@@ -20,6 +20,7 @@ import Html2Page from './pages/blog/html-modul/html2Page'
 import Css1Page from './pages/blog/css-modul/css1Page'
 import Css2Page from './pages/blog/css-modul/css2Page'
 import Css3Page from './pages/blog/css-modul/css3Page'
+import Css4Page from './pages/blog/css-modul/css4Page'
 import { scrollToHash, scrollToTopInstant } from './lib/navigation'
 
 function App() {
@@ -93,6 +94,10 @@ function App() {
 
   if (window.location.pathname === '/blog/css-modul/css3') {
     return <Css3Page />
+  }
+
+  if (window.location.pathname === '/blog/css-modul/css4') {
+    return <Css4Page />
   }
 
   if (window.location.pathname.startsWith('/blog')) {
