@@ -179,7 +179,7 @@ export default function ArticlesLayout({
           </div>
 
           <footer className="border-t border-[#F0E4E0] bg-[#fffdfc] px-6 py-7 sm:px-8">
-            <div className="rounded-[26px] border border-[#E8DDD9] bg-white p-5 shadow-[0_14px_36px_rgba(122,15,22,0.05)] sm:p-6">
+            <div className="rounded-[26px] border border-[#E8DDD9] bg-white p-5 shadow-[0_14px_36px_rgba(122,15,22,0.05)] sm:p-6 [&_h2]:font-serif [&_h3]:font-serif [&_p]:font-sans [&_p]:leading-7 [&_p]:text-gray-700 [&_ul]:my-4 [&_ol]:my-4 [&_ul]:list-disc [&_ol]:list-decimal [&_ul]:pl-6 [&_ol]:pl-6 [&_li]:my-1 [&_li]:pl-1 [&_li]:font-sans [&_li]:leading-7 [&_li]:text-gray-700 [&_li::marker]:text-burgundy [&_strong]:text-gray-900 [&_code]:rounded [&_code]:bg-[#fff4f1] [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-medium [&_code]:text-burgundy">
               {conclusion}
             </div>
 
