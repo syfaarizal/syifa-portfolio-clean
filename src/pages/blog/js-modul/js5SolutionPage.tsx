@@ -18,7 +18,24 @@ export default function Js5SolutionPage() {
         path: '/blog/js-modul/js6',
         title: 'Asynchronous JavaScript: Keep Your UI Alive',
       }}
-      related={[]}
+      related={[
+        {
+          path: '/blog/js-modul/js5',
+          date: 'Jan 2026',
+          title: 'DOM Manipulation: When Code Starts Moving the Page',
+          excerpt:
+            'This is where JavaScript stops being theory and starts touching the screen.',
+          tags: ['JavaScript', 'DOM', 'Front-End'],
+        },
+        {
+          path: '/blog/js-modul/js6',
+          date: 'Jun 2026',
+          title: 'Asynchronous JavaScript: Keep Your UI Alive',
+          excerpt:
+            'Learn how to handle asynchronous operations in JavaScript.',
+          tags: ['JavaScript', 'Async', 'Promises'],
+        },
+      ]}
       conclusion={
         <>
           <h3 className="mb-3 font-bold text-[1.5rem]">

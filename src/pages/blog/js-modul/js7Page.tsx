@@ -15,7 +15,39 @@ export default function Js7Page() {
         title: 'Asynchronous JavaScript — Solutions',
       }}
       next={undefined}
-      related={[]}
+      related={[
+        {
+          path: '/blog/html-modul/html1',
+          date: 'May 15, 2025',
+          title: 'HTML Basics: The Foundation of Web Development',
+          excerpt:
+            'Learn the basic concepts, tags, and structure that make up every webpage on the internet.',
+          tags: ['HTML', 'Web Development', 'Basics'],
+        },
+        {
+          path: '/blog/css-modul/css1',
+          date: 'May 10, 2025',
+          title: 'CSS Fundamentals: The Basics You Must Know',
+          excerpt:
+            'CSS is what makes your HTML go from boring black text to a stunning visual experience.',
+          tags: ['CSS', 'Basics', 'Fundamentals'],
+        },
+        {
+          path: '/blog/days-challenge/day1',
+          date: 'June 5, 2025',
+          title: 'Day 1: Print Name and Status',
+          excerpt: 'Learn how to print your name and status using JavaScript template literals.',
+          tags: ['JavaScript', 'Template Literals'],
+        },
+        {
+          path: '/blog/js-modul/js1',
+          date: 'Jun 2026',
+          title: 'JavaScript Basics',
+          excerpt:
+            'Learn the fundamentals of JavaScript programming.',
+          tags: ['JavaScript', 'Front-End', 'Logic'],
+        },
+      ]}
       conclusion={
         <>
           <h3 className="mb-3 font-bold text-[1.5rem]">

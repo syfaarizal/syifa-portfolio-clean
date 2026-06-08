@@ -18,7 +18,24 @@ export default function Js6SolutionPage() {
         path: '/blog/js-modul/js7',
         title: 'Mini Projects Gallery',
       }}
-      related={[]}
+      related={[
+        {
+          path: '/blog/js-modul/js6',
+          date: 'Jan 2026',
+          title: 'Asynchronous JavaScript: Keep Your UI Alive',
+          excerpt:
+            'Modern applications constantly communicate with servers, APIs, and databases.',
+          tags: ['JavaScript', 'Async', 'Fetch API'],
+        },
+        {
+          path: '/blog/js-modul/js7',
+          date: 'Jan 2026',
+          title: 'Mini Projects Gallery',
+          excerpt:
+            'Asynchronous JavaScript is not about speed. It\'s about control, UX, and resilience.',
+          tags: ['JavaScript', 'Async', 'Fetch API'],
+        },
+      ]}
       conclusion={
         <>
           <h3 className="mb-3 font-bold text-[1.5rem]">

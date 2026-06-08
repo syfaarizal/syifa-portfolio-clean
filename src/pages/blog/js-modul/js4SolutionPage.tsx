@@ -18,7 +18,24 @@ export default function Js4SolutionPage() {
         path: '/blog/js-modul/js5',
         title: 'DOM Manipulation: When Code Starts Moving the Page',
       }}
-      related={[]}
+      related={[
+        {
+          path: '/blog/js-modul/js4',
+          date: 'Jun 2026',
+          title: 'Function Mastery: From Beginner to Clean Code',
+          excerpt:
+            'When your code gets long and copy–paste starts spreading, that\'s your sign: you need functions.',
+          tags: ['JavaScript', 'Functions', 'Clean Code'],
+        },
+        {
+          path: '/blog/js-modul/js5',
+          date: 'Jan 2026',
+          title: 'DOM Manipulation: When Code Starts Moving the Page',
+          excerpt:
+            'Learn how to interact with the DOM using JavaScript.',
+          tags: ['JavaScript', 'DOM', 'Manipulation'],
+        },
+      ]}
       conclusion={
         <>
           <h3 className="mb-3 font-bold text-[1.5rem]">

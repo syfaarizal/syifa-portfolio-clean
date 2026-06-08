@@ -18,7 +18,24 @@ export default function Js6Page() {
         path: '/blog/js-modul/js6-solutions',
         title: 'Asynchronous JavaScript — Solutions',
       }}
-      related={[]}
+      related={[
+        {
+          path: '/blog/js-modul/js5',
+          date: 'Jan 2026',
+          title: 'DOM Manipulation: When Code Starts Moving the Page',
+          excerpt:
+            'This is where JavaScript stops being theory and starts touching the screen.',
+          tags: ['JavaScript', 'DOM', 'Front-End'],
+        },
+        {
+          path: '/blog/js-modul/js6-solutions',
+          date: 'Jan 2026',
+          title: 'Asynchronous JavaScript — Solutions',
+          excerpt:
+            'Solutions to the asynchronous JavaScript challenges.',
+          tags: ['JavaScript', 'Async', 'Solutions'],
+        },
+      ]}
       conclusion={
         <>
           <h3 className="mb-3 font-bold text-[1.5rem]">

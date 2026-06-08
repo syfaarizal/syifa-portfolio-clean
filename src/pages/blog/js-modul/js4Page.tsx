@@ -18,14 +18,31 @@ export default function Js4Page() {
         path: '/blog/js-modul/js4-solutions',
         title: 'Function Mastery — Solutions',
       }}
-      related={[]}
+      related={[
+        {
+          path: '/blog/js-modul/js3',
+          date: 'Jun 2026',
+          title: 'Data Exploration: Array & Object',
+          excerpt:
+            'Exploring arrays and objects in JavaScript.',
+          tags: ['JavaScript', 'Array', 'Object', 'Data'],
+        },
+        {
+          path: '/blog/js-modul/js5',
+          date: 'Jan 2026',
+          title: 'DOM Manipulation: When Code Starts Moving the Page',
+          excerpt:
+            'Learn how to interact with the DOM using JavaScript.',
+          tags: ['JavaScript', 'DOM', 'Manipulation'],
+        },
+      ]}
       conclusion={
         <>
           <h3 className="mb-3 font-bold text-[1.5rem]">
             Key Takeaways
           </h3>
 
-          <ul>
+          <ul className="list-disc list-inside">
             <li>Functions make code reusable</li>
             <li>
               <code>return</code> gives real results
