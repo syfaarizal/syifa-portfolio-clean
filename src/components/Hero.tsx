@@ -174,7 +174,7 @@ export default function Hero() {
 
           <div className="relative flex min-h-[420px] items-end justify-center sm:min-h-[520px] lg:min-h-[760px] lg:justify-end">
             <div
-              className="absolute left-1/2 top-4 h-[410px] w-[250px] -translate-x-[54%] rounded-t-[150px] rounded-b-[0] bg-burgundy shadow-[0_24px_60px_rgba(122,15,22,0.18)] transition-transform duration-500 ease-out hover:-translate-y-1 sm:top-3 sm:h-[560px] sm:w-[330px] md:h-[620px] md:w-[360px] lg:left-[8%] lg:top-14 lg:-translate-x-0 lg:rounded-t-[190px] lg:h-[640px] lg:w-[380px]"
+              className="absolute left-1/2 top-4 h-[430px] w-[280px] -translate-x-[54%] rounded-t-[150px] rounded-b-[0] bg-burgundy shadow-[0_24px_60px_rgba(122,15,22,0.18)] transition-transform duration-500 ease-out hover:-translate-y-1 sm:top-3 sm:h-[560px] sm:w-[330px] md:h-[620px] md:w-[360px] lg:left-[8%] lg:top-14 lg:-translate-x-0 lg:rounded-t-[190px] lg:h-[640px] lg:w-[380px]"
               aria-hidden="true"
             />
 
@@ -191,12 +191,12 @@ export default function Hero() {
               <img
                 src="/assets/gambar-syifa-nobg.png"
                 alt="Syifa Fauziyah Arizal"
-                className="w-[190px] select-none object-contain sm:w-[260px] md:w-[300px] lg:w-[405px]"
+                className="w-[279px] max-w-none select-none object-contain sm:w-[280px] md:w-[315px] lg:w-[405px]"
                 draggable={false}
               />
             </div>
 
-            <div className="absolute left-1/2 top-[56%] z-20 -translate-x-1/2 rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-float backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 sm:left-auto sm:right-0 sm:translate-x-0 sm:px-6 sm:py-5">
+            <div className="absolute left-[80%] top-[56%] z-20 -translate-x-1/2 rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-float backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 sm:left-auto sm:right-0 sm:translate-x-0 sm:px-6 sm:py-5">
               <div className="font-serif text-[2.2rem] leading-none font-bold text-burgundy sm:text-[2.9rem]">
                 10+
               </div>
@@ -205,7 +205,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="absolute bottom-4 left-[8%] z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-float ring-4 ring-red-700 transition-transform duration-300 hover:scale-105 sm:h-14 sm:w-14 lg:left-[6%] lg:bottom-10">
+            <div className="absolute bottom-[-8%] left-[8%] z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-float ring-4 ring-red-700 transition-transform duration-300 hover:scale-105 sm:h-14 sm:w-14 lg:left-[6%] lg:bottom-10">
               <img src="/assets/logo-libr.png" alt="Logo" className="h-10 w-10 object-contain sm:h-12 sm:w-12" />
             </div>
           </div>
