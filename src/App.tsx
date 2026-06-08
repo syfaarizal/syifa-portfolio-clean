@@ -28,6 +28,7 @@ import Js3Page from './pages/blog/js-modul/js3Page'
 import Js3SolutionPage from './pages/blog/js-modul/js3SolutionPage'
 import Js4Page from './pages/blog/js-modul/js4Page'
 import Js4SolutionPage from './pages/blog/js-modul/js4SolutionPage'
+import Js5Page from './pages/blog/js-modul/js5Page'
 import { scrollToHash, scrollToTopInstant } from './lib/navigation'
 
 type BlogRoute = {
@@ -64,6 +65,7 @@ const jsModuleRoutes: BlogRoute[] = [
   { path: '/blog/js-modul/js3-solutions', Component: Js3SolutionPage },
   { path: '/blog/js-modul/js4', Component: Js4Page },
   { path: '/blog/js-modul/js4-solutions', Component: Js4SolutionPage },
+  { path: '/blog/js-modul/js5', Component: Js5Page },
 ]
 
 const blogRoutes: BlogRoute[] = [...dayChallengeRoutes, ...htmlModuleRoutes, ...cssModuleRoutes, ...jsModuleRoutes]
