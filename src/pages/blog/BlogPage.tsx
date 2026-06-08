@@ -71,7 +71,7 @@ export default function BlogPage() {
           <div className="mb-8 flex items-center justify-between gap-4">
             <button
               type="button"
-              onClick={() => navigateWithTransition('/')}
+              onClick={() => navigateWithTransition('/#blog')}
               className="inline-flex items-center gap-2 rounded-full border border-[#E6DAD7] bg-white/90 px-4 py-2 font-sans text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-burgundy hover:text-burgundy"
             >
               <ArrowIcon />
