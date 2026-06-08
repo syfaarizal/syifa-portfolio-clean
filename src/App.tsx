@@ -30,8 +30,48 @@ import Js4Page from './pages/blog/js-modul/js4Page'
 import Js4SolutionPage from './pages/blog/js-modul/js4SolutionPage'
 import { scrollToHash, scrollToTopInstant } from './lib/navigation'
 
+type BlogRoute = {
+  path: string
+  Component: () => JSX.Element
+}
+
+const dayChallengeRoutes: BlogRoute[] = [
+  { path: '/blog/days-challenge/day1', Component: Day1Page },
+  { path: '/blog/days-challenge/day2', Component: Day2Page },
+  { path: '/blog/days-challenge/day3', Component: Day3Page },
+  { path: '/blog/days-challenge/day4', Component: Day4Page },
+  { path: '/blog/days-challenge/day5', Component: Day5Page },
+  { path: '/blog/days-challenge/day6', Component: Day6Page },
+]
+
+const htmlModuleRoutes: BlogRoute[] = [
+  { path: '/blog/html-modul/html1', Component: Html1Page },
+  { path: '/blog/html-modul/html2', Component: Html2Page },
+]
+
+const cssModuleRoutes: BlogRoute[] = [
+  { path: '/blog/css-modul/css1', Component: Css1Page },
+  { path: '/blog/css-modul/css2', Component: Css2Page },
+  { path: '/blog/css-modul/css3', Component: Css3Page },
+  { path: '/blog/css-modul/css4', Component: Css4Page },
+]
+
+const jsModuleRoutes: BlogRoute[] = [
+  { path: '/blog/js-modul/js1', Component: Js1Page },
+  { path: '/blog/js-modul/js2', Component: Js2Page },
+  { path: '/blog/js-modul/js2-solutions', Component: Js2SolutionPage },
+  { path: '/blog/js-modul/js3', Component: Js3Page },
+  { path: '/blog/js-modul/js3-solutions', Component: Js3SolutionPage },
+  { path: '/blog/js-modul/js4', Component: Js4Page },
+  { path: '/blog/js-modul/js4-solutions', Component: Js4SolutionPage },
+]
+
+const blogRoutes: BlogRoute[] = [...dayChallengeRoutes, ...htmlModuleRoutes, ...cssModuleRoutes, ...jsModuleRoutes]
+
 function App() {
   const [locationKey, setLocationKey] = useState(() => `${window.location.pathname}${window.location.hash}`)
+  const pathname = window.location.pathname
+  const blogRoute = blogRoutes.find((route) => route.path === pathname)
 
   useEffect(() => {
     const handlePopState = () => {
@@ -55,87 +95,16 @@ function App() {
     scrollToTopInstant()
   }, [locationKey])
 
-  if (window.location.pathname === '/projects') {
+  if (pathname === '/projects') {
     return <ProjectsPage />
   }
 
-  if (window.location.pathname === '/blog/days-challenge/day1') {
-    return <Day1Page />
+  if (blogRoute) {
+    const { Component } = blogRoute
+    return <Component />
   }
 
-  if (window.location.pathname === '/blog/days-challenge/day2') {
-    return <Day2Page />
-  }
-
-  if (window.location.pathname === '/blog/days-challenge/day3') {
-    return <Day3Page />
-  }
-
-  if (window.location.pathname === '/blog/days-challenge/day4') {
-    return <Day4Page />
-  }
-
-  if (window.location.pathname === '/blog/days-challenge/day5') {
-    return <Day5Page />
-  }
-
-  if (window.location.pathname === '/blog/days-challenge/day6') {
-    return <Day6Page />
-  }
-
-  if (window.location.pathname === '/blog/html-modul/html1') {
-    return <Html1Page />
-  }
-
-  if (window.location.pathname === '/blog/html-modul/html2') {
-    return <Html2Page />
-  }
-
-  if (window.location.pathname === '/blog/css-modul/css1') {
-    return <Css1Page />
-  }
-
-  if (window.location.pathname === '/blog/css-modul/css2') {
-    return <Css2Page />
-  }
-
-  if (window.location.pathname === '/blog/css-modul/css3') {
-    return <Css3Page />
-  }
-
-  if (window.location.pathname === '/blog/css-modul/css4') {
-    return <Css4Page />
-  }
-
-  if (window.location.pathname === '/blog/js-modul/js1') {
-    return <Js1Page />
-  }
-
-  if (window.location.pathname === '/blog/js-modul/js2') {
-    return <Js2Page />
-  }
-
-  if (window.location.pathname === '/blog/js-modul/js2-solutions') {
-    return <Js2SolutionPage />
-  }
-
-  if (window.location.pathname === '/blog/js-modul/js3') {
-    return <Js3Page />
-  }
-
-  if (window.location.pathname === '/blog/js-modul/js3-solutions') {
-    return <Js3SolutionPage />
-  }
-
-  if (window.location.pathname === '/blog/js-modul/js4') {
-    return <Js4Page />
-  }
-
-  if (window.location.pathname === '/blog/js-modul/js4-solutions') {
-    return <Js4SolutionPage />
-  }
-
-  if (window.location.pathname.startsWith('/blog')) {
+  if (pathname.startsWith('/blog')) {
     return <BlogPage />
   }
 

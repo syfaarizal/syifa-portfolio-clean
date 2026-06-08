@@ -28,12 +28,12 @@ export default function Js3SolutionPage() {
           tags: ['JavaScript', 'Array', 'Object', 'Data'],
         },
         {
-          path: '/blog/js-modul/js3-solutions',
+          path: '/blog/js-modul/js4-solutions',
           date: 'Jan 2026',
-          title: 'Array & Object — Solutions',
+          title: 'Function Mastery — Solutions',
           excerpt:
-            'Official solutions for Module 3 challenges. If you didn\'t try first — scroll back.',
-          tags: ['JavaScript', 'Array', 'Object', 'Solutions'],
+            'Official solutions for Module 4 challenges. If you didn\'t try first — scroll back.',
+          tags: ['JavaScript', 'Functions', 'Solutions'],
         },
       ]}
       conclusion={
