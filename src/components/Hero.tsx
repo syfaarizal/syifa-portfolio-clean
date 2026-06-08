@@ -98,31 +98,31 @@ export default function Hero() {
       className="relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#fffaf9_100%)]"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-28 top-20 h-72 w-72 rounded-full bg-burgundy/8 blur-3xl animate-[pulse_10s_ease-in-out_infinite]" />
-        <div className="absolute right-0 top-40 h-80 w-80 rounded-full bg-[#e7c6cb]/35 blur-3xl animate-[pulse_12s_ease-in-out_infinite]" />
-        <div className="absolute bottom-0 left-1/2 h-40 w-[32rem] -translate-x-1/2 rounded-full bg-burgundy/5 blur-3xl animate-[pulse_14s_ease-in-out_infinite]" />
+        <div className="absolute -left-28 top-20 h-72 w-72 rounded-full bg-burgundy/8 blur-3xl animate-[pulse_10s_ease-in-out_infinite] sm:h-80 sm:w-80" />
+        <div className="absolute right-0 top-40 h-72 w-72 rounded-full bg-[#e7c6cb]/35 blur-3xl animate-[pulse_12s_ease-in-out_infinite] sm:h-80 sm:w-80" />
+        <div className="absolute bottom-0 left-1/2 h-32 w-[20rem] -translate-x-1/2 rounded-full bg-burgundy/5 blur-3xl animate-[pulse_14s_ease-in-out_infinite] sm:h-40 sm:w-[32rem]" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-0 sm:px-0">
-        <div className="grid min-h-[calc(100vh-4rem)] items-center gap-14 py-12 lg:grid-cols-[1fr_0.98fr] lg:gap-8 lg:py-0">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8">
+        <div className="grid gap-12 py-12 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[1fr_0.98fr] lg:items-center lg:gap-8 lg:py-0">
           <div className="relative z-10 max-w-2xl">
-            <p className="mb-4 font-sans text-[1.5rem] tracking-wide text-gray-600">
+            <p className="mb-4 font-sans text-[1.05rem] tracking-wide text-gray-600 sm:text-[1.2rem] lg:text-[1.5rem]">
               Hello, I&apos;m
             </p>
 
-            <h1 className="max-w-[12ch] font-serif text-[clamp(3rem,6vw,5.35rem)] leading-[0.95] font-semibold text-gray-950">
+            <h1 className="max-w-[12ch] font-serif text-[clamp(2.7rem,10vw,5.35rem)] leading-[0.95] font-semibold text-gray-950 sm:text-[clamp(3rem,6vw,5.35rem)]">
               Syifa Fauziyah Arizal
             </h1>
 
             <div className="mt-3">
-              <p className="font-sans text-[1.05rem] font-semibold uppercase tracking-[0.28em] text-gray-500 sm:text-[1.1rem]">
+              <p className="font-sans text-[0.82rem] font-semibold uppercase tracking-[0.24em] text-gray-500 sm:text-[1rem] lg:text-[1.1rem]">
                 {title}
               </p>
 
               <div className="mt-3 flex items-start gap-3">
-                <span className="mt-1 h-[54px] w-[3px] rounded-full bg-burgundy" aria-hidden="true" />
+                <span className="mt-1 h-[40px] w-[3px] rounded-full bg-burgundy sm:h-[54px]" aria-hidden="true" />
                 <span
-                  className="pt-[6px] font-serif text-[clamp(1.8rem,3.7vw,3.05rem)] leading-none font-semibold text-burgundy transition-all duration-200 ease-out"
+                  className="pt-[6px] font-serif text-[clamp(1.45rem,7vw,3.05rem)] leading-none font-semibold text-burgundy transition-all duration-200 ease-out sm:text-[clamp(1.8rem,3.7vw,3.05rem)]"
                   style={{
                     opacity: valuePropVisible ? 1 : 0,
                     transform: valuePropVisible ? 'translateY(0)' : 'translateY(8px)',
@@ -133,15 +133,15 @@ export default function Hero() {
               </div>
             </div>
 
-            <p className="mt-6 max-w-[34rem] font-sans text-[2rem] leading-7 text-gray-600 sm:text-[1.3rem]">
+            <p className="mt-6 max-w-[34rem] font-sans text-[1.05rem] leading-7 text-gray-600 sm:text-[1.15rem] lg:text-[1.3rem]">
               I build products, systems, and AI experiences that help people turn ideas into reality.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <button className="btn-primary min-w-[148px] justify-center shadow-sm sm:text-[1.05rem]">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+              <button className="btn-primary justify-center shadow-sm sm:text-[1.05rem]">
                 View My Work <ArrowRightIcon />
               </button>
-              <button className="btn-outline min-w-[148px] justify-center sm:text-[1.05rem]">
+              <button className="btn-outline justify-center sm:text-[1.05rem]">
                 Download CV <DownloadIcon />
               </button>
             </div>
@@ -151,11 +151,11 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-burgundy/25" />
                 <span className="relative h-2 w-2 rounded-full bg-burgundy" />
               </span>
-              <span className="font-sans sm:text-[1rem] text-gray-500">Open to Front-End Opportunities</span>
+              <span className="font-sans text-[0.9rem] text-gray-500 sm:text-[1rem]">Open to Front-End Opportunities</span>
             </div>
 
             <div className="mt-12 flex flex-wrap items-center gap-4">
-              <div className="inline-flex items-center gap-3 rounded-full border border-[#ECE1DD] bg-white/70 px-4 py-3 shadow-sm backdrop-blur-sm">
+              <div className="inline-flex flex-wrap items-center gap-3 rounded-2xl border border-[#ECE1DD] bg-white/70 px-4 py-3 shadow-sm backdrop-blur-sm sm:rounded-full">
                 {socialLinks.map(({ icon: Icon, href, label }) => (
                   <a
                     key={label}
@@ -172,9 +172,9 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative flex min-h-[620px] items-end justify-center lg:min-h-[760px] lg:justify-end">
+          <div className="relative flex min-h-[420px] items-end justify-center sm:min-h-[520px] lg:min-h-[760px] lg:justify-end">
             <div
-              className="absolute left-1/2 top-3 h-[580px] w-[350px] -translate-x-[54%] rounded-t-[170px] rounded-b-[0] bg-burgundy shadow-[0_24px_60px_rgba(122,15,22,0.18)] transition-transform duration-500 ease-out hover:-translate-y-1 sm:h-[640px] sm:w-[380px] lg:left-[8%] lg:top-14 lg:-translate-x-0 lg:rounded-t-[190px]"
+              className="absolute left-1/2 top-4 h-[410px] w-[250px] -translate-x-[54%] rounded-t-[150px] rounded-b-[0] bg-burgundy shadow-[0_24px_60px_rgba(122,15,22,0.18)] transition-transform duration-500 ease-out hover:-translate-y-1 sm:top-3 sm:h-[560px] sm:w-[330px] md:h-[620px] md:w-[360px] lg:left-[8%] lg:top-14 lg:-translate-x-0 lg:rounded-t-[190px] lg:h-[640px] lg:w-[380px]"
               aria-hidden="true"
             />
 
@@ -187,26 +187,26 @@ export default function Hero() {
               <DotsPattern />
             </div>
 
-            <div className="absolute top-[18.9%] left-1/2 z-10 -translate-x-[54%] transition-transform duration-500 ease-out sm:-translate-x-[45%] lg:left-[8%] lg:translate-x-0">
+            <div className="absolute left-1/2 top-[16%] z-10 -translate-x-[54%] transition-transform duration-500 ease-out sm:top-[18.9%] sm:-translate-x-[45%] lg:left-[8%] lg:translate-x-0">
               <img
                 src="/assets/gambar-syifa-nobg.png"
                 alt="Syifa Fauziyah Arizal"
-                className="w-[250px] select-none object-contain sm:w-[300px] lg:w-[405px]"
+                className="w-[190px] select-none object-contain sm:w-[260px] md:w-[300px] lg:w-[405px]"
                 draggable={false}
               />
             </div>
 
-            <div className="absolute left-1/2 top-[57%] z-20 -translate-x-1/2 rounded-2xl border border-white/70 bg-white/95 px-5 py-4 shadow-float backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 sm:left-auto sm:right-0 sm:translate-x-0 sm:px-6 sm:py-5">
-              <div className="font-serif text-[2.9rem] leading-none font-bold text-burgundy">
+            <div className="absolute left-1/2 top-[56%] z-20 -translate-x-1/2 rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-float backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 sm:left-auto sm:right-0 sm:translate-x-0 sm:px-6 sm:py-5">
+              <div className="font-serif text-[2.2rem] leading-none font-bold text-burgundy sm:text-[2.9rem]">
                 10+
               </div>
-              <div className="mt-2 font-sans text-[0.96rem] font-semibold text-gray-800">
+              <div className="mt-1.5 font-sans text-[0.85rem] font-semibold text-gray-800 sm:mt-2 sm:text-[0.96rem]">
                 Projects Built
               </div>
             </div>
 
-            <div className="absolute bottom-5 left-[10%] z-20 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-float ring-4 ring-red-700 transition-transform duration-300 hover:scale-105 lg:left-[6%] lg:bottom-10">
-              <img src="/assets/logo-libr.png" alt="Logo" className="w-12 h-12 object-contain" />
+            <div className="absolute bottom-4 left-[8%] z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-float ring-4 ring-red-700 transition-transform duration-300 hover:scale-105 sm:h-14 sm:w-14 lg:left-[6%] lg:bottom-10">
+              <img src="/assets/logo-libr.png" alt="Logo" className="h-10 w-10 object-contain sm:h-12 sm:w-12" />
             </div>
           </div>
         </div>

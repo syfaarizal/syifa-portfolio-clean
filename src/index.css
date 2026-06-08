@@ -22,11 +22,11 @@
 
 @layer components {
   .section-label {
-    @apply text-xs font-semibold tracking-[0.18em] uppercase text-burgundy mb-3 font-sans;
+    @apply mb-3 font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-burgundy sm:text-xs;
   }
 
   .section-heading {
-    @apply font-serif text-[2.25rem] leading-tight font-semibold text-gray-900;
+    @apply font-serif text-[1.8rem] font-semibold leading-tight text-gray-900 sm:text-[2.25rem] lg:text-[3rem];
   }
 
   .card-base {
@@ -34,18 +34,15 @@
   }
 
   .btn-primary {
-    @apply bg-burgundy text-white font-sans font-medium text-sm px-6 py-2.5 rounded-xl
-           hover:bg-burgundy-900 transition-colors duration-200 flex items-center gap-2;
+    @apply flex w-full items-center gap-2 rounded-xl bg-burgundy px-6 py-2.5 font-sans text-sm font-medium text-white transition-colors duration-200 hover:bg-burgundy-900 sm:w-auto;
   }
 
   .btn-outline {
-    @apply bg-white text-gray-800 font-sans font-medium text-sm px-6 py-2.5 rounded-xl
-           border border-[#CCCCCC] hover:border-burgundy hover:text-burgundy
-           transition-colors duration-200 flex items-center gap-2;
+    @apply flex w-full items-center gap-2 rounded-xl border border-[#CCCCCC] bg-white px-6 py-2.5 font-sans text-sm font-medium text-gray-800 transition-colors duration-200 hover:border-burgundy hover:text-burgundy sm:w-auto;
   }
 
   .container-pad {
-    @apply max-w-7xl mx-auto px-8;
+    @apply mx-auto max-w-7xl px-6 sm:px-8;
   }
 }
 

@@ -79,8 +79,8 @@ const handleLink = (href: string) => {
 export default function Footer() {
   return (
     <footer style={{ background: 'linear-gradient(135deg, #4a0810 0%, #2d050b 40%, #1a0306 100%)' }}>
-      <div className="mx-auto max-w-7xl px-8 pb-10 pt-14">
-        <div className="grid grid-cols-4 gap-10">
+      <div className="mx-auto max-w-7xl px-6 pb-10 pt-14 sm:px-8">
+        <div className="grid gap-10 sm:grid-cols-2 xl:grid-cols-4">
           <div>
             <div className="mb-4 flex items-center gap-1.5">
               <LogoIcon />
@@ -89,7 +89,7 @@ export default function Footer() {
             <p className="mb-6 font-sans text-sm leading-relaxed text-white/50">
               Building elegant, functional, and impactful digital experiences.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               {socialIcons.map(({ Icon, href, label }) => (
                 <a
                   key={label}
@@ -173,7 +173,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-5 text-center sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:text-left">
           <p className="font-sans text-xs text-white/40">© 2026 LIBR. All rights reserved.</p>
           <p className="font-sans text-xs text-white/40">
             Built with <span className="text-red-400">♥</span> by Syifa Fauziyah Arizal

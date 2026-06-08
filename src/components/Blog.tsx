@@ -39,13 +39,12 @@ const posts = [
 export default function Blog() {
   return (
     <div id="blog">
-      {/* Header */}
       <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-2xl">
           <p className="section-label sm:text-[1.2rem]">Latest from Blog</p>
           <h2 className="section-heading sm:text-[3rem]">Recent Articles</h2>
           <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
-          <p className="mt-4 max-w-2xl font-sans text-[1.3rem] leading-6 text-gray-500">
+          <p className="mt-4 max-w-2xl font-sans text-[1rem] leading-7 text-gray-500 sm:text-[1.15rem]">
             My blog in learning, building and growing.
           </p>
         </div>
@@ -78,25 +77,23 @@ export default function Blog() {
         {posts.map(({ id, img, title, desc, date, readTime, path }) => (
           <article
             key={id}
-            className="group flex gap-4 rounded-2xl border border-[#EAEAEA] bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card"
+            className="group flex flex-col gap-4 overflow-hidden rounded-2xl border border-[#EAEAEA] bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card sm:flex-row"
           >
-            {/* Thumbnail */}
-            <div className="h-[94px] w-[96px] flex-shrink-0 overflow-hidden rounded-xl bg-gray-100">
-              <img src={img} alt={title} className="w-full h-full object-cover" />
+            <div className="aspect-[16/10] w-full flex-shrink-0 overflow-hidden rounded-xl bg-gray-100 sm:h-[94px] sm:w-[96px] sm:aspect-auto">
+              <img src={img} alt={title} className="h-full w-full object-cover" />
             </div>
 
-            {/* Content */}
             <div className="min-w-0 flex-1">
               <span className="mb-2 block font-sans text-[10px] uppercase tracking-[0.14em] text-gray-400">
                 {date}
               </span>
-              <h3 className="mb-2 font-serif text-[1.33rem] leading-tight font-bold text-gray-900 transition-colors group-hover:text-burgundy">
+              <h3 className="mb-2 font-serif text-[1.1rem] font-bold leading-tight text-gray-900 transition-colors group-hover:text-burgundy sm:text-[1.33rem]">
                 {title}
               </h3>
-              <p className="mb-3 font-sans text-[0.95rem] leading-6 text-gray-500">
+              <p className="mb-3 font-sans text-[0.92rem] leading-6 text-gray-500 sm:text-[0.95rem]">
                 {desc}
               </p>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 {path ? (
                   <button
                     type="button"

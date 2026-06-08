@@ -128,13 +128,13 @@ function App() {
         <Skills />
 
         <section className="border-t border-[#EAEAEA] bg-white py-20">
-          <div className="mx-auto max-w-7xl px-6 sm:px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <Projects />
           </div>
         </section>
 
         <section className="bg-white pb-20">
-          <div className="mx-auto max-w-7xl px-6 sm:px-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mt-4">
               <Blog />
             </div>

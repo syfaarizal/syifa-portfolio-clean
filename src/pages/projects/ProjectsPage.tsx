@@ -30,7 +30,7 @@ function ProjectButton({
   onClick?: () => void
 }) {
   const base =
-    'inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 font-sans text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5'
+    'inline-flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 font-sans text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 sm:w-auto'
 
   const classes =
     variant === 'primary'
@@ -67,7 +67,7 @@ function ProjectCard({
         <img
           src={project.img}
           alt={project.title}
-          className="h-[240px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
       </div>
 
@@ -77,7 +77,7 @@ function ProjectCard({
             <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-burgundy">
               {project.category}
             </p>
-            <h3 className="mt-2 font-serif text-[1.7rem] font-semibold leading-tight text-gray-950">
+            <h3 className="mt-2 font-serif text-[1.4rem] font-semibold leading-tight text-gray-950 sm:text-[1.7rem]">
               {project.title}
             </h3>
           </div>
@@ -124,25 +124,25 @@ export default function ProjectsPage() {
           <div className="absolute right-0 top-48 h-80 w-80 rounded-full bg-[#e6c7cd]/40 blur-3xl" />
         </div>
 
-        <section id="home" className="relative mx-auto max-w-7xl px-6 pb-12 pt-8 sm:px-8 lg:pt-10">
-          <div className="mb-8 flex items-center justify-between gap-4">
+        <section id="home" className="relative mx-auto max-w-7xl px-4 pb-12 pt-8 sm:px-6 lg:px-8 lg:pt-10">
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <button
               type="button"
               onClick={() => navigateWithTransition('/#projects')}
-              className="inline-flex items-center gap-2 rounded-full border border-[#E6DAD7] bg-white/90 px-4 py-2 font-sans text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-burgundy hover:text-burgundy"
+              className="inline-flex items-center gap-2 self-start rounded-full border border-[#E6DAD7] bg-white/90 px-4 py-2 font-sans text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-burgundy hover:text-burgundy"
             >
               <ArrowIcon />
               Back To Home
             </button>
           </div>
 
-          <div className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-end">
+          <div className="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-end">
             <div className="relative z-10 max-w-3xl">
               <p className="section-label sm:text-[1.05rem]">Projects Showcase</p>
-              <h1 className="mt-4 font-serif text-[clamp(3rem,6vw,5.2rem)] leading-[0.92] font-semibold tracking-tight text-gray-950">
+              <h1 className="mt-4 font-serif text-[clamp(2.6rem,11vw,5.2rem)] leading-[0.92] font-semibold tracking-tight text-gray-950">
                 Selected work, simplified and easier to scan.
               </h1>
-              <p className="mt-5 max-w-2xl font-sans text-[1.02rem] leading-7 text-gray-600 sm:text-[1.1rem]">
+              <p className="mt-5 max-w-2xl font-sans text-[0.98rem] leading-7 text-gray-600 sm:text-[1.1rem]">
                 A focused collection of three main projects with direct access to demo, source, and a detailed
                 breakdown in a modal.
               </p>
@@ -159,7 +159,7 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        <section id="projects" className="relative mx-auto max-w-7xl px-6 py-10 sm:px-8">
+        <section id="projects" className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-3">
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} onDetail={setSelectedProject} />

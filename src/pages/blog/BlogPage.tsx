@@ -67,25 +67,25 @@ export default function BlogPage() {
           <div className="absolute right-0 top-40 h-80 w-80 rounded-full bg-[#e6c7cd]/40 blur-3xl" />
         </div>
 
-        <section className="relative mx-auto max-w-7xl px-6 pb-10 pt-8 sm:px-8 lg:pt-10">
-          <div className="mb-8 flex items-center justify-between gap-4">
+        <section className="relative mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 sm:pt-10 lg:px-8">
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <button
               type="button"
               onClick={() => navigateWithTransition('/#blog')}
-              className="inline-flex items-center gap-2 rounded-full border border-[#E6DAD7] bg-white/90 px-4 py-2 font-sans text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-burgundy hover:text-burgundy"
+              className="inline-flex items-center gap-2 self-start rounded-full border border-[#E6DAD7] bg-white/90 px-4 py-2 font-sans text-sm font-semibold text-gray-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-burgundy hover:text-burgundy"
             >
               <ArrowIcon />
               Back to Home
             </button>
           </div>
 
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div className="relative z-10 max-w-3xl">
               <p className="section-label sm:text-[1.05rem]">Blog Archive</p>
-              <h1 className="mt-4 font-serif text-[clamp(3rem,6vw,5.2rem)] leading-[0.92] font-semibold tracking-tight text-gray-950">
+              <h1 className="mt-4 font-serif text-[clamp(2.6rem,11vw,5.2rem)] leading-[0.92] font-semibold tracking-tight text-gray-950">
                 Writing notes, challenges, and frontend lessons.
               </h1>
-              <p className="mt-5 max-w-2xl font-sans text-[1.02rem] leading-7 text-gray-600 sm:text-[1.08rem]">
+              <p className="mt-5 max-w-2xl font-sans text-[0.98rem] leading-7 text-gray-600 sm:text-[1.08rem]">
                 A structured archive of daily challenges and module-based notes, arranged by topic for easier browsing.
               </p>
             </div>
@@ -94,7 +94,7 @@ export default function BlogPage() {
               <p className="font-sans text-sm font-semibold uppercase tracking-[0.24em] text-burgundy">
                 Overview
               </p>
-              <div className="mt-4 grid grid-cols-3 gap-3">
+              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
                 {blogSections.map((section) => (
                   <div key={section.key} className="rounded-[20px] border border-[#E8DDD9] bg-[#fffaf9] p-4">
                     <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-gray-400">
@@ -111,7 +111,7 @@ export default function BlogPage() {
           </div>
         </section>
 
-        <section className="relative mx-auto max-w-7xl px-6 pb-16 sm:px-8">
+        <section className="relative mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8">
           <div className="space-y-6">
             {blogSections.map((section) => (
               <SectionBlock key={section.key} title={section.title} posts={section.posts} />

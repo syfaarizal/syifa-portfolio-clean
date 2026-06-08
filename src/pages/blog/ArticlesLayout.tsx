@@ -120,7 +120,7 @@ export default function ArticlesLayout({
   return (
     <div className="page-shell page-enter min-h-screen bg-[linear-gradient(180deg,#fffdfc_0%,#fff7f6_100%)] text-gray-900">
       <div className="sticky top-0 z-30 border-b border-[#EFE3DF]/80 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 sm:px-8">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <a
             href="/blog"
             onClick={(event) => {
@@ -140,9 +140,9 @@ export default function ArticlesLayout({
         </div>
       </div>
 
-      <main className="mx-auto max-w-6xl px-6 py-10 sm:px-8 lg:py-12">
+      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         <article className="overflow-hidden rounded-[32px] border border-[#E8DDD9] bg-white shadow-[0_20px_60px_rgba(122,15,22,0.06)]">
-          <header className="border-b border-[#F0E4E0] bg-[linear-gradient(180deg,#fffaf9_0%,#ffffff_100%)] px-6 py-7 sm:px-8 sm:py-8">
+          <header className="border-b border-[#F0E4E0] bg-[linear-gradient(180deg,#fffaf9_0%,#ffffff_100%)] px-5 py-7 sm:px-8 sm:py-8">
             <div className="flex flex-wrap items-center gap-3">
               <span className="rounded-full border border-[#E6DAD7] bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-burgundy">
                 {badge}
@@ -150,7 +150,7 @@ export default function ArticlesLayout({
               <span className="text-sm text-gray-400">{date}</span>
             </div>
 
-            <h1 className="mt-4 max-w-4xl font-serif text-[clamp(2.4rem,4.8vw,4.8rem)] leading-[0.95] font-semibold tracking-tight text-gray-950">
+            <h1 className="mt-4 max-w-4xl font-serif text-[clamp(2.1rem,10vw,4.8rem)] leading-[0.95] font-semibold tracking-tight text-gray-950">
               {title}
             </h1>
 
@@ -170,7 +170,7 @@ export default function ArticlesLayout({
             </p>
           </header>
 
-          <div className="px-6 py-7 sm:px-8 sm:py-8">
+          <div className="px-5 py-7 sm:px-8 sm:py-8">
             <div className="overflow-x-auto">
               <div className="prose prose-neutral max-w-none prose-headings:font-serif prose-headings:tracking-tight prose-h2:text-[clamp(1.6rem,2.5vw,2.2rem)] prose-h3:text-[clamp(1.3rem,2vw,1.7rem)] prose-p:font-sans prose-p:text-[1.01rem] prose-p:leading-8 prose-p:text-gray-700 prose-li:font-sans prose-li:text-gray-700 prose-li:marker:text-burgundy prose-ul:list-disc prose-ol:list-decimal prose-ul:pl-6 prose-ol:pl-6 prose-ul:my-4 prose-ol:my-4 prose-li:my-1 prose-strong:text-gray-900 prose-code:rounded prose-code:bg-[#fff4f1] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-[0.92em] prose-code:font-medium prose-code:text-burgundy [&_.tb-blog]:my-6 [&_.tb-blog]:min-w-[640px] [&_.tb-blog]:w-full [&_.tb-blog]:border-collapse [&_.tb-blog]:overflow-hidden [&_.tb-blog]:rounded-[20px] [&_.tb-blog]:border [&_.tb-blog]:border-[#E6DAD7] [&_.tb-blog]:bg-white [&_.tb-blog]:text-left [&_.tb-blog]:shadow-[0_12px_30px_rgba(122,15,22,0.05)] [&_.tb-blog_th]:border-b [&_.tb-blog_th]:border-[#E6DAD7] [&_.tb-blog_th]:bg-[#fff4f1] [&_.tb-blog_th]:px-4 [&_.tb-blog_th]:py-3 [&_.tb-blog_th]:text-sm [&_.tb-blog_th]:font-semibold [&_.tb-blog_th]:text-gray-800 [&_.tb-blog_td]:border-b [&_.tb-blog_td]:border-[#EEE2DE] [&_.tb-blog_td]:px-4 [&_.tb-blog_td]:py-3 [&_.tb-blog_td]:align-top [&_.tb-blog_td]:text-gray-700 [&_.tb-blog_tr:last-child_td]:border-b-0">
                 {children}
@@ -178,7 +178,7 @@ export default function ArticlesLayout({
             </div>
           </div>
 
-          <footer className="border-t border-[#F0E4E0] bg-[#fffdfc] px-6 py-7 sm:px-8">
+          <footer className="border-t border-[#F0E4E0] bg-[#fffdfc] px-5 py-7 sm:px-8">
             <div className="rounded-[26px] border border-[#E8DDD9] bg-white p-5 shadow-[0_14px_36px_rgba(122,15,22,0.05)] sm:p-6 [&_h2]:font-serif [&_h3]:font-serif [&_p]:font-sans [&_p]:leading-7 [&_p]:text-gray-700 [&_ul]:my-4 [&_ol]:my-4 [&_ul]:list-disc [&_ol]:list-decimal [&_ul]:pl-6 [&_ol]:pl-6 [&_li]:my-1 [&_li]:pl-1 [&_li]:font-sans [&_li]:leading-7 [&_li]:text-gray-700 [&_li::marker]:text-burgundy [&_strong]:text-gray-900 [&_code]:rounded [&_code]:bg-[#fff4f1] [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-medium [&_code]:text-burgundy">
               {conclusion}
             </div>

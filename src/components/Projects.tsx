@@ -15,7 +15,7 @@ export default function Projects() {
           <p className="section-label sm:text-[1.2rem]">Featured Projects</p>
           <h2 className="section-heading sm:text-[3rem]">Projects That Solve Real Problems</h2>
           <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
-          <p className="mt-4 max-w-2xl font-sans text-[1.3rem] leading-6 text-gray-500">
+          <p className="mt-4 max-w-2xl font-sans text-[1rem] leading-7 text-gray-500 sm:text-[1.15rem]">
             A selection of products, tools, and systems I&apos;ve built.
           </p>
         </div>
@@ -49,13 +49,13 @@ export default function Projects() {
             key={id}
             className="card-base group overflow-hidden transition-shadow duration-200 hover:shadow-card"
           >
-            <div className="h-50 overflow-hidden bg-gray-100">
+            <div className="aspect-[4/3] overflow-hidden bg-gray-100">
               <img src={img} alt={title} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
             </div>
 
             <div className="p-4">
-              <h3 className="mb-0.5 font-sans font-semibold text-gray-900 sm:text-[1.25rem]">{title}</h3>
-              <p className="mb-3 font-sans text-gray-500 sm:text-[0.95rem]">{desc}</p>
+              <h3 className="mb-0.5 font-sans text-[1.05rem] font-semibold text-gray-900 sm:text-[1.25rem]">{title}</h3>
+              <p className="mb-3 font-sans text-[0.92rem] text-gray-500 sm:text-[0.95rem]">{desc}</p>
               <div className="flex flex-wrap gap-1.5">
                 {tags.map((tag) => (
                   <span

@@ -263,7 +263,7 @@ const groups: SkillGroup[] = [
 
 const SkillCard = ({ skill }: { skill: SkillItem }) => (
   <article
-    className="skill-card group w-[286px] shrink-0 rounded-2xl border border-[#ece4e1] bg-white/90 p-4 shadow-[0_10px_30px_rgba(17,24,39,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-card"
+    className="skill-card group w-[clamp(220px,78vw,286px)] shrink-0 rounded-2xl border border-[#ece4e1] bg-white/90 p-4 shadow-[0_10px_30px_rgba(17,24,39,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-card sm:w-[286px]"
   >
     <div className="flex items-start gap-4">
       <div
@@ -285,7 +285,7 @@ const SkillCard = ({ skill }: { skill: SkillItem }) => (
 )
 
 const MarqueeRow = ({ title, items, reverse = false, duration }: SkillGroup) => (
-  <div className="skill-row rounded-[28px] mt-0 bg-[#fffdfd] px-4 shadow-[0_8px_24px_rgba(17,24,39,0.03)] sm:px-5">
+  <div className="skill-row mt-0 rounded-[28px] bg-[#fffdfd] px-3 shadow-[0_8px_24px_rgba(17,24,39,0.03)] sm:px-5">
     <div className="mb-4 flex items-end justify-between gap-4">
       <div>
         <p className="section-label !mb-1 sm:text-[1rem]">{title}</p>
@@ -294,8 +294,8 @@ const MarqueeRow = ({ title, items, reverse = false, duration }: SkillGroup) => 
     </div>
 
     <div className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-[#fffdfd] to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-[#fffdfd] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#fffdfd] to-transparent sm:w-20" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#fffdfd] to-transparent sm:w-20" />
       <div
         className={`marquee-track ${reverse ? 'reverse' : ''}`}
         style={{ animationDuration: duration }}
@@ -316,7 +316,7 @@ export default function Skills() {
           <p className="section-label sm:text-[1.2rem]">My Skills</p>
           <h2 className="section-heading sm:text-[3rem]">Tech Stack &amp; Expertise</h2>
           <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
-          <p className="mt-4 max-w-2xl font-sans sm:text-[1.3rem] leading-6 text-gray-500">
+          <p className="mt-4 max-w-2xl font-sans text-[1rem] leading-7 text-gray-500 sm:text-[1.1rem]">
             I use modern web technologies to build responsive interfaces, scalable products, and efficient workflows.
           </p>
         </div>
