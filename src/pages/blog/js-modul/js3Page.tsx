@@ -28,12 +28,12 @@ export default function Js3Page() {
           tags: ['JavaScript', 'Logic', 'Control Flow'],
         },
         {
-          path: '/blog/days-challenge/day6',
-          date: 'June 15, 2025',
-          title: 'Day 6: Odd, Even, or Special?',
+          path: '/blog/js-modul/js4',
+          date: 'Jun 2026',
+          title: 'Function Mastery: From Beginner to Clean Code',
           excerpt:
-            'Creating a weather application that fetches data from an API and displays it beautifully.',
-          tags: ['JavaScript', 'Conditions', 'Logic'],
+            'When your code gets long and copy–paste starts spreading, that\'s your sign: you need functions.',
+          tags: ['JavaScript', 'Functions', 'Clean Code'],
         },
       ]}
       conclusion={
