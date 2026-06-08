@@ -18,7 +18,24 @@ export default function Js3Page() {
         path: '/blog/js-modul/js3-solutions',
         title: 'Array & Object — Solutions',
       }}
-      related={[]}
+      related={[
+        {
+          path: '/blog/js-modul/js2',
+          date: 'Jun 2026',
+          title: 'Logic Brain Gym',
+          excerpt:
+            'Mastering control flow in JavaScript.',
+          tags: ['JavaScript', 'Logic', 'Control Flow'],
+        },
+        {
+          path: '/blog/days-challenge/day6',
+          date: 'June 15, 2025',
+          title: 'Day 6: Odd, Even, or Special?',
+          excerpt:
+            'Creating a weather application that fetches data from an API and displays it beautifully.',
+          tags: ['JavaScript', 'Conditions', 'Logic'],
+        },
+      ]}
       conclusion={
         <>
           <h3 className="mb-3 font-bold text-[1.5rem]">

@@ -20,20 +20,20 @@ export default function Js2Page() {
       }}
       related={[
         {
-          path: '/blog/days-challenge/day4',
-          date: 'June 11, 2025',
-          title: 'Day 4: Number Guessing Game',
+          path: '/blog/js-modul/js1',
+          date: 'Jun 2026',
+          title: 'JavaScript Basics',
           excerpt:
-            'Creating an engaging number guessing game with random number generation and user feedback.',
-          tags: ['JavaScript', 'Game', 'Logic'],
+            'Learn the fundamentals of JavaScript programming.',
+          tags: ['JavaScript', 'Front-End', 'Logic'],
         },
         {
-          path: '/blog/days-challenge/day6',
-          date: 'June 15, 2025',
-          title: 'Day 6: Odd, Even, or Special?',
+          path: '/blog/js-modul/js3',
+          date: 'Jun 2026',
+          title: 'Data Exploration: Array & Object',
           excerpt:
-            'Creating a weather application that fetches data from an API and displays it beautifully.',
-          tags: ['JavaScript', 'Conditions', 'Logic'],
+            'Dive deep into arrays and objects in JavaScript.',
+          tags: ['JavaScript', 'Array', 'Object', 'Data'],
         },
       ]}
       conclusion={

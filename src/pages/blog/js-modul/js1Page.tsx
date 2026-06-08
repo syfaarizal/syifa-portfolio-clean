@@ -5,7 +5,7 @@ export default function Js1Page() {
     <ArticlesLayout
       badge="JS Module 1"
       title="JavaScript Basics: Your First Step Into the Logic World"
-      date="May 2025"
+      date="Jun 2026"
       tags="JavaScript, Front-End, Logic"
       readingTime="6 min read"
       githubUrl="#"

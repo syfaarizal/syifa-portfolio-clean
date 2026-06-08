@@ -20,20 +20,20 @@ export default function Js2SolutionPage() {
       }}
       related={[
         {
-          path: '/blog/days-challenge/day4',
-          date: 'June 11, 2025',
-          title: 'Day 4: Number Guessing Game',
+          path: '/blog/js-modul/js2',
+          date: 'Jun 2026',
+          title: 'Logic Brain Gym',
           excerpt:
-            'Creating an engaging number guessing game with random number generation and user feedback.',
-          tags: ['JavaScript', 'Game', 'Logic'],
+            'Mastering control flow in JavaScript.',
+          tags: ['JavaScript', 'Logic', 'Control Flow'],
         },
         {
-          path: '/blog/days-challenge/day6',
-          date: 'June 15, 2025',
-          title: 'Day 6: Odd, Even, or Special?',
+          path: '/blog/js-modul/js3-solutions',
+          date: 'Jan 2026',
+          title: 'Array & Object — Solutions',
           excerpt:
-            'Creating a weather application that fetches data from an API and displays it beautifully.',
-          tags: ['JavaScript', 'Conditions', 'Logic'],
+            'Official solutions for Module 3 challenges. If you didn\'t try first — scroll back.',
+          tags: ['JavaScript', 'Array', 'Object', 'Solutions'],
         },
       ]}
       conclusion={
