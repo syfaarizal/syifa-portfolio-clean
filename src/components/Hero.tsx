@@ -46,10 +46,10 @@ const socialLinks = [
 const title = 'Front-End Developer';
 
 const valueProps = [
-  'Building Responsive Interfaces',
+  'Workflow Automation',
   'Creating Digital Experiences',
   'AI-Powered Products',
-  'Designing Smart Automations',
+  'Responsive UI',
 ]
 
 const Dot = ({ cx, cy }: { cx: number; cy: number }) => (
@@ -141,9 +141,13 @@ export default function Hero() {
               <button className="btn-primary justify-center shadow-sm sm:text-[1.05rem]">
                 View My Work <ArrowRightIcon />
               </button>
-              <button className="btn-outline justify-center sm:text-[1.05rem]">
+              <a
+                className="btn-outline justify-center sm:text-[1.05rem]"
+                href="/assets/cv/Syifa_Fauziyah_Arizal_CV.pdf"
+                download="Syifa_Fauziyah_Arizal_CV.pdf"
+              >
                 Download CV <DownloadIcon />
-              </button>
+              </a>
             </div>
 
             <div className="mt-7 flex items-center gap-2">
