@@ -95,10 +95,6 @@ export default function About() {
               I enjoy turning ideas into scalable products through code, design, and system thinking. <br /> <br />
               Currently exploring React, AI workflows, and product development.
             </p>
-
-            <button className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-[#CCCCCC] px-5 py-2.5 font-sans text-[1rem] font-medium text-gray-700 transition-colors duration-200 hover:border-burgundy hover:text-burgundy sm:w-auto">
-              More About Me <i className="ml-1 text-sm">→</i>
-            </button>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
