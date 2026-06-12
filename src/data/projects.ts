@@ -94,6 +94,56 @@ export const projects: Project[] = [
       outcome: 'The final design feels calm, practical, and easy to use for repeat focus sessions.',
     },
   },
+  {
+    id: 4,
+    title: 'Kichi — AI-Powered Discord Companion',
+    desc: 'An AI companion for Discord with memory, reminders, voice support, and conversational intelligence.',
+    tags: ['Node.js', 'Discord.js', 'OpenRouter API', 'Piper TTS'],
+    category: 'AI / Productivity',
+    img: '/assets/projects/kichi-preview.png',
+    year: '2026',
+    demoUrl: '#',
+    sourceUrl: 'https://github.com/syfaarizal/pirate-discord-bot',
+    detail: {
+      overview:
+        'Kichi is an AI-powered Discord companion designed to feel less like a bot and more like a real server member. It combines conversational AI, per-user memory, automated reminders, voice interaction, and utility tools into a single experience.',
+      challenge:
+        'Most Discord bots are command-driven and transactional. The challenge was creating a companion that feels personal, remembers users, supports voice interactions, and remains useful without overwhelming server members.',
+      solution:
+        'Built a modular Discord application powered by AI, memory management, automated scheduling, voice capabilities, and utility features. Kichi combines natural conversations, contextual memory, reminders, and voice support into a unified experience.',
+      techStack: [
+        'Node.js',
+        'Discord.js v14',
+        'OpenRouter API',
+        'Piper TTS',
+        'JSON Database',
+        'Linux VPS',
+        'PM2'
+      ],
+      keyFeatures: [
+        'Per-user conversational memory',
+        'AI-powered chat assistant',
+        'Natural language reminder creation',
+        'Custom server reminder system',
+        'Voice channel integration',
+        'Offline text-to-speech',
+        'Lyrics search system',
+        'Anti-spam protection',
+        'Persistent VPS deployment',
+        'Personalized user profiles'
+      ],
+      designProcess:
+        'The system was designed around the idea of companionship rather than command execution. Features were developed in layers: conversational AI, memory persistence, reminder automation, voice interaction, and utility tools. The architecture was separated into commands, services, utilities, and providers to keep future feature expansion manageable.',
+      lessonsLearned:
+        'Building conversational products requires more than AI integration. User memory, response timing, personality consistency, and interaction design have a major impact on how human and engaging the experience feels.',
+      problem:
+        'Discord communities often rely on multiple bots for reminders, utility commands, music-related tasks, and AI conversations. This creates fragmented experiences and inconsistent interactions for users.',
+      process:
+        'I developed Kichi using Discord.js and OpenRouter AI, implemented per-user memory storage, built an automated reminder scheduler, integrated offline text-to-speech through Piper, deployed the system on a Linux VPS, and optimized interaction flow with cooldowns, typing simulation, and personalized responses.',
+      outcome:
+        'The result is a persistent AI companion capable of remembering users, creating reminders through natural language, joining voice channels, speaking through TTS, retrieving lyrics, and maintaining engaging conversations. Kichi demonstrates practical AI integration, system architecture design, API orchestration, and real-world deployment experience.'
+    }
+  }
 ]
 
 export const projectCategories = ['All', ...new Set(projects.map((project) => project.category))]
