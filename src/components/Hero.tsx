@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { navigateWithTransition } from '../lib/navigation'
 
 const GithubIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -138,7 +139,11 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-              <button className="btn-primary justify-center shadow-sm sm:text-[1.05rem]">
+              <button
+                type="button"
+                onClick={() => navigateWithTransition('/projects')}
+                className="btn-primary justify-center shadow-sm sm:text-[1.05rem]"
+              >
                 View My Work <ArrowRightIcon />
               </button>
               <a
