@@ -120,6 +120,76 @@ export const projects: Project[] = [
       outcome:
         'The result is a persistent AI companion capable of remembering users, creating reminders through natural language, joining voice channels, speaking through TTS, retrieving lyrics, and maintaining engaging conversations. Kichi demonstrates practical AI integration, system architecture design, API orchestration, and real-world deployment experience.'
     }
+  },
+  {
+    id: 4,
+    title: 'Shopi — Modern Full-Stack E-Commerce Platform',
+    desc: 'A modern e-commerce platform featuring authentication, shopping cart, wishlist, admin dashboard, product management, payments, and order tracking.',
+    tags: [
+      'React',
+      'Tailwind CSS',
+      'FastAPI',
+      'MongoDB'
+    ],
+    category: 'Web Development / E-Commerce',
+    img: '/assets/projects/shopi-preview.png',
+    year: '2026',
+    demoUrl: '#',
+    sourceUrl: 'https://github.com/syfaarizal/shopi',
+    detail: {
+      overview:
+        'Shopi is a modern full-stack e-commerce platform designed to provide a complete online shopping experience. The application includes user authentication, product discovery, wishlist management, shopping cart functionality, checkout flow, payment simulation, order tracking, and an administrative dashboard for managing products, users, and orders.',
+
+      challenge:
+        'Building an e-commerce application requires managing multiple interconnected systems such as authentication, product catalogs, order processing, payments, user roles, and administrative tools while maintaining a seamless user experience across desktop and mobile devices.',
+
+      solution:
+        'Developed a scalable full-stack architecture using React for the frontend and FastAPI for the backend. The platform integrates authentication, state management, product CRUD operations, payment workflows, image uploads, and role-based access control into a unified marketplace experience.',
+
+      techStack: [
+        'React',
+        'Tailwind CSS',
+        'React Router',
+        'Zustand',
+        'TanStack Query',
+        'FastAPI',
+        'MongoDB',
+        'JWT Authentication',
+        'Motor',
+        'Python',
+        'Vite'
+      ],
+
+      keyFeatures: [
+        'User authentication with JWT',
+        'Role-based access control (User & Admin)',
+        'Product catalog and search filters',
+        'Wishlist management',
+        'Shopping cart system',
+        'Checkout and order management',
+        'Dummy payment gateway simulation',
+        'Admin dashboard',
+        'Product CRUD operations',
+        'Image upload support',
+        'Order status management',
+        'Responsive design with dark mode'
+      ],
+
+      designProcess:
+        'The application was designed following a marketplace-first approach. Development started with the customer experience, including product browsing, cart management, and checkout flow. Administrative features such as product management, order monitoring, image uploads, and user role management were then implemented to create a complete e-commerce ecosystem. The architecture separates frontend state management, API services, authentication, and database operations to improve maintainability and scalability.',
+
+      lessonsLearned:
+        'Building Shopi provided valuable experience in designing full-stack systems where frontend and backend responsibilities must work together seamlessly. The project highlighted the importance of state management, API design, authentication security, role-based authorization, and scalable application architecture.',
+
+      problem:
+        'Many e-commerce platforms require a combination of customer-facing features and internal management tools. Without proper architecture, handling products, orders, payments, user roles, and administration can quickly become difficult to maintain and extend.',
+
+      process:
+        'I developed the frontend using React, Tailwind CSS, Zustand, and TanStack Query to create a responsive shopping experience. On the backend, FastAPI and MongoDB were used to build REST APIs for authentication, products, orders, wishlist management, payments, and user profiles. Administrative functionality was implemented through dedicated dashboard modules, including product CRUD operations, image uploads, order status updates, and role-based access control.',
+
+      outcome:
+        'The final product is a fully functional e-commerce platform featuring authentication, product discovery, cart and wishlist management, checkout workflows, payment simulation, order tracking, and a comprehensive admin dashboard. Shopi demonstrates practical experience in full-stack development, API architecture, database integration, state management, authentication systems, and modern e-commerce application design.'
+    }
   }
 ]
 
