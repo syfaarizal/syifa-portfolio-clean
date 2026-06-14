@@ -7,6 +7,7 @@ import Projects from './components/Projects'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ScrollReveal from './components/ScrollReveal'
 import ProjectsPage from './pages/projects/ProjectsPage'
 import BlogPage from './pages/blog/BlogPage'
 import Day1Page from './pages/blog/days-challenge/day1Page'
@@ -123,25 +124,35 @@ function App() {
       <Navbar />
 
       <main>
-        <Hero />
-        <About />
-        <Skills />
+        <ScrollReveal direction="down">
+          <Hero />
+        </ScrollReveal>
+        <ScrollReveal direction="up">
+          <About />
+        </ScrollReveal>
+        <ScrollReveal direction="down">
+          <Skills />
+        </ScrollReveal>
 
         <section className="border-t border-[#EAEAEA] bg-white py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <Projects />
+            <ScrollReveal direction="up">
+              <Projects />
+            </ScrollReveal>
           </div>
         </section>
 
         <section className="bg-white pb-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mt-4">
+            <ScrollReveal direction="down" className="mt-4">
               <Blog />
-            </div>
+            </ScrollReveal>
           </div>
         </section>
 
-        <Contact />
+        <ScrollReveal direction="up">
+          <Contact />
+        </ScrollReveal>
       </main>
 
       <Footer />

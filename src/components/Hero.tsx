@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { navigateWithTransition } from '../lib/navigation'
+import useParallax from '../hooks/useParallax'
 
 const GithubIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -76,6 +77,7 @@ const DotsPattern = () => {
 export default function Hero() {
   const [valuePropIndex, setValuePropIndex] = useState(0)
   const [valuePropVisible, setValuePropVisible] = useState(true)
+  const parallaxOffset = useParallax(0.08)
 
   useEffect(() => {
     const fadeDuration = 180
@@ -99,14 +101,32 @@ export default function Hero() {
       className="relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#fffaf9_100%)]"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-28 top-20 h-72 w-72 rounded-full bg-burgundy/8 blur-3xl animate-[pulse_10s_ease-in-out_infinite] sm:h-80 sm:w-80" />
-        <div className="absolute right-0 top-40 h-72 w-72 rounded-full bg-[#e7c6cb]/35 blur-3xl animate-[pulse_12s_ease-in-out_infinite] sm:h-80 sm:w-80" />
-        <div className="absolute bottom-0 left-1/2 h-32 w-[20rem] -translate-x-1/2 rounded-full bg-burgundy/5 blur-3xl animate-[pulse_14s_ease-in-out_infinite] sm:h-40 sm:w-[32rem]" />
+        <div className="absolute -left-28 top-20 h-72 w-72 animate-[pulse_10s_ease-in-out_infinite] sm:h-80 sm:w-80">
+          <div
+            className="h-full w-full rounded-full bg-burgundy/8 blur-3xl"
+            style={{ transform: `translate3d(0, ${parallaxOffset * 0.15}px, 0)` }}
+          />
+        </div>
+        <div className="absolute right-0 top-40 h-72 w-72 animate-[pulse_12s_ease-in-out_infinite] sm:h-80 sm:w-80">
+          <div
+            className="h-full w-full rounded-full bg-[#e7c6cb]/35 blur-3xl"
+            style={{ transform: `translate3d(0, ${parallaxOffset * -0.12}px, 0)` }}
+          />
+        </div>
+        <div className="absolute bottom-0 left-1/2 h-32 w-[20rem] -translate-x-1/2 animate-[pulse_14s_ease-in-out_infinite] sm:h-40 sm:w-[32rem]">
+          <div
+            className="h-full w-full rounded-full bg-burgundy/5 blur-3xl"
+            style={{ transform: `translate3d(0, ${parallaxOffset * -0.08}px, 0)` }}
+          />
+        </div>
       </div>
 
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <div className="grid gap-12 py-12 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[1fr_0.98fr] lg:items-center lg:gap-8 lg:py-0">
-          <div className="relative z-10 max-w-2xl">
+          <div
+            className="relative z-10 max-w-2xl"
+            style={{ transform: `translate3d(0, ${parallaxOffset * -0.06}px, 0)` }}
+          >
             <p className="mb-4 font-sans text-[1.05rem] tracking-wide text-gray-600 sm:text-[1.2rem] lg:text-[1.5rem]">
               Hello, I&apos;m
             </p>
@@ -181,11 +201,19 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative flex min-h-[420px] items-end justify-center sm:min-h-[520px] lg:min-h-[760px] lg:justify-end">
+          <div
+            className="relative flex min-h-[420px] items-end justify-center sm:min-h-[520px] lg:min-h-[760px] lg:justify-end"
+            style={{ transform: `translate3d(0, ${parallaxOffset * 0.05}px, 0)` }}
+          >
             <div
               className="absolute left-1/2 top-4 h-[430px] w-[280px] -translate-x-[54%] rounded-t-[150px] rounded-b-[0] bg-burgundy shadow-[0_24px_60px_rgba(122,15,22,0.18)] transition-transform duration-500 ease-out hover:-translate-y-1 sm:top-3 sm:h-[560px] sm:w-[330px] md:h-[620px] md:w-[360px] lg:left-[8%] lg:top-14 lg:-translate-x-0 lg:rounded-t-[190px] lg:h-[640px] lg:w-[380px]"
               aria-hidden="true"
-            />
+            >
+              <div
+                className="h-full w-full rounded-[inherit]"
+                style={{ transform: `translate3d(0, ${parallaxOffset * 0.08}px, 0)` }}
+              />
+            </div>
 
             <div
               className="absolute right-[10%] top-[34%] hidden h-[255px] w-[255px] rounded-full border border-[#E9D9D2] lg:block"
@@ -196,12 +224,15 @@ export default function Hero() {
               <DotsPattern />
             </div>
 
-            <div className="absolute left-1/2 top-[16%] z-10 -translate-x-[54%] transition-transform duration-500 ease-out sm:top-[18.9%] sm:-translate-x-[45%] lg:left-[8%] lg:translate-x-0">
+            <div
+              className="absolute left-1/2 top-[16%] z-10 -translate-x-[54%] transition-transform duration-500 ease-out sm:top-[18.9%] sm:-translate-x-[45%] lg:left-[8%] lg:translate-x-0"
+            >
               <img
                 src="/assets/gambar-syifa-nobg.png"
                 alt="Syifa Fauziyah Arizal"
                 className="w-[279px] max-w-none select-none object-contain sm:w-[280px] md:w-[315px] lg:w-[405px]"
                 draggable={false}
+                style={{ transform: `translate3d(0, ${parallaxOffset * -0.02}px, 0)` }}
               />
             </div>
 

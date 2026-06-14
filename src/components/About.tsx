@@ -1,3 +1,5 @@
+import ScrollReveal from './ScrollReveal'
+
 const folderIcon = () => (
   <svg width="23" height="23" viewBox="0 0 48 48" fill="#7A0F16">
     <g id="SVGRepo_bgCarrier" strokeWidth="0" />
@@ -82,22 +84,26 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-20">
           <div className="max-w-xl">
-            <p className="section-label mb-5 sm:text-[1.2rem]">About Me</p>
+            <ScrollReveal direction="down">
+              <div>
+                <p className="section-label mb-5 sm:text-[1.2rem]">About Me</p>
 
-            <div className="mb-1">
-              <h2 className="section-heading mb-0">Building Products</h2>
-              <h2 className="section-heading mb-3">Not Just Websites</h2>
-            </div>
-            <div className="mb-6 h-0.5 w-[4.5rem] rounded-full bg-burgundy" />
+                <div className="mb-1">
+                  <h2 className="section-heading mb-0">Building Products</h2>
+                  <h2 className="section-heading mb-3">Not Just Websites</h2>
+                </div>
+                <div className="mb-6 h-0.5 w-[4.5rem] rounded-full bg-burgundy" />
 
-            <p className="mb-4 font-sans text-[1rem] leading-relaxed text-gray-500 sm:text-[1.1rem] lg:text-[1.2rem]">
-              I'm a Front-End Developer and digital builder focused on creating modern web experiences. <br /> <br />
-              I enjoy turning ideas into scalable products through code, design, and system thinking. <br /> <br />
-              Currently exploring React, AI workflows, and product development.
-            </p>
+                <p className="mb-4 font-sans text-[1rem] leading-relaxed text-gray-500 sm:text-[1.1rem] lg:text-[1.2rem]">
+                  I'm a Front-End Developer and digital builder focused on creating modern web experiences. <br /> <br />
+                  I enjoy turning ideas into scalable products through code, design, and system thinking. <br /> <br />
+                  Currently exploring React, AI workflows, and product development.
+                </p>
+              </div>
+            </ScrollReveal>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <ScrollReveal direction="up" className="scroll-reveal-stagger grid grid-cols-1 gap-4 sm:grid-cols-2">
             {infoCards.map(({ icon: Icon, title, lines }) => (
               <div
                 key={title}
@@ -125,7 +131,7 @@ export default function About() {
                 </div>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

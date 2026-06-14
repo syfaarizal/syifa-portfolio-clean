@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import ScrollReveal from './ScrollReveal'
 
 type SkillItem = {
   name: string
@@ -312,20 +313,22 @@ export default function Skills() {
   return (
     <section id="skills" className="overflow-hidden bg-white py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
-        <div className="mb-10">
-          <p className="section-label sm:text-[1.2rem]">My Skills</p>
-          <h2 className="section-heading sm:text-[3rem]">Tech Stack &amp; Expertise</h2>
-          <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
-          <p className="mt-4 max-w-2xl font-sans text-[1rem] leading-7 text-gray-500 sm:text-[1.1rem]">
-            I use modern web technologies to build responsive interfaces, scalable products, and efficient workflows.
-          </p>
-        </div>
+        <ScrollReveal direction="down" className="mb-10">
+          <div>
+            <p className="section-label sm:text-[1.2rem]">My Skills</p>
+            <h2 className="section-heading sm:text-[3rem]">Tech Stack &amp; Expertise</h2>
+            <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
+            <p className="mt-4 max-w-2xl font-sans text-[1rem] leading-7 text-gray-500 sm:text-[1.1rem]">
+              I use modern web technologies to build responsive interfaces, scalable products, and efficient workflows.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="space-y-5">
+        <ScrollReveal direction="up" className="scroll-reveal-stagger space-y-5">
           {groups.map((group) => (
             <MarqueeRow key={group.title} {...group} />
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )

@@ -1,3 +1,4 @@
+import ScrollReveal from './ScrollReveal'
 import { projects } from '../data/projects'
 import { navigateWithTransition } from '../lib/navigation'
 
@@ -12,40 +13,42 @@ export default function Projects() {
 
   return (
     <div id="projects">
-      <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-        <div className="max-w-2xl">
-          <p className="section-label sm:text-[1.2rem]">Featured Projects</p>
-          <h2 className="section-heading sm:text-[3rem]">Projects That Solve Real Problems</h2>
-          <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
-          <p className="mt-4 max-w-2xl font-sans text-[1rem] leading-7 text-gray-500 sm:text-[1.15rem]">
-            A selection of products, tools, and systems I&apos;ve built.
-          </p>
-        </div>
-        <button
-          type="button"
-          onClick={() => navigateWithTransition('/projects')}
-          className="group flex items-center gap-2 self-start font-sans font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
-        >
-          <span className="flex items-center gap-2">
-            <span
-              aria-hidden="true"
-              className="h-2 w-2 rounded-full bg-burgundy shadow-[0_0_0_0_rgba(122,15,22,0.35)] motion-safe:animate-attention-pulse motion-reduce:animate-none"
-            />
-            <span className="relative">
-              View All Projects
+      <ScrollReveal direction="down" className="mb-8">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <p className="section-label sm:text-[1.2rem]">Featured Projects</p>
+            <h2 className="section-heading sm:text-[3rem]">Projects That Solve Real Problems</h2>
+            <div className="mt-3 h-0.5 w-10 rounded-full bg-burgundy" />
+            <p className="mt-4 max-w-2xl font-sans text-[1rem] leading-7 text-gray-500 sm:text-[1.15rem]">
+              A selection of products, tools, and systems I&apos;ve built.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => navigateWithTransition('/projects')}
+            className="group flex items-center gap-2 self-start font-sans font-medium text-burgundy transition-all duration-200 hover:gap-2.5 lg:pb-2"
+          >
+            <span className="flex items-center gap-2">
               <span
                 aria-hidden="true"
-                className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-burgundy/70 transition-transform duration-300 group-hover:scale-x-100"
+                className="h-2 w-2 rounded-full bg-burgundy shadow-[0_0_0_0_rgba(122,15,22,0.35)] motion-safe:animate-attention-pulse motion-reduce:animate-none"
               />
+              <span className="relative">
+                View All Projects
+                <span
+                  aria-hidden="true"
+                  className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-burgundy/70 transition-transform duration-300 group-hover:scale-x-100"
+                />
+              </span>
             </span>
-          </span>
-          <span className="transition-transform duration-200 group-hover:translate-x-0.5">
-            <ArrowIcon />
-          </span>
-        </button>
-      </div>
+            <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+              <ArrowIcon />
+            </span>
+          </button>
+        </div>
+      </ScrollReveal>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <ScrollReveal direction="up" className="scroll-reveal-stagger grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         {featuredProjects.map(({ id, title, desc, tags, img }) => (
           <article
             key={id}
@@ -71,7 +74,7 @@ export default function Projects() {
             </div>
           </article>
         ))}
-      </div>
+      </ScrollReveal>
     </div>
   )
 }

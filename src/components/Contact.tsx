@@ -1,4 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react'
+import ScrollReveal from './ScrollReveal'
 
 const SendIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -61,17 +62,22 @@ export default function Contact() {
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-[320px_1fr] lg:items-start lg:gap-16">
           <div className="max-w-xl">
-            <p className="section-label sm:text-[1.2rem]">Get In Touch</p>
-            <h2 className="section-heading mb-3 sm:text-[2.2rem]">Let's Work Together</h2>
-            <div className="mb-4 h-0.5 w-10 rounded-full bg-burgundy" />
-            <p className="font-sans text-[1rem] leading-relaxed text-gray-500 sm:text-[1.1rem] lg:text-[1.2rem]">
-              Have an interesting project or idea? I'm ready to help you turn it into an impactful digital solution.
-            </p>
+            <ScrollReveal direction="down">
+              <div>
+                <p className="section-label sm:text-[1.2rem]">Get In Touch</p>
+                <h2 className="section-heading mb-3 sm:text-[2.2rem]">Let's Work Together</h2>
+                <div className="mb-4 h-0.5 w-10 rounded-full bg-burgundy" />
+                <p className="font-sans text-[1rem] leading-relaxed text-gray-500 sm:text-[1.1rem] lg:text-[1.2rem]">
+                  Have an interesting project or idea? I'm ready to help you turn it into an impactful digital solution.
+                </p>
+              </div>
+            </ScrollReveal>
           </div>
 
           <div className="w-full">
             <form className="space-y-4" onSubmit={handleSubmit}>
-              <div className="grid gap-3 md:grid-cols-2">
+              <ScrollReveal direction="up" className="scroll-reveal-stagger">
+                <div className="grid gap-3 md:grid-cols-2">
                 <input
                   type="text"
                   name="name"
@@ -109,7 +115,9 @@ export default function Contact() {
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'} <SendIcon />
                 </button>
-              </div>
+                </div>
+
+              </ScrollReveal>
 
               {status.type !== 'idle' && (
                 <p
