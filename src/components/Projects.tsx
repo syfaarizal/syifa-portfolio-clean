@@ -8,6 +8,8 @@ const ArrowIcon = () => (
 )
 
 export default function Projects() {
+  const featuredProjects = projects.filter((project) => project.id >= 1 && project.id <= 3)
+
   return (
     <div id="projects">
       <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
@@ -44,7 +46,7 @@ export default function Projects() {
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {projects.map(({ id, title, desc, tags, img }) => (
+        {featuredProjects.map(({ id, title, desc, tags, img }) => (
           <article
             key={id}
             className="card-base group overflow-hidden transition-shadow duration-200 hover:shadow-card"
