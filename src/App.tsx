@@ -120,23 +120,23 @@ function App() {
   }
 
   return (
-    <div className="page-shell page-enter min-h-screen bg-white font-sans">
+    <div className="page-shell home-shell min-h-screen bg-white font-sans">
       <Navbar />
 
       <main>
-        <ScrollReveal direction="down">
+        <ScrollReveal direction="down" delay={0}>
           <Hero />
         </ScrollReveal>
-        <ScrollReveal direction="up">
+        <ScrollReveal direction="up" delay={120}>
           <About />
         </ScrollReveal>
-        <ScrollReveal direction="down">
+        <ScrollReveal direction="down" delay={200}>
           <Skills />
         </ScrollReveal>
 
         <section className="border-t border-[#EAEAEA] bg-white py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <ScrollReveal direction="up">
+            <ScrollReveal direction="up" delay={260}>
               <Projects />
             </ScrollReveal>
           </div>
@@ -144,13 +144,13 @@ function App() {
 
         <section className="bg-white pb-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <ScrollReveal direction="down" className="mt-4">
+            <ScrollReveal direction="down" className="mt-4" delay={320}>
               <Blog />
             </ScrollReveal>
           </div>
         </section>
 
-        <ScrollReveal direction="up">
+        <ScrollReveal direction="up" delay={380}>
           <Contact />
         </ScrollReveal>
       </main>
