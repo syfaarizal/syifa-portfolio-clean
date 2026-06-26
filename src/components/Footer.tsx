@@ -53,8 +53,6 @@ const projectLinks = [
   { label: 'Blog', href: '/#blog' },
 ]
 
-const services = ['Web Development', 'UI/UX Implementation', 'Responsive Design', 'Performance Optimization']
-
 const socialIcons = [
   { Icon: GithubIcon, href: 'https://github.com/syfaarizal', label: 'GitHub' },
   { Icon: LinkedinIcon, href: 'https://linkedin.com/in/syifaarizal', label: 'LinkedIn' },
@@ -80,7 +78,7 @@ export default function Footer() {
   return (
     <footer style={{ background: 'linear-gradient(135deg, #4a0810 0%, #2d050b 40%, #1a0306 100%)' }}>
       <div className="mx-auto max-w-7xl px-6 pb-10 pt-14 sm:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-12 sm:grid-cols-2 xl:grid-cols-3">
           <div>
             <div className="mb-4 flex items-center gap-1.5">
               <LogoIcon />
@@ -121,21 +119,6 @@ export default function Footer() {
                     className="font-sans text-sm text-white/50 transition-colors duration-200 hover:text-white"
                   >
                     {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="mb-5 font-sans text-sm font-semibold uppercase tracking-widest text-white opacity-90">
-              Services
-            </h4>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service}>
-                  <a href="#" className="font-sans text-sm text-white/50 transition-colors duration-200 hover:text-white">
-                    {service}
                   </a>
                 </li>
               ))}
