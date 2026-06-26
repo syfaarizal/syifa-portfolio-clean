@@ -143,17 +143,8 @@ export default function ProjectsPage() {
                 Selected work, simplified and easier to scan.
               </h1>
               <p className="mt-5 max-w-2xl font-sans text-[0.98rem] leading-7 text-gray-600 sm:text-[1.1rem]">
-                A focused collection of three main projects with direct access to demo, source, and a detailed
+                A focused collection of projects with direct access to demo, source, and a detailed
                 breakdown in a modal.
-              </p>
-            </div>
-
-            <div className="relative z-10 rounded-[28px] border border-white/70 bg-white/85 p-5 shadow-[0_20px_60px_rgba(122,15,22,0.08)] backdrop-blur">
-              <p className="font-sans text-sm font-semibold uppercase tracking-[0.24em] text-burgundy">
-                Main collection
-              </p>
-              <p className="mt-3 font-sans text-[1.02rem] leading-7 text-gray-600">
-                Three cards, one clean row on desktop, stacked naturally on smaller screens.
               </p>
             </div>
           </div>
