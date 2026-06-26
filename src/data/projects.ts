@@ -33,7 +33,7 @@ export const projects: Project[] = [
     category: 'Showcase',
     img: '/assets/projects/showcase-review.png',
     year: '2025',
-    demoUrl: 'https://loginlab.vercel.app/',
+    demoUrl: 'https://libr-showcase.vercel.app/',
     sourceUrl: 'https://github.com/syfaarizal/showcase-login-page',
     detail: {
       overview: 'A polished login-page showcase built around a brand-first visual direction and clean UI hierarchy.',
@@ -50,79 +50,6 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: 'CruisePoint Indonesia',
-    desc: 'Designed to improve user engagement and showcase tourism services effectively.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    category: 'Landing Page',
-    img: '/assets/projects/cruisePoint-preview.png',
-    year: '2024',
-    demoUrl: 'https://syfaarizal.github.io/cruishpoint-indonesia/',
-    sourceUrl: 'https://github.com/syfaarizal/cruishpoint-indonesia',
-    detail: {
-      overview: 'A landing page designed for CruisePoint Indonesia with a simple commercial story and clear brand cues.',
-      challenge: 'Present a travel service in a way that feels credible, tidy, and easy to navigate on mobile.',
-      solution: 'Use a clean hero, structured sections, and direct calls to action that keep the page easy to scan.',
-      techStack: ['HTML', 'CSS', 'JavaScript'],
-      keyFeatures: ['Responsive layout', 'Service highlights', 'Direct CTA flow', 'Mobile-friendly structure'],
-      designProcess: 'The page was shaped around readability first, then refined with spacing and visual accents to keep it professional.',
-      lessonsLearned: 'Travel and service landing pages work best when they stay clear and avoid over-decoration.',
-      problem: 'The page needed to communicate trust and service value without a heavy interface.',
-      process: 'I kept the layout focused, improved hierarchy, and adjusted the flow for responsive browsing.',
-      outcome: 'The result is a straightforward landing page that feels polished and business-ready.',
-    },
-  },
-  {
-    id: 3,
-    title: 'Kichi — AI-Powered Discord Companion',
-    desc: 'An AI companion for Discord with memory, reminders, voice support, and conversational intelligence.',
-    tags: ['Node.js', 'Discord.js', 'OpenRouter API', 'Piper TTS'],
-    category: 'AI / Productivity',
-    img: '/assets/projects/kichi-preview.png',
-    year: '2026',
-    demoUrl: '#',
-    sourceUrl: 'https://github.com/syfaarizal/pirate-discord-bot',
-    detail: {
-      overview:
-        'Kichi is an AI-powered Discord companion designed to feel less like a bot and more like a real server member. It combines conversational AI, per-user memory, automated reminders, voice interaction, and utility tools into a single experience.',
-      challenge:
-        'Most Discord bots are command-driven and transactional. The challenge was creating a companion that feels personal, remembers users, supports voice interactions, and remains useful without overwhelming server members.',
-      solution:
-        'Built a modular Discord application powered by AI, memory management, automated scheduling, voice capabilities, and utility features. Kichi combines natural conversations, contextual memory, reminders, and voice support into a unified experience.',
-      techStack: [
-        'Node.js',
-        'Discord.js v14',
-        'OpenRouter API',
-        'Piper TTS',
-        'JSON Database',
-        'Linux VPS',
-        'PM2'
-      ],
-      keyFeatures: [
-        'Per-user conversational memory',
-        'AI-powered chat assistant',
-        'Natural language reminder creation',
-        'Custom server reminder system',
-        'Voice channel integration',
-        'Offline text-to-speech',
-        'Lyrics search system',
-        'Anti-spam protection',
-        'Persistent VPS deployment',
-        'Personalized user profiles'
-      ],
-      designProcess:
-        'The system was designed around the idea of companionship rather than command execution. Features were developed in layers: conversational AI, memory persistence, reminder automation, voice interaction, and utility tools. The architecture was separated into commands, services, utilities, and providers to keep future feature expansion manageable.',
-      lessonsLearned:
-        'Building conversational products requires more than AI integration. User memory, response timing, personality consistency, and interaction design have a major impact on how human and engaging the experience feels.',
-      problem:
-        'Discord communities often rely on multiple bots for reminders, utility commands, music-related tasks, and AI conversations. This creates fragmented experiences and inconsistent interactions for users.',
-      process:
-        'I developed Kichi using Discord.js and OpenRouter AI, implemented per-user memory storage, built an automated reminder scheduler, integrated offline text-to-speech through Piper, deployed the system on a Linux VPS, and optimized interaction flow with cooldowns, typing simulation, and personalized responses.',
-      outcome:
-        'The result is a persistent AI companion capable of remembering users, creating reminders through natural language, joining voice channels, speaking through TTS, retrieving lyrics, and maintaining engaging conversations. Kichi demonstrates practical AI integration, system architecture design, API orchestration, and real-world deployment experience.'
-    }
-  },
-  {
-    id: 4,
     title: 'Shopi — Modern Full-Stack E-Commerce Platform',
     desc: 'A modern e-commerce platform featuring authentication, shopping cart, wishlist, admin dashboard, product management, payments, and order tracking.',
     tags: [
@@ -134,7 +61,7 @@ export const projects: Project[] = [
     category: 'Web Development / E-Commerce',
     img: '/assets/projects/shopi-preview.png',
     year: '2026',
-    demoUrl: '#',
+    demoUrl: 'https://shopi-lime.vercel.app/',
     sourceUrl: 'https://github.com/syfaarizal/shopi',
     detail: {
       overview:
@@ -190,6 +117,79 @@ export const projects: Project[] = [
       outcome:
         'The final product is a fully functional e-commerce platform featuring authentication, product discovery, cart and wishlist management, checkout workflows, payment simulation, order tracking, and a comprehensive admin dashboard. Shopi demonstrates practical experience in full-stack development, API architecture, database integration, state management, authentication systems, and modern e-commerce application design.'
     }
+  },
+  {
+    id: 3,
+    title: 'Kichi — AI-Powered Discord Companion',
+    desc: 'An AI companion for Discord with memory, reminders, voice support, and conversational intelligence.',
+    tags: ['Node.js', 'Discord.js', 'OpenRouter API', 'Piper TTS'],
+    category: 'AI / Productivity',
+    img: '/assets/projects/kichi-preview.png',
+    year: '2026',
+    demoUrl: 'https://www.kichi.web.id/',
+    sourceUrl: 'https://github.com/syfaarizal/pirate-discord-bot',
+    detail: {
+      overview:
+        'Kichi is an AI-powered Discord companion designed to feel less like a bot and more like a real server member. It combines conversational AI, per-user memory, automated reminders, voice interaction, and utility tools into a single experience.',
+      challenge:
+        'Most Discord bots are command-driven and transactional. The challenge was creating a companion that feels personal, remembers users, supports voice interactions, and remains useful without overwhelming server members.',
+      solution:
+        'Built a modular Discord application powered by AI, memory management, automated scheduling, voice capabilities, and utility features. Kichi combines natural conversations, contextual memory, reminders, and voice support into a unified experience.',
+      techStack: [
+        'Node.js',
+        'Discord.js v14',
+        'OpenRouter API',
+        'Piper TTS',
+        'JSON Database',
+        'Linux VPS',
+        'PM2'
+      ],
+      keyFeatures: [
+        'Per-user conversational memory',
+        'AI-powered chat assistant',
+        'Natural language reminder creation',
+        'Custom server reminder system',
+        'Voice channel integration',
+        'Offline text-to-speech',
+        'Lyrics search system',
+        'Anti-spam protection',
+        'Persistent VPS deployment',
+        'Personalized user profiles'
+      ],
+      designProcess:
+        'The system was designed around the idea of companionship rather than command execution. Features were developed in layers: conversational AI, memory persistence, reminder automation, voice interaction, and utility tools. The architecture was separated into commands, services, utilities, and providers to keep future feature expansion manageable.',
+      lessonsLearned:
+        'Building conversational products requires more than AI integration. User memory, response timing, personality consistency, and interaction design have a major impact on how human and engaging the experience feels.',
+      problem:
+        'Discord communities often rely on multiple bots for reminders, utility commands, music-related tasks, and AI conversations. This creates fragmented experiences and inconsistent interactions for users.',
+      process:
+        'I developed Kichi using Discord.js and OpenRouter AI, implemented per-user memory storage, built an automated reminder scheduler, integrated offline text-to-speech through Piper, deployed the system on a Linux VPS, and optimized interaction flow with cooldowns, typing simulation, and personalized responses.',
+      outcome:
+        'The result is a persistent AI companion capable of remembering users, creating reminders through natural language, joining voice channels, speaking through TTS, retrieving lyrics, and maintaining engaging conversations. Kichi demonstrates practical AI integration, system architecture design, API orchestration, and real-world deployment experience.'
+    }
+  },
+  {
+    id: 4,
+    title: 'CruisePoint Indonesia',
+    desc: 'Designed to improve user engagement and showcase tourism services effectively.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    category: 'Landing Page',
+    img: '/assets/projects/cruisePoint-preview.png',
+    year: '2024',
+    demoUrl: 'https://syfaarizal.github.io/cruishpoint-indonesia/',
+    sourceUrl: 'https://github.com/syfaarizal/cruishpoint-indonesia',
+    detail: {
+      overview: 'A landing page designed for CruisePoint Indonesia with a simple commercial story and clear brand cues.',
+      challenge: 'Present a travel service in a way that feels credible, tidy, and easy to navigate on mobile.',
+      solution: 'Use a clean hero, structured sections, and direct calls to action that keep the page easy to scan.',
+      techStack: ['HTML', 'CSS', 'JavaScript'],
+      keyFeatures: ['Responsive layout', 'Service highlights', 'Direct CTA flow', 'Mobile-friendly structure'],
+      designProcess: 'The page was shaped around readability first, then refined with spacing and visual accents to keep it professional.',
+      lessonsLearned: 'Travel and service landing pages work best when they stay clear and avoid over-decoration.',
+      problem: 'The page needed to communicate trust and service value without a heavy interface.',
+      process: 'I kept the layout focused, improved hierarchy, and adjusted the flow for responsive browsing.',
+      outcome: 'The result is a straightforward landing page that feels polished and business-ready.',
+    },
   }
 ]
 
