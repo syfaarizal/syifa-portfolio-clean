@@ -35,6 +35,7 @@ import Js6Page from './pages/blog/js-modul/js6Page'
 import Js6SolutionPage from './pages/blog/js-modul/js6SolutionPage'
 import Js7Page from './pages/blog/js-modul/js7Page'
 import { scrollToHash, scrollToTopInstant } from './lib/navigation'
+import LoadingScreen from './components/LoadingScreen'
 
 type BlogRoute = {
   path: string
@@ -79,10 +80,19 @@ const jsModuleRoutes: BlogRoute[] = [
 
 const blogRoutes: BlogRoute[] = [...dayChallengeRoutes, ...htmlModuleRoutes, ...cssModuleRoutes, ...jsModuleRoutes]
 
+// Only show loading screen on the first visit within the session
+const hasSeenLoading = sessionStorage.getItem('loading_shown') === 'true'
+
 function App() {
   const [locationKey, setLocationKey] = useState(() => `${window.location.pathname}${window.location.hash}`)
+  const [loadingDone, setLoadingDone] = useState(hasSeenLoading)
   const pathname = window.location.pathname
   const blogRoute = blogRoutes.find((route) => route.path === pathname)
+
+  const handleLoadingComplete = () => {
+    sessionStorage.setItem('loading_shown', 'true')
+    setLoadingDone(true)
+  }
 
   useEffect(() => {
     const handlePopState = () => {
@@ -106,57 +116,63 @@ function App() {
     scrollToTopInstant()
   }, [locationKey])
 
-  if (pathname === '/projects') {
-    return <ProjectsPage />
-  }
-
-  if (blogRoute) {
-    const { Component } = blogRoute
-    return <Component />
-  }
-
-  if (pathname.startsWith('/blog')) {
-    return <BlogPage />
-  }
-
   return (
-    <div className="page-shell home-shell min-h-screen bg-white font-sans">
-      <Navbar />
+    <>
+      {!loadingDone && <LoadingScreen onComplete={handleLoadingComplete} />}
 
-      <main>
-        <ScrollReveal direction="down" delay={0}>
-          <Hero />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={120}>
-          <About />
-        </ScrollReveal>
-        <ScrollReveal direction="down" delay={200}>
-          <Skills />
-        </ScrollReveal>
+      <div
+        style={{
+          opacity: loadingDone ? 1 : 0,
+          transition: loadingDone ? 'opacity 0.5s cubic-bezier(0.4,0,0.2,1) 0.1s' : 'none',
+        }}
+      >
+        {pathname === '/projects' ? (
+          <ProjectsPage />
+        ) : blogRoute ? (
+          <blogRoute.Component />
+        ) : pathname.startsWith('/blog') ? (
+          <BlogPage />
+        ) : (
+          <div className="page-shell home-shell min-h-screen bg-white font-sans">
+            <Navbar />
 
-        <section className="border-t border-[#EAEAEA] bg-white py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <ScrollReveal direction="up" delay={260}>
-              <Projects />
-            </ScrollReveal>
+            <main>
+              <ScrollReveal direction="down" delay={0}>
+                <Hero />
+              </ScrollReveal>
+              <ScrollReveal direction="up" delay={120}>
+                <About />
+              </ScrollReveal>
+              <ScrollReveal direction="down" delay={200}>
+                <Skills />
+              </ScrollReveal>
+
+              <section className="border-t border-[#EAEAEA] bg-white py-20">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                  <ScrollReveal direction="up" delay={260}>
+                    <Projects />
+                  </ScrollReveal>
+                </div>
+              </section>
+
+              <section className="bg-white pb-20">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                  <ScrollReveal direction="down" className="mt-4" delay={320}>
+                    <Blog />
+                  </ScrollReveal>
+                </div>
+              </section>
+
+              <ScrollReveal direction="up" delay={380}>
+                <Contact />
+              </ScrollReveal>
+            </main>
+
+            <Footer />
           </div>
-        </section>
-
-        <section className="bg-white pb-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <ScrollReveal direction="down" className="mt-4" delay={320}>
-              <Blog />
-            </ScrollReveal>
-          </div>
-        </section>
-
-        <ScrollReveal direction="up" delay={380}>
-          <Contact />
-        </ScrollReveal>
-      </main>
-
-      <Footer />
-    </div>
+        )}
+      </div>
+    </>
   )
 }
 
