@@ -52,16 +52,16 @@ export default function Projects() {
         {featuredProjects.map(({ id, title, desc, tags, img }) => (
           <article
             key={id}
-            className="card-base group overflow-hidden transition-shadow duration-200 hover:shadow-card"
+            className="card-base group flex h-full flex-col overflow-hidden transition-shadow duration-200 hover:shadow-card"
           >
             <div className="aspect-[4/3] overflow-hidden bg-gray-100">
               <img src={img} alt={title} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
             </div>
 
-            <div className="p-4">
+            <div className="flex flex-1 flex-col p-4">
               <h3 className="mb-0.5 font-sans text-[1.05rem] font-semibold text-gray-900 sm:text-[1.25rem]">{title}</h3>
               <p className="mb-3 font-sans text-[0.92rem] text-gray-500 sm:text-[0.95rem]">{desc}</p>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
                 {tags.map((tag) => (
                   <span
                     key={tag}
