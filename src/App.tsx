@@ -119,7 +119,7 @@ function App() {
       <div
         style={{
           opacity: loadingDone ? 1 : 0,
-          transition: loadingDone ? 'opacity 0.5s cubic-bezier(0.4,0,0.2,1) 0.1s' : 'none',
+          transition: loadingDone ? 'opacity 0.28s cubic-bezier(0.4,0,0.2,1)' : 'none',
         }}
       >
         {pathname === '/projects' ? (

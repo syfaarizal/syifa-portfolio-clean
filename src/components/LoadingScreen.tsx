@@ -6,7 +6,7 @@ const GREETINGS = [
   '你好',
   'こんにちは',
   '안녕하세요',
-  'مرحبًا',
+  'مرحبا',
   'Hallo',
   'Ciao',
   'Bonjour',
@@ -15,9 +15,11 @@ const GREETINGS = [
   'Привет',
 ]
 
-const DISPLAY_DURATION = 200
-const TRANSITION_DURATION = 220
+const DISPLAY_DURATION = 280
+const TRANSITION_DURATION = 130
 const CYCLE_DURATION = DISPLAY_DURATION + TRANSITION_DURATION
+const EXIT_DELAY = 5100
+const EXIT_TRANSITION = 280
 
 interface LoadingScreenProps {
   onComplete: () => void
@@ -47,8 +49,8 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
     const exitTimer = setTimeout(() => {
       setExiting(true)
-      setTimeout(onComplete, 700)
-    }, 2600)
+      setTimeout(onComplete, EXIT_TRANSITION)
+    }, EXIT_DELAY)
 
     return () => {
       clearInterval(interval)
@@ -60,17 +62,16 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
       style={{
-        backgroundColor: '#0a0a0a',
+        backgroundColor: '#ffffff',
         opacity: exiting ? 0 : 1,
-        transform: exiting ? 'scale(1.03)' : 'scale(1)',
-        filter: exiting ? 'blur(6px)' : 'blur(0px)',
+        transform: exiting ? 'scale(1.01)' : 'scale(1)',
+        filter: exiting ? 'blur(2px)' : 'blur(0px)',
         transition: exiting
-          ? 'opacity 0.65s cubic-bezier(0.4,0,0.2,1), transform 0.65s cubic-bezier(0.4,0,0.2,1), filter 0.65s cubic-bezier(0.4,0,0.2,1)'
+          ? `opacity ${EXIT_TRANSITION}ms cubic-bezier(0.4,0,0.2,1), transform ${EXIT_TRANSITION}ms cubic-bezier(0.4,0,0.2,1), filter ${EXIT_TRANSITION}ms cubic-bezier(0.4,0,0.2,1)`
           : 'none',
         pointerEvents: exiting ? 'none' : 'all',
       }}
     >
-      {/* Ambient glow — top-left maroon */}
       <div
         className="pointer-events-none absolute"
         style={{
@@ -78,11 +79,11 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           left: '-10%',
           width: '45vw',
           height: '45vw',
-          background: 'radial-gradient(circle, rgba(122,15,22,0.18) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(17,24,39,0.06) 0%, transparent 70%)',
           borderRadius: '50%',
         }}
       />
-      {/* Ambient glow — bottom-right subtle warm */}
+
       <div
         className="pointer-events-none absolute"
         style={{
@@ -90,45 +91,31 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           right: '-10%',
           width: '38vw',
           height: '38vw',
-          background: 'radial-gradient(circle, rgba(122,15,22,0.10) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(17,24,39,0.04) 0%, transparent 70%)',
           borderRadius: '50%',
         }}
       />
 
-      {/* Thin top accent line */}
       <div
         className="pointer-events-none absolute left-0 top-0 w-full"
         style={{
           height: '1px',
-          background: 'linear-gradient(90deg, transparent 0%, rgba(122,15,22,0.6) 40%, rgba(217,164,65,0.3) 60%, transparent 100%)',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(17,24,39,0.15) 40%, rgba(17,24,39,0.08) 60%, transparent 100%)',
         }}
       />
 
-      {/* Content */}
-      <div className="relative flex flex-col items-center gap-6 select-none">
-        {/* Monogram / logo mark */}
+      <div className="relative flex select-none flex-col items-center gap-6">
         <div
-          className="mb-2 flex h-10 w-10 items-center justify-center rounded-full border"
+          className="mb-2 flex h-12 w-12 items-center justify-center rounded-full"
           style={{
-            borderColor: 'rgba(122,15,22,0.5)',
-            background: 'rgba(122,15,22,0.08)',
+            borderColor: 'rgba(17,24,39,0.16)',
+            background: 'rgba(17,24,39,0.04)',
           }}
         >
-          <span
-            style={{
-              fontFamily: '"Cormorant Garamond", Georgia, serif',
-              fontSize: '1rem',
-              fontWeight: 600,
-              letterSpacing: '0.04em',
-              color: '#7A0F16',
-            }}
-          >
-            S
-          </span>
+            <img src="/assets/logo-libr.png" alt="Logo LIBR" className="h-10 w-10 object-contain" />
         </div>
 
-        {/* Greeting text */}
-        <div className="relative h-[3.5rem] w-[16rem] flex items-center justify-center overflow-hidden">
+        <div className="relative flex h-[3.5rem] w-[16rem] items-center justify-center overflow-hidden">
           <span
             key={currentIndex}
             style={{
@@ -136,10 +123,10 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
               fontSize: 'clamp(2rem, 5vw, 2.5rem)',
               fontWeight: 300,
               letterSpacing: '0.06em',
-              color: '#f5f5f5',
+              color: '#111827',
               display: 'block',
               opacity: visible ? 1 : 0,
-              transform: visible ? 'translateY(0px)' : 'translateY(6px)',
+              transform: visible ? 'translateY(0px)' : 'translateY(4px)',
               transition: `opacity ${TRANSITION_DURATION}ms cubic-bezier(0.4,0,0.2,1), transform ${TRANSITION_DURATION}ms cubic-bezier(0.4,0,0.2,1)`,
               willChange: 'opacity, transform',
               textAlign: 'center',
@@ -149,36 +136,33 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           </span>
         </div>
 
-        {/* Thin decorative divider */}
         <div
           style={{
             width: '2rem',
             height: '1px',
-            background: 'linear-gradient(90deg, transparent, rgba(122,15,22,0.7), transparent)',
+            background: 'linear-gradient(90deg, transparent, rgba(17,24,39,0.28), transparent)',
           }}
         />
 
-        {/* Subtitle */}
         <p
           style={{
             fontFamily: '"DM Sans", system-ui, sans-serif',
             fontSize: '0.65rem',
             letterSpacing: '0.22em',
             textTransform: 'uppercase',
-            color: 'rgba(255,255,255,0.28)',
-            fontWeight: 400,
+            color: 'rgba(17,24,39,0.45)',
+            fontWeight: 800,
           }}
         >
           Portfolio
         </p>
       </div>
 
-      {/* Bottom thin accent line */}
       <div
         className="pointer-events-none absolute bottom-0 left-0 w-full"
         style={{
           height: '1px',
-          background: 'linear-gradient(90deg, transparent 0%, rgba(122,15,22,0.25) 50%, transparent 100%)',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(17,24,39,0.08) 50%, transparent 100%)',
         }}
       />
     </div>
