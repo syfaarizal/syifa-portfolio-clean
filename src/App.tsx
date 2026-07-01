@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from 'react'
+import LoadingScreen from './components/LoadingScreen'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -35,7 +36,6 @@ import Js6Page from './pages/blog/js-modul/js6Page'
 import Js6SolutionPage from './pages/blog/js-modul/js6SolutionPage'
 import Js7Page from './pages/blog/js-modul/js7Page'
 import { scrollToHash, scrollToTopInstant } from './lib/navigation'
-import LoadingScreen from './components/LoadingScreen'
 
 type BlogRoute = {
   path: string
@@ -80,17 +80,13 @@ const jsModuleRoutes: BlogRoute[] = [
 
 const blogRoutes: BlogRoute[] = [...dayChallengeRoutes, ...htmlModuleRoutes, ...cssModuleRoutes, ...jsModuleRoutes]
 
-// Only show loading screen on the first visit within the session
-const hasSeenLoading = sessionStorage.getItem('loading_shown') === 'true'
-
 function App() {
   const [locationKey, setLocationKey] = useState(() => `${window.location.pathname}${window.location.hash}`)
-  const [loadingDone, setLoadingDone] = useState(hasSeenLoading)
+  const [loadingDone, setLoadingDone] = useState(false)
   const pathname = window.location.pathname
   const blogRoute = blogRoutes.find((route) => route.path === pathname)
 
   const handleLoadingComplete = () => {
-    sessionStorage.setItem('loading_shown', 'true')
     setLoadingDone(true)
   }
 
