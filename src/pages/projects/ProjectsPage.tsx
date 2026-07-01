@@ -62,7 +62,7 @@ function ProjectCard({
   onDetail: (project: Project) => void
 }) {
   return (
-    <article className="group overflow-hidden rounded-[30px] border border-[#E8DDD9] bg-white/95 shadow-[0_18px_48px_rgba(122,15,22,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(122,15,22,0.1)]">
+    <article className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-[#E8DDD9] bg-white/95 shadow-[0_18px_48px_rgba(122,15,22,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(122,15,22,0.1)]">
       <div className="overflow-hidden border-b border-[#EFE4E0] bg-[#f8f3f1]">
         <img
           src={project.img}
@@ -71,7 +71,7 @@ function ProjectCard({
         />
       </div>
 
-      <div className="p-5 sm:p-6">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-burgundy">
@@ -90,7 +90,7 @@ function ProjectCard({
           {project.desc}
         </p>
 
-        <div className="mt-5 flex flex-wrap gap-2">
+        <div className="mt-auto flex flex-wrap gap-2 pt-5">
           {project.tags.map((tag) => (
             <span
               key={tag}
@@ -105,7 +105,7 @@ function ProjectCard({
           <ProjectButton href={project.demoUrl} variant="primary">
             Demo
           </ProjectButton>
-          <ProjectButton href={project.sourceUrl}>Source</ProjectButton>
+          {project.sourceUrl ? <ProjectButton href={project.sourceUrl}>Source</ProjectButton> : null}
           <ProjectButton onClick={() => onDetail(project)}>Detail</ProjectButton>
         </div>
       </div>

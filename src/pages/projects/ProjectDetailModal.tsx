@@ -171,15 +171,17 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                       Open Demo
                       <ExternalIcon />
                     </a>
-                    <a
-                      href={project.sourceUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-[#E8DDD9] bg-white px-4 py-2 font-sans text-sm font-semibold text-gray-800 transition-all duration-200 hover:-translate-y-0.5 hover:border-burgundy hover:text-burgundy"
-                    >
-                      Open Source
-                      <ExternalIcon />
-                    </a>
+                    {project.sourceUrl ? (
+                      <a
+                        href={project.sourceUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-[#E8DDD9] bg-white px-4 py-2 font-sans text-sm font-semibold text-gray-800 transition-all duration-200 hover:-translate-y-0.5 hover:border-burgundy hover:text-burgundy"
+                      >
+                        Open Source
+                        <ExternalIcon />
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               </div>

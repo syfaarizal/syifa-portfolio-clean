@@ -39,7 +39,7 @@ export const projects: Project[] = [
     img: '/assets/projects/kihs-preview.png',
     year: '2026',
     demoUrl: 'https://kihsglobal.com/',
-    sourceUrl: 'https://github.com/syfaarizal/kihs',
+    sourceUrl: '',
     detail: {
       overview:
         'KIHS is the official marketing website and lead-generation platform for Karawang International Hotel School, a hospitality education institution in West Java, Indonesia. The site combines a premium, animation-rich marketing front end with serverless backend functions that capture and route admissions and brochure-download leads directly into the school\'s inbox — including a full student registration flow with document upload and dual email confirmations.',
