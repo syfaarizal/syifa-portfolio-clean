@@ -27,26 +27,70 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'Login Page Showcase',
-    desc: 'LIBR brand login concepts with a clean front-end presentation.',
-    tags: ['Tailwind CSS', 'TypeScript'],
-    category: 'Showcase',
-    img: '/assets/projects/showcase-review.png',
-    year: '2025',
-    demoUrl: 'https://libr-showcase.vercel.app/',
-    sourceUrl: 'https://github.com/syfaarizal/showcase-login-page',
+    title: 'KIHS — Hospitality School Marketing & Admissions Platform',
+    desc: 'A full marketing website and lead-generation platform for a hospitality education institution, featuring an animated single-page homepage, multi-step student registration with document upload, and automated email notifications.',
+    tags: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Framer Motion'
+    ],
+    category: 'Web Development / Education',
+    img: '/assets/projects/kihs-preview.png',
+    year: '2026',
+    demoUrl: 'https://kihsglobal.com/',
+    sourceUrl: 'https://github.com/syfaarizal/kihs',
     detail: {
-      overview: 'A polished login-page showcase built around a brand-first visual direction and clean UI hierarchy.',
-      challenge: 'Make the first-screen auth experience feel premium while keeping the layout simple and fast to scan.',
-      solution: 'Use strong contrast, balanced spacing, and a focused structure that makes the brand feel memorable.',
-      techStack: ['Next.js', 'Tailwind CSS', 'TypeScript'],
-      keyFeatures: ['Brand-led layout', 'Responsive composition', 'Clean auth states', 'Simple conversion flow'],
-      designProcess: 'Started from the brand tone, then refined spacing, typography, and panel balance until the screen felt calm and intentional.',
-      lessonsLearned: 'Small adjustments in spacing and hierarchy have a large impact on perceived quality.',
-      problem: 'The screen needed to feel modern and trustworthy without becoming visually noisy.',
-      process: 'I iterated on layout balance, reduced unnecessary elements, and tuned the visual rhythm.',
-      outcome: 'The final result reads as a premium login experience that is easy to extend into future auth flows.',
-    },
+      overview:
+        'KIHS is the official marketing website and lead-generation platform for Karawang International Hotel School, a hospitality education institution in West Java, Indonesia. The site combines a premium, animation-rich marketing front end with serverless backend functions that capture and route admissions and brochure-download leads directly into the school\'s inbox — including a full student registration flow with document upload and dual email confirmations.',
+
+      challenge:
+        'The client\'s previous website had a broken student registration form that could not actually receive submissions, meaning every prospective student inquiry was silently lost. The existing UI was also outdated and not properly responsive, creating a poor first impression for an institution competing for enrollments. On top of the technical rebuild, the client was not tech-savvy, so every requirement, decision, and update had to be communicated in plain, non-technical language throughout the project.',
+
+      solution:
+        'Rebuilt the website from the ground up with React, TypeScript, and Tailwind CSS, delivering a fully responsive, animation-rich interface across every page. Replaced the non-functional registration system with a working multi-step form — complete with file upload, validation, and Vercel Serverless Functions on the backend — so every submission reliably reaches the admissions team via Nodemailer, with a confirmation email sent back to the applicant.',
+
+      techStack: [
+        'React 18',
+        'TypeScript',
+        'Vite',
+        'Tailwind CSS',
+        'Framer Motion',
+        'React Router v6',
+        'Node.js',
+        'Vercel Serverless Functions',
+        'Nodemailer',
+        'Formidable'
+      ],
+
+      keyFeatures: [
+        'Animated single-page homepage (hero, statistics, about, partnerships, programs, alumni, testimonials, CTA)',
+        'Dedicated program detail pages (Food & Beverage, Housekeeping)',
+        'Information hub: news & articles, announcements, photo gallery with lightbox, FAQ',
+        'Multi-step student registration with document upload (KTP, photo) and file-size validation',
+        'Dual email notifications on registration: admin alert + applicant confirmation',
+        'Brochure download lead-capture form with instant PDF delivery and graceful fallback',
+        'Stateless serverless backend with CORS protection scoped to trusted origins',
+        'Built-in /api/health diagnostic endpoint for safe post-deployment verification',
+        'Fully responsive across mobile, tablet, and desktop',
+        'Global instant scroll-reset on every route change'
+      ],
+
+      designProcess:
+        'Development began by fixing the core business problem — the broken registration pipeline — before layering on visual polish. Once the API layer for registration and brochure requests was reliable, the front end was rebuilt page by page with a navy-and-gold premium visual identity suited to an academic, hospitality-industry brand. Motion design was kept restrained and purposeful: fade-up reveals and subtle hover lifts rather than heavy animation, to keep the site feeling premium rather than flashy.',
+
+      lessonsLearned:
+        'Beyond the technical rebuild, this project was a strong exercise in client communication. Working with a non-technical client meant translating concepts like "serverless function," "CORS," or "SMTP delivery" into plain language the client could actually make decisions from — explaining why the old form was silently failing, what a Gmail App Password is and why it\'s needed, and how to verify the new system was working without needing to understand the code behind it. That experience reinforced how much of freelance development is really about clear, patient explanation, not just writing code.',
+
+      problem:
+        'The client\'s existing website had a registration form that looked functional but never actually delivered submissions anywhere — a critical failure for an admissions-driven institution. The UI was also visually dated and broke on smaller screens, undermining trust in the school\'s brand.',
+
+      process:
+        'I audited the existing site to confirm the registration form had no working backend, then rebuilt the entire front end in React, TypeScript, and Tailwind CSS with Framer Motion for restrained, premium motion design. On the backend, I built Vercel Serverless Functions handling multi-step registration (with file upload via Formidable), brochure-lead capture, and a diagnostic health endpoint — wired to Nodemailer for reliable, branded transactional emails. Throughout, I kept the client informed in non-technical terms at every milestone, from initial audit to final deployment verification.',
+
+      outcome:
+        'The final product is a fully responsive, animation-rich marketing website with a registration system that actually works — every student inquiry and brochure request now reliably reaches the admissions team, with confirmation emails sent automatically. The project strengthened my skills in serverless architecture and lead-generation systems, and specifically in explaining technical work clearly to a non-technical client — turning what could have been a frustrating collaboration into a smooth one.'
+    }
   },
   {
     id: 2,
@@ -168,8 +212,31 @@ export const projects: Project[] = [
         'The result is a persistent AI companion capable of remembering users, creating reminders through natural language, joining voice channels, speaking through TTS, retrieving lyrics, and maintaining engaging conversations. Kichi demonstrates practical AI integration, system architecture design, API orchestration, and real-world deployment experience.'
     }
   },
-  {
+    {
     id: 4,
+    title: 'Login Page Showcase',
+    desc: 'LIBR brand login concepts with a clean front-end presentation.',
+    tags: ['Tailwind CSS', 'TypeScript'],
+    category: 'Showcase',
+    img: '/assets/projects/showcase-review.png',
+    year: '2025',
+    demoUrl: 'https://libr-showcase.vercel.app/',
+    sourceUrl: 'https://github.com/syfaarizal/showcase-login-page',
+    detail: {
+      overview: 'A polished login-page showcase built around a brand-first visual direction and clean UI hierarchy.',
+      challenge: 'Make the first-screen auth experience feel premium while keeping the layout simple and fast to scan.',
+      solution: 'Use strong contrast, balanced spacing, and a focused structure that makes the brand feel memorable.',
+      techStack: ['Next.js', 'Tailwind CSS', 'TypeScript'],
+      keyFeatures: ['Brand-led layout', 'Responsive composition', 'Clean auth states', 'Simple conversion flow'],
+      designProcess: 'Started from the brand tone, then refined spacing, typography, and panel balance until the screen felt calm and intentional.',
+      lessonsLearned: 'Small adjustments in spacing and hierarchy have a large impact on perceived quality.',
+      problem: 'The screen needed to feel modern and trustworthy without becoming visually noisy.',
+      process: 'I iterated on layout balance, reduced unnecessary elements, and tuned the visual rhythm.',
+      outcome: 'The final result reads as a premium login experience that is easy to extend into future auth flows.',
+    },
+  },
+  {
+    id: 5,
     title: 'CruisePoint Indonesia',
     desc: 'Designed to improve user engagement and showcase tourism services effectively.',
     tags: ['HTML', 'CSS', 'JavaScript'],
