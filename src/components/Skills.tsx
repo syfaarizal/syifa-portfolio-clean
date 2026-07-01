@@ -236,59 +236,69 @@ const Icons = {
   ),
 }
 
+const ExtraIcons = {
+  PromptEngineering: (
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+      <rect x="3" y="7" width="26" height="18" rx="3" stroke="#7c3aed" strokeWidth="1.5" fill="none"/>
+      <path d="M8 12l4 4-4 4" stroke="#7c3aed" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <line x1="15" y1="20" x2="24" y2="20" stroke="#7c3aed" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  ),
+  AIWorkflow: (
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+      <circle cx="7" cy="16" r="3" stroke="#0ea5e9" strokeWidth="1.5" fill="none"/>
+      <circle cx="16" cy="8" r="3" stroke="#0ea5e9" strokeWidth="1.5" fill="none"/>
+      <circle cx="25" cy="16" r="3" stroke="#0ea5e9" strokeWidth="1.5" fill="none"/>
+      <circle cx="16" cy="24" r="3" stroke="#0ea5e9" strokeWidth="1.5" fill="none"/>
+      <line x1="10" y1="14.5" x2="13" y2="10.5" stroke="#0ea5e9" strokeWidth="1.2" strokeLinecap="round"/>
+      <line x1="19" y1="10.5" x2="22" y2="14.5" stroke="#0ea5e9" strokeWidth="1.2" strokeLinecap="round"/>
+      <line x1="22" y1="17.5" x2="19" y2="21.5" stroke="#0ea5e9" strokeWidth="1.2" strokeLinecap="round"/>
+      <line x1="13" y1="21.5" x2="10" y2="17.5" stroke="#0ea5e9" strokeWidth="1.2" strokeLinecap="round"/>
+    </svg>
+  ),
+  Automation: (
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+      <circle cx="16" cy="16" r="4" stroke="#f59e0b" strokeWidth="1.5" fill="none"/>
+      <path d="M16 4v4M16 24v4M4 16h4M24 16h4" stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M7.76 7.76l2.83 2.83M21.41 21.41l2.83 2.83M7.76 24.24l2.83-2.83M21.41 10.59l2.83-2.83" stroke="#f59e0b" strokeWidth="1.3" strokeLinecap="round"/>
+    </svg>
+  ),
+}
+
 const groups: SkillGroup[] = [
   {
-    title: 'Core Technologies',
+    title: 'Frontend Development',
     items: [
-      { name: 'HTML5',      description: 'Building semantic and accessible web structures.',          icon: Icons.HTML5,      accent: '#e34f26' },
-      { name: 'CSS3',       description: 'Creating responsive layouts and polished interfaces.',       icon: Icons.CSS3,       accent: '#1572b6' },
-      { name: 'JavaScript', description: 'Powering interactive experiences and application logic.',   icon: Icons.JavaScript, accent: '#f7df1e' },
-      { name: 'TypeScript', description: 'Used across all production projects for type safety.',      icon: Icons.TypeScript, accent: '#3178c6' },
+      { name: 'TypeScript',    description: 'Used across all production projects for end-to-end type safety.',      icon: Icons.TypeScript,   accent: '#3178c6' },
+      { name: 'JavaScript',    description: 'Powering interactive experiences and application logic.',              icon: Icons.JavaScript,   accent: '#f7df1e' },
+      { name: 'React',         description: 'Building reusable components and scalable UI architectures.',          icon: Icons.React,        accent: '#61dafb' },
+      { name: 'Next.js',       description: 'Developing full-stack applications with SSR and modern React.',        icon: Icons.NextJS,       accent: '#000000' },
+      { name: 'Tailwind CSS',  description: 'Designing fast, consistent interfaces with utility-first CSS.',        icon: Icons.Tailwind,     accent: '#38bdf8' },
+      { name: 'Framer Motion', description: 'Crafting smooth page transitions and scroll-driven animations.',       icon: Icons.FramerMotion, accent: '#0055FF' },
     ],
   },
   {
-    title: 'Front-End Ecosystem',
+    title: 'Backend & Product Engineering',
     reverse: true,
     items: [
-      { name: 'React 18',       description: 'Building reusable components and scalable interfaces.',         icon: Icons.React,          accent: '#61dafb' },
-      { name: 'Next.js',        description: 'Developing full-stack applications with modern React.',         icon: Icons.NextJS,         accent: '#000000' },
-      { name: 'Vue 3',          description: 'Composable front-end development with the Options/Composition API.', icon: Icons.Vue,       accent: '#41B883' },
-      { name: 'Tailwind CSS',   description: 'Designing fast and consistent user interfaces.',                icon: Icons.Tailwind,       accent: '#38bdf8' },
-      { name: 'Framer Motion',  description: 'Crafting smooth page transitions and scroll animations.',       icon: Icons.FramerMotion,   accent: '#0055FF' },
-      { name: 'GSAP',           description: 'High-performance animations and engaging interactions.',        icon: Icons.GSAP,           accent: '#88ce02' },
-      { name: 'Zustand',        description: 'Lightweight global state management in React apps.',            icon: Icons.Zustand,        accent: '#C8A96E' },
-      { name: 'TanStack Query', description: 'Server-state synchronization with caching and background updates.', icon: Icons.TanStackQuery, accent: '#FF4154' },
-    ],
-  },
-  {
-    title: 'Backend & Dev Tools',
-    items: [
-      { name: 'Node.js',    description: 'Building APIs, automations, and serverless backend logic.',  icon: Icons.NodeJS,     accent: '#339933' },
-      { name: 'FastAPI',    description: 'High-performance Python REST APIs with auto docs.',           icon: Icons.FastAPI,    accent: '#009688' },
-      { name: 'MongoDB',    description: 'Flexible NoSQL database for scalable document storage.',     icon: Icons.MongoDB,    accent: '#00ED64' },
-      { name: 'Discord.js', description: 'Building full-featured Discord bots with v14 API.',          icon: Icons.DiscordJS,  accent: '#5865f2' },
-      { name: 'Nodemailer', description: 'Transactional email delivery via SMTP in Node.js.',          icon: Icons.Nodemailer, accent: '#339933' },
-      { name: 'Git',        description: 'Version control and branching across all projects.',          icon: Icons.Git,        accent: '#f05032' },
-      { name: 'GitHub',     description: 'Code hosting, collaboration, and CI/CD workflows.',          icon: Icons.GitHub,     accent: '#1b1f23' },
-      { name: 'Vercel',     description: 'Deploying and managing production web applications.',         icon: Icons.Vercel,     accent: '#000000' },
-      { name: 'Linux VPS',  description: 'Self-hosted server management and PM2 deployments.',         icon: Icons.VPS,        accent: '#0f172a' },
+      { name: 'Node.js',    description: 'Building RESTful APIs, automations, and serverless backend logic.',  icon: Icons.NodeJS,    accent: '#339933' },
+      { name: 'FastAPI',    description: 'High-performance Python REST APIs with automatic documentation.',    icon: Icons.FastAPI,   accent: '#009688' },
+      { name: 'MongoDB',    description: 'Flexible NoSQL database for scalable document storage.',            icon: Icons.MongoDB,   accent: '#00ED64' },
+      { name: 'Discord.js', description: 'Building full-featured Discord bots with the v14 API.',            icon: Icons.DiscordJS, accent: '#5865f2' },
+      { name: 'Git',        description: 'Version control, branching strategy, and collaborative workflows.', icon: Icons.Git,       accent: '#f05032' },
+      { name: 'GitHub',     description: 'Code hosting, pull requests, Actions CI/CD, and team collaboration.', icon: Icons.GitHub,  accent: '#1b1f23' },
+      { name: 'Vercel',     description: 'Deploying and managing production web applications at scale.',      icon: Icons.Vercel,    accent: '#000000' },
     ],
   },
   {
     title: 'AI & Automation',
-    reverse: true,
     items: [
-      { name: 'OpenAI API', description: 'Integrating GPT models for conversational AI and automation.',  icon: Icons.OpenAI, accent: '#10a37f' },
-      { name: 'Claude API', description: 'Supporting reasoning, long-form tasks, and research workflows.', icon: Icons.Claude, accent: '#cc785c' },
-      { name: 'Gemini API', description: 'Exploring multimodal and agentic AI workflows.',               icon: Icons.Gemini, accent: '#4285f4' },
-    ],
-  },
-  {
-    title: 'Tooling',
-    items: [
-      { name: 'VS Code', description: 'Primary environment for daily development.',            icon: Icons.VSCode, accent: '#007acc' },
-      { name: 'Cursor',  description: 'AI-assisted coding and rapid prototyping.',             icon: Icons.Cursor, accent: '#8b5cf6' },
-      { name: 'Vite',    description: 'Lightning-fast build tool powering all Vite projects.', icon: Icons.Vite,   accent: '#BD34FE' },
+      { name: 'OpenAI API',          description: 'Integrating GPT models for conversational AI and intelligent automation.',    icon: Icons.OpenAI,             accent: '#10a37f' },
+      { name: 'Claude API',          description: 'Long-form reasoning, research workflows, and agentic task orchestration.',   icon: Icons.Claude,             accent: '#cc785c' },
+      { name: 'Gemini API',          description: 'Multimodal and agentic AI workflows powered by Google Gemini.',              icon: Icons.Gemini,             accent: '#4285f4' },
+      { name: 'Prompt Engineering',  description: 'Crafting structured prompts for reliable, high-quality model outputs.',      icon: ExtraIcons.PromptEngineering, accent: '#7c3aed' },
+      { name: 'AI Workflow',         description: 'Designing multi-step AI pipelines that connect models to real-world actions.', icon: ExtraIcons.AIWorkflow,  accent: '#0ea5e9' },
+      { name: 'Automation',          description: 'Building scripts and bots that reduce repetitive work across systems.',      icon: ExtraIcons.Automation,    accent: '#f59e0b' },
     ],
   },
 ]
