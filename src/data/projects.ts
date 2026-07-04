@@ -212,8 +212,73 @@ export const projects: Project[] = [
         'The result is a persistent AI companion capable of remembering users, creating reminders through natural language, joining voice channels, speaking through TTS, retrieving lyrics, and maintaining engaging conversations. Kichi demonstrates practical AI integration, system architecture design, API orchestration, and real-world deployment experience.'
     }
   },
-    {
+  {
     id: 4,
+    title: 'Casio Classic Collection — Premium Product Landing Page',
+    desc: 'A premium product landing page recreating Casio’s "Timeless Elegance" campaign with smooth animations, responsive layouts, and SEO optimization.',
+    tags: [
+      'React',
+      'Tailwind CSS',
+      'TypeScript',
+      'Framer Motion'
+    ],
+    category: 'Web Development / Landing Page',
+    img: '/assets/projects/casio-preview.png',
+    year: '2026',
+    demoUrl: 'https://casio-landing.vercel.app/',
+    sourceUrl: 'https://github.com/syfaarizal/casio-landing',
+    detail: {
+      overview:
+        'Casio Classic Collection is a premium product landing page inspired by Casio’s "Timeless Elegance" campaign. The project recreates a modern luxury watch showcase with pixel-accurate layouts, smooth scroll animations, responsive design, and SEO best practices while delivering a polished user experience across all devices.',
+
+      challenge:
+        'The main challenge was accurately recreating a premium product landing page while maintaining clean code architecture, responsive layouts, smooth animations, and high performance. Every section required careful attention to spacing, typography, image composition, and interaction details to preserve the luxury aesthetic.',
+
+      solution:
+        'Built the landing page using React, TypeScript, Tailwind CSS, and Framer Motion with reusable components and animation utilities. The application incorporates responsive layouts, bidirectional scroll animations, optimized image loading, structured SEO metadata, and modular project architecture for maintainability and scalability.',
+
+      techStack: [
+        'React 19',
+        'TypeScript',
+        'Tailwind CSS v4',
+        'Framer Motion',
+        'Vite',
+        'Lucide React',
+        'ESLint',
+        'Prettier'
+      ],
+
+      keyFeatures: [
+        'Pixel-perfect responsive layout',
+        'Smooth scroll reveal animations',
+        'Interactive hover micro-interactions',
+        'Horizontal image gallery with pagination',
+        'Reusable UI component architecture',
+        'SEO optimization with Open Graph & JSON-LD',
+        'Optimized image loading',
+        'Reduced motion accessibility support',
+        'Fast performance using Vite',
+        'Clean and scalable project structure'
+      ],
+
+      designProcess:
+        'Development began by analyzing the reference design to accurately reproduce its visual hierarchy, spacing, typography, and composition. The interface was then divided into reusable components such as the Hero, Features, Gallery, Quote Section, Navbar, and Footer. Finally, smooth animations, responsive behavior, accessibility improvements, and SEO enhancements were integrated to deliver a polished production-ready landing page.',
+
+      lessonsLearned:
+        'This project strengthened my understanding of translating static UI designs into responsive, production-ready web applications. It also improved my skills in component architecture, animation design, performance optimization, accessibility considerations, and SEO implementation using modern frontend technologies.',
+
+      problem:
+        'Luxury product landing pages require a balance between visual appeal, performance, accessibility, and maintainable code. Achieving a pixel-accurate recreation while ensuring responsiveness and smooth user interactions can be challenging without a well-structured frontend architecture.',
+
+      process:
+        'I developed the landing page using React, TypeScript, and Tailwind CSS while organizing the UI into reusable components. Framer Motion was implemented to create smooth scroll-based animations and interactive micro-interactions. Images were optimized for performance, SEO metadata was added using Open Graph and structured data, and accessibility features such as reduced-motion support were included to improve the overall user experience.',
+
+      outcome:
+        'The final result is a modern, responsive, and production-ready product landing page that closely recreates the original Casio campaign. The project demonstrates strong frontend development skills in responsive design, reusable component architecture, animation implementation, performance optimization, accessibility, and SEO best practices.'
+    }
+  },
+  {
+    id: 5,
     title: 'Login Page Showcase',
     desc: 'LIBR brand login concepts with a clean front-end presentation.',
     tags: ['Tailwind CSS', 'TypeScript'],
@@ -236,7 +301,7 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 5,
+    id: 6,
     title: 'CruisePoint Indonesia',
     desc: 'Designed to improve user engagement and showcase tourism services effectively.',
     tags: ['HTML', 'CSS', 'JavaScript'],
