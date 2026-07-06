@@ -30,6 +30,12 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [visible, setVisible] = useState(true)
   const [exiting, setExiting] = useState(false)
 
+  const handleSkip = () => {
+    if (exiting) return
+    setExiting(true)
+    setTimeout(onComplete, EXIT_TRANSITION)
+  }
+
   useEffect(() => {
     let frame = 0
     const totalFrames = GREETINGS.length
@@ -60,7 +66,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden cursor-pointer"
       style={{
         backgroundColor: '#ffffff',
         opacity: exiting ? 0 : 1,
@@ -70,6 +76,16 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           ? `opacity ${EXIT_TRANSITION}ms cubic-bezier(0.4,0,0.2,1), transform ${EXIT_TRANSITION}ms cubic-bezier(0.4,0,0.2,1), filter ${EXIT_TRANSITION}ms cubic-bezier(0.4,0,0.2,1)`
           : 'none',
         pointerEvents: exiting ? 'none' : 'all',
+      }}
+      onClick={handleSkip}
+      role="button"
+      aria-label="Skip loading animation"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          handleSkip()
+        }
       }}
     >
       <div
