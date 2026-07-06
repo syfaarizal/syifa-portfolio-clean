@@ -214,6 +214,66 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    title: 'RasaKita — Modern Food & Beverage Ecommerce',
+    desc: 'A modern ecommerce website for food & beverage businesses with responsive design, product catalog, and conversion-focused user experience.',
+    tags: ['Next.js 15', 'TypeScript', 'Tailwind CSS v4', 'Framer Motion'],
+    category: 'Ecommerce',
+    img: '/assets/projects/rasakita-preview.png',
+    year: '2026',
+    demoUrl: 'https://your-demo-url.com',
+    sourceUrl: 'https://github.com/yourusername/rasakita',
+    detail: {
+      overview:
+        'RasaKita is a modern ecommerce website concept built for food and beverage businesses, including local snacks, frozen food, healthy catering, and trendy beverages. The project focuses on delivering a clean shopping experience with responsive layouts, modern UI, and scalable architecture.',
+
+      challenge:
+        'Many small and medium food businesses still rely on outdated websites or social media catalogs that provide inconsistent shopping experiences. The challenge was designing an ecommerce interface that feels modern, trustworthy, mobile-friendly, and ready for future backend integration.',
+
+      solution:
+        'Built using Next.js App Router with TypeScript and Tailwind CSS, the website features a modular architecture, reusable components, responsive layouts, animated interactions, and centralized data management, making future API or CMS integration straightforward.',
+
+      techStack: [
+        'Next.js 15',
+        'React 19',
+        'TypeScript',
+        'Tailwind CSS v4',
+        'Framer Motion',
+        'Swiper',
+        'Lucide React',
+        'shadcn/ui'
+      ],
+
+      keyFeatures: [
+        'Responsive desktop & mobile design',
+        'Modern ecommerce landing page',
+        'Product catalog & category browsing',
+        'Reusable UI component system',
+        'Smooth page animations',
+        'Scalable App Router architecture',
+        'Centralized product data',
+        'Ready for API integration',
+        'SEO-friendly structure',
+        'Fast performance optimization'
+      ],
+
+      designProcess:
+        'The project started by identifying the needs of modern food businesses and translating them into a clean ecommerce experience. The design emphasizes readability, product presentation, strong call-to-actions, and mobile usability. Components were built modularly to simplify maintenance and future feature expansion.',
+
+      lessonsLearned:
+        'This project strengthened my understanding of scalable frontend architecture using the Next.js App Router, component-driven development, responsive UI implementation, performance optimization, and designing interfaces that balance aesthetics with business conversion goals.',
+
+      problem:
+        'Many food businesses struggle to present their products professionally online, resulting in fragmented customer journeys and limited scalability. They need an ecommerce platform that is visually appealing, responsive, and prepared for future business growth.',
+
+      process:
+        'I designed the interface, developed reusable UI components, organized project data into centralized modules, implemented responsive layouts for multiple screen sizes, added smooth animations using Framer Motion, and structured the application to support future backend or CMS integration without major refactoring.',
+
+      outcome:
+        'The final result is a modern ecommerce website that showcases products professionally across desktop and mobile devices. It demonstrates practical frontend engineering skills, responsive web development, reusable component architecture, performance-conscious implementation, and production-ready code organization.'
+    }
+  },
+  {
+    id: 5,
     title: 'Casio Classic Collection — Premium Product Landing Page',
     desc: 'A premium product landing page recreating Casio’s "Timeless Elegance" campaign with smooth animations, responsive layouts, and SEO optimization.',
     tags: [
@@ -278,7 +338,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 5,
+    id: 6,
     title: 'Login Page Showcase',
     desc: 'LIBR brand login concepts with a clean front-end presentation.',
     tags: ['Tailwind CSS', 'TypeScript'],
@@ -301,7 +361,7 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 6,
+    id: 7,
     title: 'CruisePoint Indonesia',
     desc: 'Designed to improve user engagement and showcase tourism services effectively.',
     tags: ['HTML', 'CSS', 'JavaScript'],
