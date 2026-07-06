@@ -220,8 +220,8 @@ export const projects: Project[] = [
     category: 'Ecommerce',
     img: '/assets/projects/rasakita-preview.png',
     year: '2026',
-    demoUrl: 'https://your-demo-url.com',
-    sourceUrl: 'https://github.com/yourusername/rasakita',
+    demoUrl: 'https://rasa-kita-ten.vercel.app/',
+    sourceUrl: 'https://github.com/syfaarizal/client-rasa-kita-web',
     detail: {
       overview:
         'RasaKita is a modern ecommerce website concept built for food and beverage businesses, including local snacks, frozen food, healthy catering, and trendy beverages. The project focuses on delivering a clean shopping experience with responsive layouts, modern UI, and scalable architecture.',
