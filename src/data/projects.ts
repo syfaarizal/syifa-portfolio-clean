@@ -274,6 +274,65 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    title: 'Klinik Sehat — Modern Healthcare Clinic Website',
+    desc: 'A modern healthcare clinic website with responsive design, doctor directory, medical services, health articles, and a seamless appointment experience.',
+    tags: ['Next.js 15', 'TypeScript', 'Tailwind CSS v4', 'Framer Motion'],
+    category: 'Healthcare',
+    img: '/assets/projects/klinik-sehat-preview.png',
+    year: '2026',
+    demoUrl: 'https://kliniksehat.vercel.app/',
+    sourceUrl: 'https://github.com/syfaarizal/client-klinik-sehat-web',
+    detail: {
+      overview:
+        'Klinik Sehat is a modern healthcare website built for medical clinics to showcase doctors, healthcare services, health articles, and online appointment information. The project emphasizes responsive design, clean user experience, and a scalable frontend architecture ready for future CMS or backend integration.',
+
+      challenge:
+        'Many healthcare clinics still rely on outdated websites that make it difficult for patients to find doctors, browse services, or access health information efficiently. The challenge was creating a modern, trustworthy, and mobile-friendly experience that improves accessibility while remaining easy to maintain and expand.',
+
+      solution:
+        'Built with Next.js App Router, TypeScript, and Tailwind CSS, the website uses reusable UI components, centralized content management, responsive layouts, and modular architecture. This makes future integration with APIs, booking systems, or CMS platforms straightforward.',
+
+      techStack: [
+        'Next.js 15',
+        'React 19',
+        'TypeScript',
+        'Tailwind CSS v4',
+        'Framer Motion',
+        'shadcn/ui',
+        'Lucide React'
+      ],
+
+      keyFeatures: [
+        'Responsive desktop & mobile design',
+        'Modern healthcare landing page',
+        'Doctor directory & profile pages',
+        'Medical services catalog',
+        'Health articles & blog pages',
+        'Testimonials & trust sections',
+        'Online reservation & contact page',
+        'Reusable component architecture',
+        'Centralized content management',
+        'SEO-friendly structure'
+      ],
+
+      designProcess:
+        'The design process focused on building a clean healthcare experience that prioritizes trust, readability, and accessibility. Each section was carefully structured to guide visitors from discovering medical services to exploring doctor profiles, reading health articles, and making appointments. Components were designed to be reusable and scalable for future expansion.',
+
+      lessonsLearned:
+        'This project strengthened my understanding of scalable frontend architecture with the Next.js App Router, component-driven development, responsive interface design, structured data management, and creating user experiences tailored to healthcare services.',
+
+      problem:
+        'Patients often struggle with clinic websites that provide limited information, poor navigation, and inconsistent user experiences. Healthcare providers need a modern platform that presents services professionally while remaining flexible for future digital transformation.',
+
+      process:
+        'I designed the user interface, developed reusable UI components, centralized all content into structured data files, implemented responsive layouts, added smooth animations with Framer Motion, and organized the application to support future CMS or backend integration with minimal refactoring.',
+
+      outcome:
+        'The final result is a modern healthcare website that delivers an intuitive experience across desktop and mobile devices. It showcases practical frontend engineering skills, scalable project architecture, reusable component systems, responsive implementation, and production-ready code organization.'
+    }
+  },
+  {
+    id: 6,
     title: 'Casio Classic Collection — Premium Product Landing Page',
     desc: 'A premium product landing page recreating Casio’s "Timeless Elegance" campaign with smooth animations, responsive layouts, and SEO optimization.',
     tags: [
@@ -338,7 +397,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 6,
+    id: 7,
     title: 'Login Page Showcase',
     desc: 'LIBR brand login concepts with a clean front-end presentation.',
     tags: ['Tailwind CSS', 'TypeScript'],
@@ -361,7 +420,7 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 7,
+    id: 8,
     title: 'CruisePoint Indonesia',
     desc: 'Designed to improve user engagement and showcase tourism services effectively.',
     tags: ['HTML', 'CSS', 'JavaScript'],
