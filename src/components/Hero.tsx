@@ -26,6 +26,23 @@ const EmailIcon = () => (
   </svg>
 )
 
+const UpworkIcon = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="Upwork"
+    role="img"
+    focusable="false"
+  >
+    <path
+      fill="currentColor"
+      d="M357.2 296.9c-17 0-33-7.2-47.4-18.9l3.5-16.6.1-.6c3.2-17.6 13.1-47.2 43.8-47.2 23 0 41.7 18.7 41.7 41.7s-18.8 41.7-41.7 41.7zm0-125.5c-39.2 0-69.5 25.4-81.9 67.3-18.8-28.3-33.1-62.2-41.4-90.8h-42.2v109.7c0 21.7-17.6 39.3-39.3 39.3s-39.3-17.6-39.3-39.3V147.8H71v109.7c0 44.9 36.5 81.8 81.4 81.8s81.4-36.9 81.4-81.8v-18.4c8.2 17.1 18.2 34.4 30.4 49.6l-25.8 121.4h43.1l18.7-88c16.4 10.5 35.2 17.1 56.8 17.1 46.2 0 83.8-37.8 83.8-84.1 0-46.2-37.5-83.8-83.8-83.8z"
+    />
+  </svg>
+)
+
 const DownloadIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
@@ -43,6 +60,7 @@ const socialLinks = [
   { icon: LinkedinIcon, href: 'https://linkedin.com/in/syifaarizal', label: 'LinkedIn' },
   { icon: InstagramIcon, href: 'https://instagram.com/syfaarizal', label: 'Instagram' },
   { icon: EmailIcon, href: 'mailto:syifairgi@gmail.com', label: 'Email' },
+  { icon: UpworkIcon, href: 'https://www.upwork.com/freelancers/syfaarizal?mp_source=share', label: 'Upwork' }
 ]
 
 const title = 'Front-End Developer';
@@ -132,7 +150,7 @@ export default function Hero() {
             </p>
 
             <h1 className="max-w-[12ch] font-serif text-[clamp(2.7rem,10vw,5.35rem)] leading-[0.95] font-semibold text-gray-950 sm:text-[clamp(3rem,6vw,5.35rem)]">
-              Syifa Fauziyah Arizal
+              Syifa Arizal
             </h1>
 
             <div className="mt-3">
@@ -229,7 +247,7 @@ export default function Hero() {
             >
               <img
                 src="/assets/gambar-syifa-nobg.png"
-                alt="Syifa Fauziyah Arizal"
+                alt="Syifa Arizal"
                 className="w-[279px] max-w-none select-none object-contain sm:w-[280px] md:w-[315px] lg:w-[405px]"
                 draggable={false}
                 style={{ transform: `translate3d(0, ${parallaxOffset * -0.02}px, 0)` }}
