@@ -333,6 +333,71 @@ export const projects: Project[] = [
   },
   {
     id: 6,
+    title: 'Kopinusa Coffee & Eatery — Modern Restaurant Website',
+    desc: 'A modern restaurant and coffee shop website featuring menu showcase, online reservations, promotions, blog articles, and a responsive customer experience.',
+    tags: [
+      'Next.js 15',
+      'TypeScript',
+      'Tailwind CSS v4',
+      'Framer Motion'
+    ],
+    category: 'Restaurant',
+    img: '/assets/projects/kopinusa-preview.png',
+    year: '2026',
+    demoUrl: 'https://kopinusa.vercel.app/',
+    sourceUrl: 'https://github.com/syfaarizal/kopinusa',
+    detail: {
+      overview:
+        'Kopinusa Coffee & Eatery is a modern restaurant website designed for coffee shops and food businesses to showcase menus, promotions, gallery, blog articles, and reservation information. The project focuses on delivering an elegant user experience with responsive layouts, fast performance, and a scalable frontend architecture.',
+
+      challenge:
+        'Many restaurants still rely heavily on social media, making it difficult for customers to browse menus, discover promotions, or access complete business information. The challenge was creating a modern website that strengthens brand identity while providing a seamless browsing experience across all devices.',
+
+      solution:
+        'Built with Next.js App Router, TypeScript, and Tailwind CSS, the website leverages reusable UI components, centralized content management, responsive layouts, and modular architecture. The structure is prepared for future integration with CMS, ordering systems, or backend APIs.',
+
+      techStack: [
+        'Next.js 15',
+        'React 19',
+        'TypeScript',
+        'Tailwind CSS v4',
+        'Framer Motion',
+        'Swiper',
+        'shadcn/ui',
+        'Lucide React'
+      ],
+
+      keyFeatures: [
+        'Responsive desktop & mobile design',
+        'Restaurant landing page',
+        'Interactive food & beverage menu',
+        'Category filtering & product pages',
+        'Gallery & promotional sections',
+        'Blog & article pages',
+        'Reservation & contact page',
+        'Reusable component architecture',
+        'SEO-ready structure',
+        'Fast performance optimization'
+      ],
+
+      designProcess:
+        'The design process centered on creating a premium digital experience that reflects the atmosphere of a modern coffee shop. The interface prioritizes visual storytelling, menu presentation, intuitive navigation, and strong call-to-action sections while maintaining consistency through reusable UI components.',
+
+      lessonsLearned:
+        'This project enhanced my understanding of scalable frontend architecture with Next.js App Router, reusable component design, responsive layouts, structured content management, and building engaging user experiences for restaurant and hospitality businesses.',
+
+      problem:
+        'Many restaurants lack a professional website that effectively showcases their menu, promotions, and brand identity. Customers often experience fragmented journeys between social media platforms and messaging apps, limiting engagement and future scalability.',
+
+      process:
+        'I designed the complete user interface, developed reusable UI components, centralized business content into structured data modules, implemented responsive layouts, integrated smooth animations using Framer Motion, and organized the project for future CMS or backend integration with minimal refactoring.',
+
+      outcome:
+        'The final result is a modern restaurant website that provides an engaging browsing experience across desktop and mobile devices. It demonstrates practical frontend engineering skills, scalable architecture, reusable component systems, responsive implementation, performance optimization, and production-ready code organization.'
+    }
+  },
+  {
+    id: 7,
     title: 'Casio Classic Collection — Premium Product Landing Page',
     desc: 'A premium product landing page recreating Casio’s "Timeless Elegance" campaign with smooth animations, responsive layouts, and SEO optimization.',
     tags: [
@@ -397,7 +462,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 7,
+    id: 8,
     title: 'Login Page Showcase',
     desc: 'LIBR brand login concepts with a clean front-end presentation.',
     tags: ['Tailwind CSS', 'TypeScript'],
@@ -420,7 +485,7 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 8,
+    id: 9,
     title: 'CruisePoint Indonesia',
     desc: 'Designed to improve user engagement and showcase tourism services effectively.',
     tags: ['HTML', 'CSS', 'JavaScript'],
