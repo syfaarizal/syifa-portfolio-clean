@@ -398,6 +398,73 @@ export const projects: Project[] = [
   },
   {
     id: 7,
+    title: 'Luxora Hotel — Premium Hotel Landing Page',
+    desc: 'A premium hotel landing page template featuring online booking, room showcase, facilities, gallery, and a luxury guest experience with scalable architecture.',
+    tags: [
+      'Next.js 15',
+      'TypeScript',
+      'Tailwind CSS v4',
+      'Framer Motion'
+    ],
+    category: 'Hotel',
+    img: '/assets/projects/luxora-preview.png',
+    year: '2026',
+    demoUrl: 'https://luxora.vercel.app/',
+    sourceUrl: 'https://github.com/syfaarizal/luxora',
+    detail: {
+      overview:
+        'Luxora Hotel is a premium hotel landing page template built for hotels, resorts, villas, and hospitality businesses. Designed with a luxurious visual style, the project includes room showcases, booking functionality, facilities, galleries, testimonials, and a highly reusable architecture that can be rebranded without modifying UI components.',
+
+      challenge:
+        'Many hotel websites are difficult to customize, tightly coupled to specific branding, or lack scalability for future business needs. The challenge was building a premium landing page that delivers an exceptional guest experience while remaining flexible enough to support different hospitality brands through simple configuration changes.',
+
+      solution:
+        'Built with Next.js App Router, React 19, TypeScript, and Tailwind CSS v4, the template uses a configuration-driven architecture, reusable UI components, centralized content management, and a service layer prepared for CMS and backend integration. Branding, colors, typography, and content can all be updated without touching component code.',
+
+      techStack: [
+        'Next.js 15',
+        'React 19',
+        'TypeScript',
+        'Tailwind CSS v4',
+        'Framer Motion',
+        'Swiper',
+        'React Hook Form',
+        'Zod',
+        'shadcn/ui',
+        'Lucide React'
+      ],
+
+      keyFeatures: [
+        'Responsive desktop & mobile design',
+        'Luxury hotel landing page',
+        'Online booking search bar',
+        'Room showcase & pricing carousel',
+        'Premium facilities & gallery',
+        'Testimonials & newsletter section',
+        'Reusable configuration-driven architecture',
+        'CMS & backend ready',
+        'Advanced SEO optimization',
+        'High performance & accessibility'
+      ],
+
+      designProcess:
+        'The design process focused on creating a premium hospitality experience through elegant layouts, refined typography, immersive imagery, and intuitive booking flows. Every section was built as an independent, reusable component while all business content, branding, and configuration were centralized to maximize maintainability and future scalability.',
+
+      lessonsLearned:
+        'This project deepened my understanding of enterprise-grade frontend architecture, configuration-driven development, scalable design systems, reusable component patterns, SEO optimization, accessibility best practices, and building templates that can easily adapt to multiple business domains.',
+
+      problem:
+        'Hospitality businesses often need websites that are visually premium, easy to customize, and prepared for long-term growth. Traditional landing pages usually require extensive code changes for branding updates, making maintenance slower and less scalable.',
+
+      process:
+        'I designed the complete interface, developed reusable UI components, separated business content into centralized configuration and data modules, implemented responsive layouts, integrated animations with Framer Motion, optimized SEO and accessibility, and structured the application with a service layer ready for CMS or backend integration.',
+
+      outcome:
+        'The final result is a production-ready hotel landing page template that delivers a premium user experience across all devices. It demonstrates advanced frontend engineering, reusable architecture, configuration-driven development, responsive implementation, performance optimization, SEO best practices, and long-term scalability.'
+    }
+},
+  {
+    id: 8,
     title: 'Casio Classic Collection — Premium Product Landing Page',
     desc: 'A premium product landing page recreating Casio’s "Timeless Elegance" campaign with smooth animations, responsive layouts, and SEO optimization.',
     tags: [
@@ -462,7 +529,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 8,
+    id: 9,
     title: 'Login Page Showcase',
     desc: 'LIBR brand login concepts with a clean front-end presentation.',
     tags: ['Tailwind CSS', 'TypeScript'],
@@ -485,7 +552,7 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 9,
+    id: 10,
     title: 'CruisePoint Indonesia',
     desc: 'Designed to improve user engagement and showcase tourism services effectively.',
     tags: ['HTML', 'CSS', 'JavaScript'],
