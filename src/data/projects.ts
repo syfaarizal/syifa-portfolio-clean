@@ -409,8 +409,8 @@ export const projects: Project[] = [
     category: 'Hotel',
     img: '/assets/projects/luxora-preview.png',
     year: '2026',
-    demoUrl: 'https://luxora.vercel.app/',
-    sourceUrl: 'https://github.com/syfaarizal/luxora',
+    demoUrl: 'https://hotelluxora.vercel.app/',
+    sourceUrl: 'https://github.com/syfaarizal/client-luxora-hotel-web',
     detail: {
       overview:
         'Luxora Hotel is a premium hotel landing page template built for hotels, resorts, villas, and hospitality businesses. Designed with a luxurious visual style, the project includes room showcases, booking functionality, facilities, galleries, testimonials, and a highly reusable architecture that can be rebranded without modifying UI components.',
