@@ -208,7 +208,7 @@ export default function Hero() {
                     key={label}
                     href={href}
                     aria-label={label}
-                    className="group flex h-12 w-12 items-center justify-center rounded-full border border-[#E8E0DD] bg-white text-gray-700 shadow-[0_1px_0_rgba(255,255,255,0.7)] transition-all duration-200 hover:-translate-y-0.5 hover:border-burgundy hover:bg-burgundy hover:text-white hover:shadow-float"
+                    className="group flex h-10 w-10 items-center justify-center rounded-full border border-[#E8E0DD] bg-white text-gray-700 shadow-[0_1px_0_rgba(255,255,255,0.7)] transition-all duration-200 hover:-translate-y-0.5 hover:border-burgundy hover:bg-burgundy hover:text-white hover:shadow-float sm:h-12 sm:w-12"
                   >
                     <span className="transition-transform duration-200 group-hover:scale-110">
                       <Icon />
