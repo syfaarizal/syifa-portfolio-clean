@@ -247,8 +247,12 @@ export default function Hero() {
             >
               <img
                 src="/assets/gambar-syifa-nobg.png"
-                alt="Syifa Arizal"
+                alt="Syifa Arizal – Front End Developer"
                 className="w-[279px] max-w-none select-none object-contain sm:w-[280px] md:w-[315px] lg:w-[405px]"
+                width={405}
+                height={640}
+                fetchPriority="high"
+                decoding="async"
                 draggable={false}
                 style={{ transform: `translate3d(0, ${parallaxOffset * -0.02}px, 0)` }}
               />
@@ -264,7 +268,7 @@ export default function Hero() {
             </div>
 
             <div className="absolute bottom-[-8%] left-[8%] z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-float ring-4 ring-red-700 transition-transform duration-300 hover:scale-105 sm:h-14 sm:w-14 lg:left-[6%] lg:bottom-10">
-              <img src="/assets/logo-libr.png" alt="Logo" className="h-10 w-10 object-contain sm:h-12 sm:w-12" />
+              <img src="/assets/logo-libr.png" alt="Syifa Arizal logo" className="h-10 w-10 object-contain sm:h-12 sm:w-12" width={48} height={48} loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

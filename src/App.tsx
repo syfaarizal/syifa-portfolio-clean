@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { Suspense, lazy, useEffect, useLayoutEffect, useState } from 'react'
 import LoadingScreen from './components/LoadingScreen'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -9,37 +9,40 @@ import Blog from './components/Blog'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollReveal from './components/ScrollReveal'
-import ProjectsPage from './pages/projects/ProjectsPage'
-import BlogPage from './pages/blog/BlogPage'
-import Day1Page from './pages/blog/days-challenge/day1Page'
-import Day2Page from './pages/blog/days-challenge/day2Page'
-import Day3Page from './pages/blog/days-challenge/day3Page'
-import Day4Page from './pages/blog/days-challenge/day4Page'
-import Day5Page from './pages/blog/days-challenge/day5Page'
-import Day6Page from './pages/blog/days-challenge/day6Page'
-import Html1Page from './pages/blog/html-modul/html1Page'
-import Html2Page from './pages/blog/html-modul/html2Page'
-import Css1Page from './pages/blog/css-modul/css1Page'
-import Css2Page from './pages/blog/css-modul/css2Page'
-import Css3Page from './pages/blog/css-modul/css3Page'
-import Css4Page from './pages/blog/css-modul/css4Page'
-import Js1Page from './pages/blog/js-modul/js1Page'
-import Js2Page from './pages/blog/js-modul/js2Page'
-import Js2SolutionPage from './pages/blog/js-modul/js2SolutionPage'
-import Js3Page from './pages/blog/js-modul/js3Page'
-import Js3SolutionPage from './pages/blog/js-modul/js3SolutionPage'
-import Js4Page from './pages/blog/js-modul/js4Page'
-import Js4SolutionPage from './pages/blog/js-modul/js4SolutionPage'
-import Js5Page from './pages/blog/js-modul/js5Page'
-import Js5SolutionPage from './pages/blog/js-modul/js5SolutionPage'
-import Js6Page from './pages/blog/js-modul/js6Page'
-import Js6SolutionPage from './pages/blog/js-modul/js6SolutionPage'
-import Js7Page from './pages/blog/js-modul/js7Page'
 import { scrollToHash, scrollToTopInstant } from './lib/navigation'
+
+// Code-split blog pages — loaded lazily on navigation
+const BlogPage = lazy(() => import('./pages/blog/BlogPage'))
+const ProjectsPage = lazy(() => import('./pages/projects/ProjectsPage'))
+
+const Day1Page = lazy(() => import('./pages/blog/days-challenge/day1Page'))
+const Day2Page = lazy(() => import('./pages/blog/days-challenge/day2Page'))
+const Day3Page = lazy(() => import('./pages/blog/days-challenge/day3Page'))
+const Day4Page = lazy(() => import('./pages/blog/days-challenge/day4Page'))
+const Day5Page = lazy(() => import('./pages/blog/days-challenge/day5Page'))
+const Day6Page = lazy(() => import('./pages/blog/days-challenge/day6Page'))
+const Html1Page = lazy(() => import('./pages/blog/html-modul/html1Page'))
+const Html2Page = lazy(() => import('./pages/blog/html-modul/html2Page'))
+const Css1Page = lazy(() => import('./pages/blog/css-modul/css1Page'))
+const Css2Page = lazy(() => import('./pages/blog/css-modul/css2Page'))
+const Css3Page = lazy(() => import('./pages/blog/css-modul/css3Page'))
+const Css4Page = lazy(() => import('./pages/blog/css-modul/css4Page'))
+const Js1Page = lazy(() => import('./pages/blog/js-modul/js1Page'))
+const Js2Page = lazy(() => import('./pages/blog/js-modul/js2Page'))
+const Js2SolutionPage = lazy(() => import('./pages/blog/js-modul/js2SolutionPage'))
+const Js3Page = lazy(() => import('./pages/blog/js-modul/js3Page'))
+const Js3SolutionPage = lazy(() => import('./pages/blog/js-modul/js3SolutionPage'))
+const Js4Page = lazy(() => import('./pages/blog/js-modul/js4Page'))
+const Js4SolutionPage = lazy(() => import('./pages/blog/js-modul/js4SolutionPage'))
+const Js5Page = lazy(() => import('./pages/blog/js-modul/js5Page'))
+const Js5SolutionPage = lazy(() => import('./pages/blog/js-modul/js5SolutionPage'))
+const Js6Page = lazy(() => import('./pages/blog/js-modul/js6Page'))
+const Js6SolutionPage = lazy(() => import('./pages/blog/js-modul/js6SolutionPage'))
+const Js7Page = lazy(() => import('./pages/blog/js-modul/js7Page'))
 
 type BlogRoute = {
   path: string
-  Component: () => JSX.Element
+  Component: React.LazyExoticComponent<() => JSX.Element>
 }
 
 const dayChallengeRoutes: BlogRoute[] = [
@@ -123,11 +126,17 @@ function App() {
         }}
       >
         {pathname === '/projects' ? (
-          <ProjectsPage />
+          <Suspense fallback={<PageLoader />}>
+            <ProjectsPage />
+          </Suspense>
         ) : blogRoute ? (
-          <blogRoute.Component />
+          <Suspense fallback={<PageLoader />}>
+            <blogRoute.Component />
+          </Suspense>
         ) : pathname.startsWith('/blog') ? (
-          <BlogPage />
+          <Suspense fallback={<PageLoader />}>
+            <BlogPage />
+          </Suspense>
         ) : (
           <div className="page-shell home-shell min-h-screen bg-white font-sans">
             <Navbar />
@@ -169,6 +178,14 @@ function App() {
         )}
       </div>
     </>
+  )
+}
+
+function PageLoader() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-white">
+      <div className="h-8 w-8 animate-spin rounded-full border-2 border-burgundy border-t-transparent" aria-label="Loading page" />
+    </div>
   )
 }
 

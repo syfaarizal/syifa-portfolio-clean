@@ -68,6 +68,10 @@ function ProjectCard({
           src={project.img}
           alt={project.title}
           className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          width={640}
+          height={480}
+          loading="lazy"
+          decoding="async"
         />
       </div>
 

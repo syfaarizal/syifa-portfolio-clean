@@ -101,7 +101,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
             <div className="border-b border-[#EAEAEA] lg:border-b-0 lg:border-r">
               <div className="bg-[linear-gradient(180deg,#fffdfd_0%,#fff6f4_100%)] p-5 sm:p-6 lg:sticky lg:top-0">
                 <div className="overflow-hidden rounded-[26px] border border-[#E8DDD9] bg-white shadow-sm">
-                  <img src={project.img} alt={project.title} className="h-[280px] w-full object-cover sm:h-[310px]" />
+                  <img src={project.img} alt={project.title} className="h-[280px] w-full object-cover sm:h-[310px]" width={640} height={310} loading="lazy" decoding="async" />
                 </div>
 
                 <div className="mt-5 rounded-[24px] border border-[#E8DDD9] bg-white p-5 shadow-[0_12px_32px_rgba(122,15,22,0.05)]">

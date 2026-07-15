@@ -83,7 +83,7 @@ export default function Blog() {
             className="group flex flex-col gap-4 overflow-hidden rounded-2xl border border-[#EAEAEA] bg-white p-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card sm:flex-row"
           >
             <div className="aspect-[16/10] w-full flex-shrink-0 overflow-hidden rounded-xl bg-gray-100 sm:h-[94px] sm:w-[96px] sm:aspect-auto">
-              <img src={img} alt={title} className="h-full w-full object-cover" />
+              <img src={img} alt={title} className="h-full w-full object-cover" width={96} height={94} loading="lazy" decoding="async" />
             </div>
 
             <div className="min-w-0 flex-1">

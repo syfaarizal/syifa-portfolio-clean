@@ -55,7 +55,7 @@ export default function Projects() {
             className="card-base group flex h-full flex-col overflow-hidden transition-shadow duration-200 hover:shadow-card"
           >
             <div className="aspect-[4/3] overflow-hidden bg-gray-100">
-              <img src={img} alt={title} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+              <img src={img} alt={title} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" width={640} height={480} loading="lazy" decoding="async" />
             </div>
 
             <div className="flex flex-1 flex-col p-4">

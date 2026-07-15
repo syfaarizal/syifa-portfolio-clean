@@ -1,0 +1,12 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow API routes (not crawlable content)
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://syifa-arizal.site/sitemap.xml
+
+# Crawl delay (be considerate to the server)
+Crawl-delay: 1
