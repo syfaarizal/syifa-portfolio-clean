@@ -86,11 +86,16 @@ const blogRoutes: BlogRoute[] = [...dayChallengeRoutes, ...htmlModuleRoutes, ...
 function App() {
   const [locationKey, setLocationKey] = useState(() => `${window.location.pathname}${window.location.hash}`)
   const [loadingDone, setLoadingDone] = useState(false)
+  const [loaderMounted, setLoaderMounted] = useState(true)
   const pathname = window.location.pathname
   const blogRoute = blogRoutes.find((route) => route.path === pathname)
 
   const handleLoadingComplete = () => {
     setLoadingDone(true)
+  }
+
+  const handleLoaderExited = () => {
+    setLoaderMounted(false)
   }
 
   useEffect(() => {
@@ -117,14 +122,11 @@ function App() {
 
   return (
     <>
-      {!loadingDone && <LoadingScreen onComplete={handleLoadingComplete} />}
+      {loaderMounted && (
+        <LoadingScreen onComplete={handleLoadingComplete} onExited={handleLoaderExited} />
+      )}
 
-      <div
-        style={{
-          opacity: loadingDone ? 1 : 0,
-          transition: loadingDone ? 'opacity 0.28s cubic-bezier(0.4,0,0.2,1)' : 'none',
-        }}
-      >
+      <div>
         {pathname === '/projects' ? (
           <Suspense fallback={<PageLoader />}>
             <ProjectsPage />
@@ -143,7 +145,7 @@ function App() {
 
             <main>
               <ScrollReveal direction="down" delay={0}>
-                <Hero />
+                <Hero introReady={loadingDone} />
               </ScrollReveal>
               <ScrollReveal direction="up" delay={120}>
                 <About />

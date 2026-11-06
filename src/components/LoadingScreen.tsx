@@ -19,21 +19,28 @@ const DISPLAY_DURATION = 280
 const TRANSITION_DURATION = 130
 const CYCLE_DURATION = DISPLAY_DURATION + TRANSITION_DURATION
 const EXIT_DELAY = 5100
-const EXIT_TRANSITION = 280
+const EXIT_TRANSITION = 620
 
 interface LoadingScreenProps {
   onComplete: () => void
+  onExited: () => void
 }
 
-export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
+export default function LoadingScreen({ onComplete, onExited }: LoadingScreenProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [visible, setVisible] = useState(true)
   const [exiting, setExiting] = useState(false)
 
-  const handleSkip = () => {
+  const beginExit = () => {
     if (exiting) return
     setExiting(true)
-    setTimeout(onComplete, EXIT_TRANSITION)
+    onComplete()
+    setTimeout(onExited, EXIT_TRANSITION)
+  }
+
+  const handleSkip = () => {
+    if (exiting) return
+    beginExit()
   }
 
   useEffect(() => {
@@ -53,10 +60,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       }
     }, CYCLE_DURATION)
 
-    const exitTimer = setTimeout(() => {
-      setExiting(true)
-      setTimeout(onComplete, EXIT_TRANSITION)
-    }, EXIT_DELAY)
+    const exitTimer = setTimeout(beginExit, EXIT_DELAY)
 
     return () => {
       clearInterval(interval)
@@ -69,11 +73,9 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden cursor-pointer"
       style={{
         backgroundColor: '#ffffff',
-        opacity: exiting ? 0 : 1,
-        transform: exiting ? 'scale(1.01)' : 'scale(1)',
-        filter: exiting ? 'blur(2px)' : 'blur(0px)',
+        transform: exiting ? 'translate3d(0, -100%, 0)' : 'translate3d(0, 0, 0)',
         transition: exiting
-          ? `opacity ${EXIT_TRANSITION}ms cubic-bezier(0.4,0,0.2,1), transform ${EXIT_TRANSITION}ms cubic-bezier(0.4,0,0.2,1), filter ${EXIT_TRANSITION}ms cubic-bezier(0.4,0,0.2,1)`
+          ? `transform ${EXIT_TRANSITION}ms cubic-bezier(0.76, 0, 0.24, 1)`
           : 'none',
         pointerEvents: exiting ? 'none' : 'all',
       }}

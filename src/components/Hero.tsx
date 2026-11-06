@@ -120,10 +120,10 @@ export default function Hero({ introReady = true }: { introReady?: boolean }) {
   const [valuePropIndex, setValuePropIndex] = useState(0)
   const [valuePropVisible, setValuePropVisible] = useState(true)
   const [cvOpen, setCvOpen] = useState(false)
-  const [cardPull, setCardPull] = useState({ x: 0, y: -INTRO_DROP, a: 0 })
+  const [cardPull, setCardPull] = useState({ x: 0, y: -INTRO_DROP, a: 0, m: 0 })
   const [isDragging, setIsDragging] = useState(false)
   const [isCardHovered, setIsCardHovered] = useState(false)
-  const cardSim = useRef({ x: 0, y: -INTRO_DROP, vx: 0, vy: 0, a: 0, va: 0, tx: 0, ty: 0, dragging: false, intro: false })
+  const cardSim = useRef({ x: 0, y: -INTRO_DROP, vx: 0, vy: 0, a: 0, va: 0, tx: 0, ty: 0, dragging: false, intro: false, m: 0 })
   const dragOrigin = useRef({ px: 0, py: 0, rawX: 0, rawY: 0 })
   const simFrame = useRef<number | null>(null)
   const simLastTime = useRef(0)
@@ -203,6 +203,11 @@ export default function Hero({ introReady = true }: { introReady?: boolean }) {
 
     if (sim.intro && sim.y >= -0.3 && Math.abs(sim.vy) < 6) sim.intro = false
 
+    // Besarnya gerak kartu -> glow ikut naik/turun. Dihaluskkan biar gak berkedip.
+    const rawMotion = Math.min(1, Math.hypot(sim.vx, sim.vy) / 700 + Math.abs(sim.va) * 6)
+    sim.m += (rawMotion - sim.m) * Math.min(1, h * 9)
+    const motion = sim.m
+
     const resting =
       !sim.dragging && !sim.intro &&
       Math.abs(sim.x) < 0.2 && Math.abs(sim.y) < 0.2 &&
@@ -210,13 +215,13 @@ export default function Hero({ introReady = true }: { introReady?: boolean }) {
       Math.abs(sim.a) < 0.0005 && Math.abs(sim.va) < 0.01
 
     if (resting) {
-      Object.assign(sim, { x: 0, y: 0, vx: 0, vy: 0, a: 0, va: 0 })
-      setCardPull({ x: 0, y: 0, a: 0 })
+      Object.assign(sim, { x: 0, y: 0, vx: 0, vy: 0, a: 0, va: 0, m: 0 })
+      setCardPull({ x: 0, y: 0, a: 0, m: 0 })
       simFrame.current = null
       return
     }
 
-    setCardPull({ x: sim.x, y: sim.y, a: sim.a })
+    setCardPull({ x: sim.x, y: sim.y, a: sim.a, m: motion })
     simFrame.current = window.requestAnimationFrame(stepSim)
   }
 
@@ -232,7 +237,7 @@ export default function Hero({ introReady = true }: { introReady?: boolean }) {
     const sim = cardSim.current
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       Object.assign(sim, { x: 0, y: 0, vx: 0, vy: 0, a: 0, va: 0, intro: false })
-      setCardPull({ x: 0, y: 0, a: 0 })
+      setCardPull({ x: 0, y: 0, a: 0, m: 0 })
       return
     }
     Object.assign(sim, { x: 0, y: -INTRO_DROP, vx: 90, vy: 0, a: 0, va: 0, tx: 0, ty: 0, dragging: false, intro: true })
@@ -295,6 +300,16 @@ export default function Hero({ introReady = true }: { introReady?: boolean }) {
     `C ${strapStartX} ${strapStartY + strapSpan * 0.4}`,
     `${strapEndX - Math.sin(tilt) * strapSpan * 0.45} ${strapEndY - Math.cos(tilt) * strapSpan * 0.45}`,
     `${strapEndX} ${strapEndY}`,
+  ].join(' ')
+
+  // Glow merah ngikutin kartu: makin kartu bergerak, makin terang.
+  const motion = cardPull.m
+  const glowBoost = isDragging ? 0.45 : isCardHovered ? 0.22 : 0
+  const glowLevel = Math.min(1, motion + glowBoost)
+  const cardGlowFilter = [
+    `drop-shadow(0 ${18 - glowLevel * 2}px ${24 - glowLevel * 4}px rgba(75,10,18,${(0.16 + glowLevel * 0.03).toFixed(3)}))`,
+    `drop-shadow(0 0 ${(4 + glowLevel * 7).toFixed(1)}px rgba(201,37,63,${(0.18 + glowLevel * 0.4).toFixed(3)}))`,
+    `drop-shadow(0 0 ${(12 + glowLevel * 22).toFixed(1)}px rgba(201,37,63,${(0.1 + glowLevel * 0.26).toFixed(3)}))`,
   ].join(' ')
 
   return (
@@ -451,13 +466,9 @@ export default function Hero({ introReady = true }: { introReady?: boolean }) {
                 <img
                   src="/assets/syifa-card.png"
                   alt="Syifa Arizal ID card, Front-End Developer"
-                  className="relative z-10 block h-auto w-full transition-[filter] duration-300 ease-out"
+                  className="relative z-10 block h-auto w-full"
                   style={{
-                    filter: isDragging
-                      ? 'drop-shadow(0 16px 22px rgba(75,10,18,0.18)) drop-shadow(0 0 8px rgba(201,37,63,0.55)) drop-shadow(0 0 26px rgba(201,37,63,0.30))'
-                      : isCardHovered
-                        ? 'drop-shadow(0 17px 23px rgba(75,10,18,0.17)) drop-shadow(0 0 5px rgba(201,37,63,0.42)) drop-shadow(0 0 16px rgba(201,37,63,0.22))'
-                        : 'drop-shadow(0 18px 24px rgba(75,10,18,0.16))',
+                    filter: cardGlowFilter,
                   }}
                   width={1024}
                   height={1536}
