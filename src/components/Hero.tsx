@@ -121,6 +121,8 @@ export default function Hero({ introReady = true }: { introReady?: boolean }) {
   const [valuePropVisible, setValuePropVisible] = useState(true)
   const [cvOpen, setCvOpen] = useState(false)
   const [cardPull, setCardPull] = useState({ x: 0, y: -INTRO_DROP, a: 0 })
+  const [isDragging, setIsDragging] = useState(false)
+  const [isCardHovered, setIsCardHovered] = useState(false)
   const cardSim = useRef({ x: 0, y: -INTRO_DROP, vx: 0, vy: 0, a: 0, va: 0, tx: 0, ty: 0, dragging: false, intro: false })
   const dragOrigin = useRef({ px: 0, py: 0, rawX: 0, rawY: 0 })
   const simFrame = useRef<number | null>(null)
@@ -247,6 +249,7 @@ export default function Hero({ introReady = true }: { introReady?: boolean }) {
     sim.intro = false
     sim.tx = sim.x
     sim.ty = sim.y
+    setIsDragging(true)
     dragOrigin.current = {
       px: event.clientX,
       py: event.clientY,
@@ -270,6 +273,7 @@ export default function Hero({ introReady = true }: { introReady?: boolean }) {
     sim.dragging = false
     sim.tx = 0
     sim.ty = 0
+    setIsDragging(false)
     startSim()
   }
 
@@ -436,7 +440,9 @@ export default function Hero({ introReady = true }: { introReady?: boolean }) {
                 onPointerMove={moveCardDrag}
                 onPointerUp={endCardDrag}
                 onPointerCancel={endCardDrag}
-                className="relative z-10 block w-full cursor-grab touch-none select-none will-change-transform active:cursor-grabbing"
+                onPointerEnter={() => setIsCardHovered(true)}
+                onPointerLeave={() => setIsCardHovered(false)}
+                className="group relative z-10 block w-full cursor-grab touch-none select-none will-change-transform active:cursor-grabbing"
                 style={{
                   transform: `translate3d(${cardPull.x}px, ${cardPull.y}px, 0) rotate(${-tilt * (180 / Math.PI)}deg)`,
                   transformOrigin: `50% ${(STRAP_END_Y / CARD_H) * 100}%`,
@@ -445,7 +451,14 @@ export default function Hero({ introReady = true }: { introReady?: boolean }) {
                 <img
                   src="/assets/syifa-card.png"
                   alt="Syifa Arizal ID card, Front-End Developer"
-                  className="block h-auto w-full drop-shadow-[0_18px_24px_rgba(75,10,18,0.16)]"
+                  className="relative z-10 block h-auto w-full transition-[filter] duration-300 ease-out"
+                  style={{
+                    filter: isDragging
+                      ? 'drop-shadow(0 16px 22px rgba(75,10,18,0.18)) drop-shadow(0 0 8px rgba(201,37,63,0.55)) drop-shadow(0 0 26px rgba(201,37,63,0.30))'
+                      : isCardHovered
+                        ? 'drop-shadow(0 17px 23px rgba(75,10,18,0.17)) drop-shadow(0 0 5px rgba(201,37,63,0.42)) drop-shadow(0 0 16px rgba(201,37,63,0.22))'
+                        : 'drop-shadow(0 18px 24px rgba(75,10,18,0.16))',
+                  }}
                   width={1024}
                   height={1536}
                   fetchPriority="high"
