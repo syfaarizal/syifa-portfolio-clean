@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { navigateWithTransition } from '../lib/navigation'
 import useParallax from '../hooks/useParallax'
 import CvModal from './CvModal'
@@ -68,6 +68,33 @@ const socialLinks = [
 
 const title = 'Front-End Developer';
 
+// --- Geometri kartu ID
+const CARD_W = 900 // lebar gambar syifa-card.png saat tampil di desktop
+const CARD_H = 950 // tinggi gambar (rasio 2:3)
+const STRAP_W = 143 // lebar tali merah
+const STRAP_END_Y = 33 // titik tali "masuk" ke ring besi, diukur dari atas PNG. Geser kalau kurang pas
+const HANGER_TOP_DESKTOP = 97 // jarak atas PNG dari tepi atas hero (menentukan panjang tali yang kelihatan)
+const HANGER_TOP_MOBILE = 64
+
+// --- Fisika kartu ---
+const INTRO_DROP = 900 // kartu mulai dari atas layar (px) lalu jatuh dan memantul saat halaman masuk
+const GRAVITY = 3200 // px/s², kecepatan jatuh saat tali masih longgar
+const STRAP_STIFFNESS = 554 // kekakuan saat tali kencang: makin besar, pantulan makin pendek
+const STRAP_DAMPING = 13 // makin besar, pantulan makin cepat habis
+const PULL_LIMIT_X = 150 // batas tarik ke samping (makin dekat batas, makin berat)
+const PULL_LIMIT_DOWN = 240
+const PULL_LIMIT_UP = 36
+
+// Tarikan makin berat mendekati batas (karet), bukan berhenti mendadak.
+const softLimit = (value: number, down: number, up: number) =>
+  value >= 0 ? down * Math.tanh(value / down) : -up * Math.tanh(-value / up)
+
+const softLimitInverse = (value: number, down: number, up: number) => {
+  const limit = value >= 0 ? down : up
+  const ratio = Math.min(0.98, Math.abs(value) / limit)
+  return Math.sign(value) * limit * Math.atanh(ratio)
+}
+
 const valueProps = [
   'Workflow Automation',
   'Creating Digital Experiences',
@@ -75,31 +102,39 @@ const valueProps = [
   'Responsive UI',
 ]
 
-const Dot = ({ cx, cy }: { cx: number; cy: number }) => (
-  <circle cx={cx} cy={cy} r="2.5" fill="#D1D5DB" />
-)
-
-const DotsPattern = () => {
-  const dots = []
-
-  for (let row = 0; row < 5; row++) {
-    for (let col = 0; col < 6; col++) {
-      dots.push(<Dot key={`${row}-${col}`} cx={col * 18} cy={row * 18} />)
-    }
-  }
-
-  return (
-    <svg width="150" height="130" viewBox="0 0 100 80" className="opacity-60">
-      {dots}
-    </svg>
-  )
-}
-
-export default function Hero() {
+export default function Hero({ introReady = true }: { introReady?: boolean }) {
   const [valuePropIndex, setValuePropIndex] = useState(0)
   const [valuePropVisible, setValuePropVisible] = useState(true)
   const [cvOpen, setCvOpen] = useState(false)
+  const [cardPull, setCardPull] = useState({ x: 0, y: -INTRO_DROP, a: 0 })
+  const cardSim = useRef({ x: 0, y: -INTRO_DROP, vx: 0, vy: 0, a: 0, va: 0, tx: 0, ty: 0, dragging: false, intro: false })
+  const dragOrigin = useRef({ px: 0, py: 0, rawX: 0, rawY: 0 })
+  const simFrame = useRef<number | null>(null)
+  const simLastTime = useRef(0)
   const parallaxOffset = useParallax(0.08)
+  const stageRef = useRef<HTMLDivElement>(null)
+  const [cardScale, setCardScale] = useState(1)
+  const [isDesktop, setIsDesktop] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(min-width: 1024px)').matches,
+  )
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 1024px)')
+    const onChange = () => setIsDesktop(media.matches)
+    onChange()
+    media.addEventListener('change', onChange)
+    return () => media.removeEventListener('change', onChange)
+  }, [])
+
+  useEffect(() => {
+    const stage = stageRef.current
+    if (!stage) return
+    const measure = () => setCardScale(stage.clientWidth / CARD_W)
+    measure()
+    const observer = new ResizeObserver(measure)
+    observer.observe(stage)
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     const fadeDuration = 180
@@ -116,6 +151,133 @@ export default function Hero() {
 
     return () => window.clearInterval(interval)
   }, [])
+
+  const stepSim = (time: number) => {
+    const sim = cardSim.current
+    const dt = Math.min(Math.max((time - simLastTime.current) / 1000, 0), 1 / 30)
+    simLastTime.current = time
+    const steps = 4
+    const h = dt / steps
+
+    for (let i = 0; i < steps; i++) {
+      // Sumbu X: ayunan ke samping (lebih kaku saat dipegang, lebih longgar saat dilepas)
+      const kx = sim.dragging ? 320 : 105
+      const cx = sim.dragging ? 26 : 7.2
+      sim.vx += (kx * (sim.tx - sim.x) - cx * sim.vx) * h
+      sim.x += sim.vx * h
+
+      // Sumbu Y
+      if (sim.intro) {
+        // Jatuh bebas saat tali longgar, memantul elastis saat tali kencang
+        sim.vy += (sim.y > 0 ? -STRAP_STIFFNESS * sim.y - STRAP_DAMPING * sim.vy : GRAVITY) * h
+      } else {
+        const ky = sim.dragging ? 320 : 105
+        const cy = sim.dragging ? 26 : 7.2
+        sim.vy += (ky * (sim.ty - sim.y) - cy * sim.vy) * h
+      }
+      sim.y += sim.vy * h
+
+      // Sudut: mengejar arah tali dengan sedikit delay, jadi kartu terlihat berayun
+      const targetA = Math.atan2(sim.x, Math.max(520 + sim.y, 260))
+      const ka = sim.dragging ? 160 : 70
+      const ca = sim.dragging ? 16 : 5.5
+      sim.va += (ka * (targetA - sim.a) - ca * sim.va) * h
+      sim.a += sim.va * h
+    }
+
+    if (sim.intro && sim.y >= -0.3 && Math.abs(sim.vy) < 6) sim.intro = false
+
+    const resting =
+      !sim.dragging && !sim.intro &&
+      Math.abs(sim.x) < 0.2 && Math.abs(sim.y) < 0.2 &&
+      Math.abs(sim.vx) < 2 && Math.abs(sim.vy) < 2 &&
+      Math.abs(sim.a) < 0.0005 && Math.abs(sim.va) < 0.01
+
+    if (resting) {
+      Object.assign(sim, { x: 0, y: 0, vx: 0, vy: 0, a: 0, va: 0 })
+      setCardPull({ x: 0, y: 0, a: 0 })
+      simFrame.current = null
+      return
+    }
+
+    setCardPull({ x: sim.x, y: sim.y, a: sim.a })
+    simFrame.current = window.requestAnimationFrame(stepSim)
+  }
+
+  const startSim = () => {
+    if (simFrame.current !== null) return
+    simLastTime.current = performance.now()
+    simFrame.current = window.requestAnimationFrame(stepSim)
+  }
+
+  // Animasi masuk: kartu jatuh dari atas lalu memantul. Mulai setelah loading screen selesai (introReady).
+  useEffect(() => {
+    if (!introReady) return
+    const sim = cardSim.current
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      Object.assign(sim, { x: 0, y: 0, vx: 0, vy: 0, a: 0, va: 0, intro: false })
+      setCardPull({ x: 0, y: 0, a: 0 })
+      return
+    }
+    Object.assign(sim, { x: 0, y: -INTRO_DROP, vx: 90, vy: 0, a: 0, va: 0, tx: 0, ty: 0, dragging: false, intro: true })
+    if (simFrame.current !== null) window.cancelAnimationFrame(simFrame.current)
+    simFrame.current = null
+    startSim()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [introReady])
+
+  const startCardDrag = (event: React.PointerEvent<HTMLButtonElement>) => {
+    event.currentTarget.setPointerCapture(event.pointerId)
+    const sim = cardSim.current
+    sim.dragging = true
+    sim.intro = false
+    sim.tx = sim.x
+    sim.ty = sim.y
+    dragOrigin.current = {
+      px: event.clientX,
+      py: event.clientY,
+      rawX: softLimitInverse(sim.x, PULL_LIMIT_X, PULL_LIMIT_X),
+      rawY: softLimitInverse(sim.y, PULL_LIMIT_DOWN, PULL_LIMIT_UP),
+    }
+    startSim()
+  }
+
+  const moveCardDrag = (event: React.PointerEvent<HTMLButtonElement>) => {
+    const sim = cardSim.current
+    if (!sim.dragging) return
+    const origin = dragOrigin.current
+    sim.tx = softLimit(origin.rawX + (event.clientX - origin.px), PULL_LIMIT_X, PULL_LIMIT_X)
+    sim.ty = softLimit(origin.rawY + (event.clientY - origin.py), PULL_LIMIT_DOWN, PULL_LIMIT_UP)
+  }
+
+  const endCardDrag = () => {
+    const sim = cardSim.current
+    if (!sim.dragging) return
+    sim.dragging = false
+    sim.tx = 0
+    sim.ty = 0
+    startSim()
+  }
+
+  useEffect(() => () => {
+    if (simFrame.current !== null) window.cancelAnimationFrame(simFrame.current)
+    simFrame.current = null
+  }, [])
+
+  // Tali: dari tepi atas hero (tetap) -> ring kartu (ikut ketarik). Kartu miring mengikuti arah tali.
+  const hangerTop = isDesktop ? HANGER_TOP_DESKTOP : HANGER_TOP_MOBILE
+  const tilt = cardPull.a
+  const strapStartX = CARD_W / 2
+  const strapStartY = isDesktop ? -120 / cardScale : 0
+  const strapEndX = strapStartX + cardPull.x / cardScale
+  const strapEndY = hangerTop / cardScale + STRAP_END_Y + cardPull.y / cardScale
+  const strapSpan = strapEndY - strapStartY
+  const strapPath = [
+    `M ${strapStartX} ${strapStartY}`,
+    `C ${strapStartX} ${strapStartY + strapSpan * 0.4}`,
+    `${strapEndX - Math.sin(tilt) * strapSpan * 0.45} ${strapEndY - Math.cos(tilt) * strapSpan * 0.45}`,
+    `${strapEndX} ${strapEndY}`,
+  ].join(' ')
 
   return (
     <>
@@ -147,7 +309,7 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <div className="grid gap-12 py-12 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[1fr_0.98fr] lg:items-center lg:gap-8 lg:py-0">
           <div
-            className="relative z-10 max-w-2xl"
+            className="relative z-10 max-w-2xl xl:pl-[50px] 2xl:pl-0"
             style={{ transform: `translate3d(0, ${parallaxOffset * -0.06}px, 0)` }}
           >
             <p className="mb-4 font-sans text-[1.05rem] tracking-wide text-gray-600 sm:text-[1.2rem] lg:text-[1.5rem]">
@@ -225,55 +387,59 @@ export default function Hero() {
           </div>
 
           <div
-            className="relative flex min-h-[420px] items-end justify-center sm:min-h-[520px] lg:min-h-[760px] lg:justify-end"
-            style={{ transform: `translate3d(0, ${parallaxOffset * 0.05}px, 0)` }}
+            className="relative flex justify-center lg:self-stretch"
+            style={isDesktop ? undefined : { clipPath: 'inset(0 -100vw -320px -100vw)' }}
           >
             <div
-              className="absolute left-1/2 top-4 h-[430px] w-[280px] -translate-x-[54%] rounded-t-[150px] rounded-b-[0] bg-burgundy shadow-[0_24px_60px_rgba(122,15,22,0.18)] transition-transform duration-500 ease-out hover:-translate-y-1 sm:top-3 sm:h-[560px] sm:w-[330px] md:h-[620px] md:w-[360px] lg:left-[8%] lg:top-14 lg:-translate-x-0 lg:rounded-t-[190px] lg:h-[640px] lg:w-[380px]"
-              aria-hidden="true"
+              ref={stageRef}
+              className="relative flex w-[275px] flex-col items-center pb-6 sm:w-[325px] md:w-[355px] lg:w-[390px]"
+              style={{ paddingTop: hangerTop }}
             >
-              <div
-                className="h-full w-full rounded-[inherit]"
-                style={{ transform: `translate3d(0, ${parallaxOffset * 0.08}px, 0)` }}
-              />
-            </div>
+              {/* Tali lanyard: satu kurva yang ujung bawahnya selalu nempel di ring kartu */}
+              <svg
+                className="pointer-events-none absolute left-0 top-0 z-0 h-auto w-full overflow-visible"
+                viewBox={`0 0 ${CARD_W} ${CARD_H}`}
+                aria-hidden="true"
+                style={{
+                  filter: 'drop-shadow(0 8px 10px rgba(75,10,18,0.14))',
+                  ...(isDesktop
+                    ? {}
+                    : {
+                        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, #000 40px)',
+                        maskImage: 'linear-gradient(to bottom, transparent 0, #000 40px)',
+                      }),
+                }}
+              >
+                <path d={strapPath} fill="none" stroke="#940b25" strokeWidth={STRAP_W + 3} />
+                <path d={strapPath} fill="none" stroke="#ad0c2b" strokeWidth={STRAP_W} />
+                <path d={strapPath} fill="none" stroke="#c9253f" strokeWidth={STRAP_W * 0.35} opacity=".28" />
+              </svg>
 
-            <div
-              className="absolute right-[10%] top-[34%] hidden h-[255px] w-[255px] rounded-full border border-[#E9D9D2] lg:block"
-              aria-hidden="true"
-            />
+              <button
+                type="button"
+                aria-label="Drag Syifa's ID card"
+                onPointerDown={startCardDrag}
+                onPointerMove={moveCardDrag}
+                onPointerUp={endCardDrag}
+                onPointerCancel={endCardDrag}
+                className="relative z-10 block w-full cursor-grab touch-none select-none will-change-transform active:cursor-grabbing"
+                style={{
+                  transform: `translate3d(${cardPull.x}px, ${cardPull.y}px, 0) rotate(${-tilt * (180 / Math.PI)}deg)`,
+                  transformOrigin: `50% ${(STRAP_END_Y / CARD_H) * 100}%`,
+                }}
+              >
+                <img
+                  src="/assets/syifa-card.png"
+                  alt="Syifa Arizal ID card, Front-End Developer"
+                  className="block h-auto w-full drop-shadow-[0_18px_24px_rgba(75,10,18,0.16)]"
+                  width={1024}
+                  height={1536}
+                  fetchPriority="high"
+                  decoding="async"
+                  draggable={false}
+                />
+              </button>
 
-            <div className="absolute right-6 top-14 hidden lg:block" aria-hidden="true">
-              <DotsPattern />
-            </div>
-
-            <div
-              className="absolute left-1/2 top-[16%] z-10 -translate-x-[54%] transition-transform duration-500 ease-out sm:top-[18.9%] sm:-translate-x-[45%] lg:left-[8%] lg:translate-x-0"
-            >
-              <img
-                src="/assets/gambar-syifa-nobg.png"
-                alt="Syifa Arizal – Front End Developer"
-                className="w-[279px] max-w-none select-none object-contain sm:w-[280px] md:w-[315px] lg:w-[405px]"
-                width={405}
-                height={640}
-                fetchPriority="high"
-                decoding="async"
-                draggable={false}
-                style={{ transform: `translate3d(0, ${parallaxOffset * -0.02}px, 0)` }}
-              />
-            </div>
-
-            <div className="absolute left-[80%] top-[56%] z-20 -translate-x-1/2 rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-float backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 sm:left-auto sm:right-0 sm:translate-x-0 sm:px-6 sm:py-5">
-              <div className="font-serif text-[2.2rem] leading-none font-bold text-burgundy sm:text-[2.9rem]">
-                10+
-              </div>
-              <div className="mt-1.5 font-sans text-[0.85rem] font-semibold text-gray-800 sm:mt-2 sm:text-[0.96rem]">
-                Projects Built
-              </div>
-            </div>
-
-            <div className="absolute bottom-[-8%] left-[8%] z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-float ring-4 ring-red-700 transition-transform duration-300 hover:scale-105 sm:h-14 sm:w-14 lg:left-[6%] lg:bottom-10">
-              <img src="/assets/logo-libr.png" alt="Syifa Arizal logo" className="h-10 w-10 object-contain sm:h-12 sm:w-12" width={48} height={48} loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
