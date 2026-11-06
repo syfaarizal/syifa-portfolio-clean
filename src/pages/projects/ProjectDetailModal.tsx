@@ -21,7 +21,7 @@ const ExternalIcon = () => (
   </svg>
 )
 
-function SectionCard({
+function Section({
   title,
   children,
 }: {
@@ -29,13 +29,14 @@ function SectionCard({
   children: ReactNode
 }) {
   return (
-    <section className="rounded-[24px] border border-[#E8DDD9] bg-[#fffaf9] p-5">
-      <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-gray-500">
-        {title}
-      </p>
-      <div className="mt-3 font-sans text-[0.98rem] leading-7 text-gray-600">
-        {children}
+    <section>
+      <div className="flex items-center gap-3">
+        <span className="h-[3px] w-6 rounded-full bg-burgundy/70" aria-hidden="true" />
+        <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-burgundy">
+          {title}
+        </p>
       </div>
+      <div className="mt-3 font-sans text-[0.98rem] leading-7 text-gray-600">{children}</div>
     </section>
   )
 }
@@ -68,131 +69,63 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
       role="presentation"
     >
       <div
-        className="relative max-h-[92vh] w-full max-w-5xl overflow-hidden rounded-[32px] border border-white/70 bg-white shadow-[0_30px_100px_rgba(0,0,0,0.3)]"
+        className="relative flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden rounded-[32px] border border-white/70 bg-white shadow-[0_30px_100px_rgba(0,0,0,0.3)]"
         onClick={(event) => event.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-labelledby={`project-modal-title-${project.id}`}
       >
-        <div className="flex items-center justify-between border-b border-[#EAEAEA] px-5 py-4 sm:px-6">
-          <div>
-            <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-burgundy">
-              Project Detail
-            </p>
-            <h3
-              id={`project-modal-title-${project.id}`}
-              className="mt-1 font-serif text-[1.75rem] font-semibold leading-tight text-gray-950"
-            >
-              {project.title}
-            </h3>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E8DDD9] text-gray-600 transition-colors duration-200 hover:border-burgundy hover:text-burgundy"
-            aria-label="Close project detail"
-          >
-            <CloseIcon />
-          </button>
-        </div>
-
-        <div className="max-h-[calc(92vh-72px)] overflow-y-auto">
-          <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="border-b border-[#EAEAEA] lg:border-b-0 lg:border-r">
-              <div className="bg-[linear-gradient(180deg,#fffdfd_0%,#fff6f4_100%)] p-5 sm:p-6 lg:sticky lg:top-0">
-                <div className="overflow-hidden rounded-[26px] border border-[#E8DDD9] bg-white shadow-sm">
-                  <img src={project.img} alt={project.title} className="h-[280px] w-full object-cover sm:h-[310px]" width={640} height={310} loading="lazy" decoding="async" />
-                </div>
-
-                <div className="mt-5 rounded-[24px] border border-[#E8DDD9] bg-white p-5 shadow-[0_12px_32px_rgba(122,15,22,0.05)]">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-burgundy">
-                        Quick context
-                      </p>
-                      <h4 className="mt-2 font-serif text-[1.45rem] font-semibold leading-tight text-gray-950">
-                        {project.title}
-                      </h4>
-                    </div>
-                    <span className="rounded-full border border-[#E8DDD9] bg-[#fcf7f6] px-3 py-1 font-sans text-xs font-semibold text-gray-600">
-                      {project.year}
-                    </span>
-                  </div>
-
-                  <p className="mt-4 font-sans text-[0.98rem] leading-7 text-gray-600">
-                    {project.detail.overview}
-                  </p>
-
-                  <div className="mt-4 grid grid-cols-3 gap-2">
-                    <div className="rounded-2xl border border-[#E8DDD9] bg-[#fffaf9] px-3 py-3">
-                      <p className="font-sans text-[10px] uppercase tracking-[0.18em] text-gray-400">
-                        Challenge
-                      </p>
-                      <p className="mt-1 font-sans text-xs leading-5 text-gray-600">
-                        {project.detail.challenge}
-                      </p>
-                    </div>
-                    <div className="rounded-2xl border border-[#E8DDD9] bg-[#fffaf9] px-3 py-3">
-                      <p className="font-sans text-[10px] uppercase tracking-[0.18em] text-gray-400">
-                        Solution
-                      </p>
-                      <p className="mt-1 font-sans text-xs leading-5 text-gray-600">
-                        {project.detail.solution}
-                      </p>
-                    </div>
-                    <div className="rounded-2xl border border-[#E8DDD9] bg-[#fffaf9] px-3 py-3">
-                      <p className="font-sans text-[10px] uppercase tracking-[0.18em] text-gray-400">
-                        Outcome
-                      </p>
-                      <p className="mt-1 font-sans text-xs leading-5 text-gray-600">
-                        {project.detail.outcome}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-[#E8DDD9] bg-[#fffaf9] px-3 py-1 font-sans text-xs font-semibold text-gray-600"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full bg-burgundy px-4 py-2 font-sans text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-burgundy-900"
+        <header className="shrink-0 border-b border-[#EFE7E4] bg-[linear-gradient(180deg,#fffdfd_0%,#fff8f6_100%)] px-6 py-5 sm:px-8 sm:py-6">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-burgundy">
+                {project.category}
+              </p>
+              <h3
+                id={`project-modal-title-${project.id}`}
+                className="mt-2 max-w-[100ch] font-serif text-[1.7rem] font-semibold leading-tight text-gray-950 sm:text-[2.15rem]"
+              >
+                {project.title}
+              </h3>
+              <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+                <span className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-gray-400">
+                  {project.year}
+                </span>
+                <span className="h-3 w-px bg-[#E3D8D4]" aria-hidden="true" />
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-[#E8DDD9] bg-white/80 px-3 py-1 font-sans text-xs font-semibold text-gray-600"
                     >
-                      Open Demo
-                      <ExternalIcon />
-                    </a>
-                    {project.sourceUrl ? (
-                      <a
-                        href={project.sourceUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-[#E8DDD9] bg-white px-4 py-2 font-sans text-sm font-semibold text-gray-800 transition-all duration-200 hover:-translate-y-0.5 hover:border-burgundy hover:text-burgundy"
-                      >
-                        Open Source
-                        <ExternalIcon />
-                      </a>
-                    ) : null}
-                  </div>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
+            <button
+              type="button"
+              onClick={onClose}
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#E8DDD9] bg-white/70 text-gray-600 transition-colors duration-200 hover:border-burgundy hover:text-burgundy"
+              aria-label="Close project detail"
+            >
+              <CloseIcon />
+            </button>
+          </div>
+        </header>
 
-            <div className="space-y-4 p-5 sm:p-6">
-              <SectionCard title="Project Overview">{project.detail.overview}</SectionCard>
-              <SectionCard title="Challenge">{project.detail.challenge}</SectionCard>
-              <SectionCard title="Solution">{project.detail.solution}</SectionCard>
+        <div className="min-h-0 flex-1 overflow-y-auto px-6 py-6 sm:px-8 sm:py-7">
+          <div className="grid gap-x-10 gap-y-7 lg:grid-cols-2">
+            <div className="space-y-7">
+              <Section title="Overview">{project.detail.overview}</Section>
+              <Section title="Challenge">{project.detail.challenge}</Section>
+              <Section title="Solution">{project.detail.solution}</Section>
+              <Section title="Design Process">{project.detail.designProcess}</Section>
+            </div>
 
-              <section className="rounded-[24px] border border-[#E8DDD9] bg-[#fffaf9] p-5">
+            <div className="space-y-7">
+              <section className="rounded-[22px] border border-[#EFE7E4] bg-[#fffaf9] p-5">
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-gray-500">
                   Tech Stack
                 </p>
@@ -208,28 +141,28 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                 </div>
               </section>
 
-              <section className="rounded-[24px] border border-[#E8DDD9] bg-[#fffaf9] p-5">
-                <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-gray-500">
-                  Key Features
-                </p>
-                <ul className="mt-3 space-y-2 font-sans text-[0.98rem] leading-7 text-gray-600">
+              <section>
+                <div className="flex items-center gap-3">
+                  <span className="h-[3px] w-6 rounded-full bg-burgundy/70" aria-hidden="true" />
+                  <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-burgundy">
+                    Key Features
+                  </p>
+                </div>
+                <ul className="mt-3 space-y-2.5 font-sans text-[0.98rem] leading-7 text-gray-600">
                   {project.detail.keyFeatures.map((feature) => (
-                    <li key={feature} className="flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-burgundy" />
+                    <li key={feature} className="flex gap-2.5">
+                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-burgundy" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
               </section>
 
-              <SectionCard title="Design Process">{project.detail.designProcess}</SectionCard>
-              <SectionCard title="Lessons Learned">{project.detail.lessonsLearned}</SectionCard>
-
-              <section className="rounded-[24px] border border-[#E8DDD9] bg-[#4a0810] p-5 text-white">
+              <section className="rounded-[22px] border border-[#EFE7E4] bg-[#4a0810] p-5 text-white">
                 <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-white/65">
                   Problem → Process → Outcome
                 </p>
-                <div className="mt-4 space-y-4 font-sans text-[0.98rem] leading-7 text-white/85">
+                <div className="mt-4 space-y-4 font-sans text-[0.95rem] leading-7 text-white/85">
                   <div>
                     <p className="font-semibold text-white">Problem</p>
                     <p>{project.detail.problem}</p>
@@ -244,10 +177,51 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                   </div>
                 </div>
               </section>
-
             </div>
           </div>
+
+          <section className="mt-8 rounded-[22px] border border-[#EFE7E4] bg-[#fffaf9] p-6 sm:p-7">
+            <div className="flex items-center gap-3">
+              <span className="h-[3px] w-6 rounded-full bg-burgundy/70" aria-hidden="true" />
+              <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.24em] text-burgundy">
+                Lessons Learned
+              </p>
+            </div>
+            <p className="mt-4 max-w-[100ch] font-serif text-[1.05rem] font-semibold leading-8 text-gray-700 sm:text-[1.12rem]">
+              {project.detail.lessonsLearned}
+            </p>
+          </section>
         </div>
+
+        <footer className="shrink-0 border-t border-[#EFE7E4] bg-[#fffaf9] px-6 py-4 sm:px-8">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-sans text-sm text-gray-500">
+              Interested in a build like this?
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-burgundy px-5 py-2.5 font-sans text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-burgundy-900"
+              >
+                Open Demo
+                <ExternalIcon />
+              </a>
+              {project.sourceUrl ? (
+                <a
+                  href={project.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#E8DDD9] bg-white px-5 py-2.5 font-sans text-sm font-semibold text-gray-800 transition-all duration-200 hover:-translate-y-0.5 hover:border-burgundy hover:text-burgundy"
+                >
+                  Open Source
+                  <ExternalIcon />
+                </a>
+              ) : null}
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   , document.body)

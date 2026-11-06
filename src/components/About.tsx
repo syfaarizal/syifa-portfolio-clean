@@ -17,16 +17,6 @@ const folderIcon = () => (
   </svg>
 )
 
-const stackIcon = () => (
-  <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 32 32" fill="#7A0F16">
-    <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
-    <g id="SVGRepo_iconCarrier">
-      <path d="M31,16v9c0,0.55-0.45,1-1,1H2c-0.55,0-1-0.45-1-1v-8c0-0.55,0.45-1,1-1h1c0.55,0,1,0.45,1,1 c0,0.55,0.45,1,1,1h6c0.55,0,1.201,0.402,1.447,0.894l0.106,0.211C12.799,19.597,13.45,20,14,20h4c0.55,0,1.201-0.403,1.447-0.894 l0.106-0.211C19.799,18.403,20.45,18,21,18h6c0.55,0,1-0.45,1-1l0-1c0-0.55,0.45-1,1-1h1C30.55,15,31,15.45,31,16z M6,17h20 c0.55,0,1-0.45,1-1s-0.45-1-1-1H6c-0.55,0-1,0.45-1,1S5.45,17,6,17z M6,14h20c0.55,0,1-0.45,1-1s-0.45-1-1-1H6c-0.55,0-1,0.45-1,1 S5.45,14,6,14z M6,11h20c0.55,0,1-0.45,1-1s-0.45-1-1-1H6c-0.55,0-1,0.45-1,1S5.45,11,6,11z M6,8h20c0.55,0,1-0.45,1-1s-0.45-1-1-1 H6C5.45,6,5,6.45,5,7S5.45,8,6,8z" />
-    </g>
-  </svg>
-)
-
 const laptopIcon = () => (
   <svg fill="#7A0F16" width="23" height="23" viewBox="0 -64 640 640">
     <g id="SVGRepo_bgCarrier" strokeWidth="0" />
@@ -69,13 +59,19 @@ const cubesIcon = () => (
   </svg>
 )
 
+// Education: isi `period` kalau mau ditampilkan (contoh: '2023 - 2027').
+const education = {
+  school: 'Universitas Siber Muhammadiyah',
+  program: 'S1 Informatics Engineering',
+  gpa: '3.81 / 4.00',
+  period: '',
+}
+
 const infoCards = [
-  { icon: folderIcon, title: '10+', lines: ['Projects Built'] },
-  { icon: stackIcon, title: '4+', lines: ['Core Technologies'] },
-  { icon: laptopIcon, title: 'Front-End', lines: ['Development'] },
-  { icon: capIcon, title: 'Modern Stack', lines: ['React & Next.js'] },
-  { icon: briefcaseIcon, title: 'Open To', lines: ['Opportunities'] },
-  { icon: cubesIcon, title: 'Building AI-Powered', lines: ['Digital Products'] },
+  { icon: folderIcon, title: '10+ Projects', lines: ['Business sites, e-commerce & AI tools'] },
+  { icon: laptopIcon, title: 'Core Stack', lines: ['React, Next.js & Tailwind CSS'] },
+  { icon: briefcaseIcon, title: 'Freelance', lines: ['Websites for UMKM clients'] },
+  { icon: cubesIcon, title: 'Also Building', lines: ['AI workflows & Discord bots'] },
 ]
 
 export default function About() {
@@ -94,16 +90,44 @@ export default function About() {
                 </div>
                 <div className="mb-6 h-0.5 w-[4.5rem] rounded-full bg-burgundy" />
 
-                <p className="mb-4 font-sans text-[1rem] leading-relaxed text-gray-500 sm:text-[1.1rem] lg:text-[1.2rem]">
-                  I'm a Front-End Developer and digital builder focused on creating modern web experiences. <br /> <br />
-                  I enjoy turning ideas into scalable products through code, design, and system thinking. <br /> <br />
-                  Currently exploring React, AI workflows, and product development.
-                </p>
+                <div className="space-y-5 font-sans text-[1rem] leading-relaxed text-gray-500 sm:text-[1.1rem] lg:text-[1.2rem]">
+                  <p>
+                    I'm a Front-End Developer who builds fast, responsive websites and web apps,
+                    from business sites and e-commerce to AI-powered tools.
+                  </p>
+                  <p>
+                    I work mainly with React, Next.js, and Tailwind CSS. Recent projects include a
+                    hospitality school admissions platform, a full-stack e-commerce app, and an AI
+                    companion bot for Discord.
+                  </p>
+                  <p>
+                    I'm studying Informatics Engineering while taking freelance projects for small
+                    businesses in Indonesia, and I'm open to front-end roles.
+                  </p>
+                </div>
               </div>
             </ScrollReveal>
           </div>
 
           <ScrollReveal direction="up" className="scroll-reveal-stagger grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="card-base flex items-start gap-4 px-5 py-5 transition-shadow duration-200 hover:shadow-card sm:col-span-2">
+              <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-burgundy-50">
+                {capIcon()}
+              </div>
+              <div>
+                <p className="mb-1 font-sans text-[0.82rem] font-medium uppercase tracking-wider text-gray-400 sm:text-[0.9rem]">
+                  Education
+                </p>
+                <p className="font-sans font-semibold leading-snug text-gray-900 sm:text-[1.05rem]">
+                  {education.school}
+                </p>
+                <p className="mt-0.5 font-sans text-sm leading-snug text-gray-500">
+                  {education.program} · GPA {education.gpa}
+                  {education.period ? ` · ${education.period}` : ''}
+                </p>
+              </div>
+            </div>
+
             {infoCards.map(({ icon: Icon, title, lines }) => (
               <div
                 key={title}
