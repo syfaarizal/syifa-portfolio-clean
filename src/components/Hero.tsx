@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { navigateWithTransition } from '../lib/navigation'
 import useParallax from '../hooks/useParallax'
+import CvModal from './CvModal'
 
 const GithubIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -43,9 +44,11 @@ const UpworkIcon = () => (
   </svg>
 )
 
-const DownloadIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+const DocumentIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+    <path d="M14 2v6h6" />
+    <path d="M8 13h8M8 17h5" />
   </svg>
 )
 
@@ -95,6 +98,7 @@ const DotsPattern = () => {
 export default function Hero() {
   const [valuePropIndex, setValuePropIndex] = useState(0)
   const [valuePropVisible, setValuePropVisible] = useState(true)
+  const [cvOpen, setCvOpen] = useState(false)
   const parallaxOffset = useParallax(0.08)
 
   useEffect(() => {
@@ -114,6 +118,7 @@ export default function Hero() {
   }, [])
 
   return (
+    <>
     <section
       id="home"
       className="relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#fffaf9_100%)]"
@@ -184,13 +189,13 @@ export default function Hero() {
               >
                 View My Work <ArrowRightIcon />
               </button>
-              <a
+              <button
+                type="button"
+                onClick={() => setCvOpen(true)}
                 className="btn-outline justify-center sm:text-[1.05rem]"
-                href="/assets/cv/Syifa_Fauziyah_Arizal_CV.pdf"
-                download="Syifa_Fauziyah_Arizal_CV.pdf"
               >
-                Download CV <DownloadIcon />
-              </a>
+                View CV <DocumentIcon />
+              </button>
             </div>
 
             <div className="mt-7 flex items-center gap-2">
@@ -276,5 +281,8 @@ export default function Hero() {
 
       <div className="absolute bottom-0 left-0 right-0 h-px bg-[#EAEAEA]" />
     </section>
+
+    <CvModal open={cvOpen} onClose={() => setCvOpen(false)} />
+    </>
   )
 }
