@@ -9,7 +9,7 @@ const ArrowIcon = () => (
 )
 
 export default function Projects() {
-  const featuredProjects = projects.filter((project) => project.id >= 1 && project.id <= 3)
+  const featuredProjects = projects.filter((project) => project.id >= 9 && project.id <= 11)
 
   return (
     <div id="projects">
