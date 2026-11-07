@@ -651,6 +651,72 @@ export const projects: Project[] = [
       outcome:
         'The result is a working resident catalog that replaces scrolling through group chats with a searchable, photo-first storefront where buyers can filter to what is actually available right now and check out in a couple of taps via WhatsApp. Sellers manage their own shops and stock without help, and every admin action is enforced by the database rather than the interface. Beyond the catalog itself, the project delivered a full Supabase-native stack — RLS, triggers, security-definer functions, Edge Functions, and scheduled jobs — plus a hard lesson in what a community platform owes its users in terms of privacy and trust.'
     }
+  },
+  {
+    id: 11,
+    title: 'BioCard — One Link, Your Whole Identity',
+    desc: 'A customizable bio-link platform where a profile is more than a list of links — avatar, banner, theme, gallery, now-playing, and birthday, rendered as a single portrait card with a pixel-accurate live preview.',
+    tags: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS v4',
+      'Supabase',
+      'Prisma'
+    ],
+    category: 'Web Development / SaaS',
+    img: '/assets/projects/biocard-preview.png',
+    year: '2026',
+    demoUrl: 'https://biocard-pro.vercel.app/',
+    sourceUrl: 'https://github.com/syfaarizal/bio-card',
+    detail: {
+      overview:
+        'BioCard is a platform for building personalized profile pages — avatar, banner, bio, social links, gallery, now-playing, birthday, and theme — with a live preview that matches the public page exactly. Each profile renders as a single portrait card at a public slug, and the editor that builds it runs the same layout component inside a fixed 390px iframe, so what you edit is precisely what visitors see. The product ships with seven themes, six avatar decoration rings, draggable image focal points, Spotify now-playing, per-profile analytics, and SEO-ready public pages.',
+      challenge:
+        'Most link-in-bio tools are flat by design: they show a logo, a name, and a vertical stack of identical buttons. They answer "where can I find you?" but not "who are you?" — they strip away every signal that makes someone recognizable, so a musician, a designer, and a student all end up looking like the same list of links. The challenge was building a tool where the page itself carries identity, while still being instantly comprehensible to anyone who lands on it from a phone. That meant solving a set of problems that are invisible individually but obvious in the finished product: themes that never render half-applied, images that can be cropped properly rather than stretched, and an editor preview that never lies about what a visitor will actually see.',
+      solution:
+        'Built BioCard on Next.js App Router with TypeScript, Tailwind CSS v4, and Motion for animation, backed by Supabase Auth and PostgreSQL through Prisma 7 with the pg driver adapter, and UploadThing for file storage. Identity is composed rather than listed: seven theme systems defined once as CSS custom properties, six SVG avatar rings that form the actual avatar border, a draggable focal point on every framed image, a gallery, birthday and zodiac detail, and a now-playing card. To keep the preview trustworthy, the editor renders the real card in a 390px iframe — the iframe has its own viewport, so media queries resolve against the phone a visitor will use rather than the editor window — and the card is styled entirely with container queries so the same markup adapts to whatever space it is given.',
+      techStack: [
+        'Next.js 16 (App Router, Turbopack)',
+        'React 19',
+        'TypeScript',
+        'Tailwind CSS v4',
+        'Motion (motion/react)',
+        'Supabase Auth',
+        '@supabase/ssr',
+        'PostgreSQL',
+        'Prisma 7 (@prisma/adapter-pg)',
+        'UploadThing',
+        'Zod',
+        'React Hook Form',
+        'Radix UI',
+        'Vercel'
+      ],
+      keyFeatures: [
+        'Single portrait card layout shared by the public page and the editor preview',
+        'Live preview inside a 390px iframe for pixel-accurate editing on mobile',
+        'Seven themes (Default, Midnight, Rose, Cyber, Cyber Red, Soft Green, Glass) as one token file',
+        'Six avatar decoration rings (Plain, Sakura, Cyber, Red Angel, Ember, Moon) drawn as SVG borders',
+        'Drag-to-set focal point on avatar, banner, and gallery images',
+        'Spotify now-playing picked from the Spotify embed',
+        'Profile gallery with lightbox',
+        'Birthday and zodiac detail block',
+        'Per-profile analytics broken down by day, referrer, and period',
+        'Public SEO with per-profile metadata, Open Graph tags, and a generated sitemap',
+        'Auth flows for login, register, and password reset',
+        'Server Actions for auth, profile, and analytics mutations',
+        'Architecture Decision Records documenting each technical choice'
+      ],
+      designProcess:
+        'The design process started from the premise that the page is the product. BioCard is mobile-first and portrait-only by decision — one layout, centered at max-width on desktop like a Linktree-style stage — because a shared profile is overwhelmingly opened on a phone, and a card that changes shape between devices is a card that has to be designed twice. Themes were centralized as CSS custom properties so a palette could never be half-applied across the card, the gallery, and the landing page. Visual identity then came from a small set of expressive knobs rather than a large template library: the theme sets the mood, the avatar ring sets the signature, and the focal point handles the one thing a fixed crop cannot — keeping a face visible in a circle.',
+      lessonsLearned:
+        'The hardest lesson was learning to distrust the preview. The editor originally rendered the card at the editor window\'s width, so a laptop preview showed a two-column layout that a phone visitor would never see — the preview was confidently wrong. The fix was architectural rather than cosmetic: an iframe with a fixed viewport, so the browser evaluates media queries against 390px no matter the outer window, and container queries everywhere on the card so it depends on itself instead of on the viewport. A second lesson came from image focal points: using `transform: scale()` for zoom is wrong here because it scales the rendered pixels and leaves the clipping geometry wrong, so the clipping stage itself has to be resized. The third was learning that consistency between two surfaces is a system problem, not a discipline problem — moving themes to shared tokens and layout to a shared component removed the possibility of divergence instead of relying on careful editing.',
+      problem:
+        'Link-in-bio pages have become flat: they display links and nothing else. They present a destination but no identity, so a visitor clicking through learns nothing about who made the page, what they care about, or what they look like. For a generation that curates how it is perceived, that is the whole point lost — one click should reveal not just a list of URLs but a person, and yet the standard tool for it renders everyone as the same column of buttons.',
+      process:
+        'I started by documenting the technical decisions as Architecture Decision Records rather than picking a stack and moving on — covering the App Router for SSR and Server Actions, Supabase for both Auth and relational Postgres, Prisma as the typed ORM over a relational User → Profile → SocialLinks, Music, Images, ViewLog model, UploadThing for storage, and the decision to keep slug separate from username so a profile URL could later differ from an account handle. I then built the shared card layer first, since the editor and the public page both render it: a single ProfileLayout with container queries and no device variants, avatar decorations as SVG overlays inset to meet each ring exactly, and the draggable focal-point stage. Theming came next as one token file defining every theme\'s custom properties, consumed identically by the card and the landing gallery. The editor was then built around that shared layer, with the live preview running the real card in a 390px iframe and syncing state over postMessage so the editor stays the single owner of form state, and Zod plus React Hook Form handling validation with auto-save. Finally I added authentication with Supabase SSR session handling, per-profile analytics on views by day, referrer, and period, and public SEO with per-profile metadata, Open Graph tags, and a generated sitemap.',
+      outcome:
+        'The result is a working platform where a single link carries an identity instead of a directory — a themed, portrait card with an avatar signature, gallery, birthday, and now-playing that a visitor can read in seconds, built for the way this generation actually shares a profile. The editor is exact: what is edited in the iframe is what the public page renders, on the same markup, at the same width. The project deepened my skills in Next.js App Router architecture, server-side rendering for public-page SEO, Prisma and relational schema design, container-query-based component design, and multi-surface design consistency — plus a sharpened instinct for the difference between a page that technically works and one that actually communicates.'
+    }
   }
 ]
 
