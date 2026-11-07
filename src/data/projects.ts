@@ -530,49 +530,62 @@ export const projects: Project[] = [
   },
   {
     id: 9,
-    title: 'Login Page Showcase',
-    desc: 'LIBR brand login concepts with a clean front-end presentation.',
-    tags: ['Tailwind CSS', 'TypeScript'],
-    category: 'Showcase',
-    img: '/assets/projects/showcase-review.png',
-    year: '2025',
-    demoUrl: 'https://libr-showcase.vercel.app/',
-    sourceUrl: 'https://github.com/syfaarizal/showcase-login-page',
+    title: 'FocusForge — Personal Focus Timer App for Android',
+    desc: 'A native Android focus app built with React and Capacitor: pick a task, set a duration, and lock into the session with a Focus Lock that blocks distractions.',
+    tags: [
+      'React',
+      'Capacitor',
+      'Vite',
+      'JavaScript'
+    ],
+    category: 'Mobile App / Productivity',
+    img: '/assets/projects/focusforge-preview.png',
+    year: '2026',
+    demoUrl: 'https://focusforge-libr.vercel.app/',
+    sourceUrl: 'https://github.com/syfaarizal/focusforge-libr',
     detail: {
-      overview: 'A polished login-page showcase built around a brand-first visual direction and clean UI hierarchy.',
-      challenge: 'Make the first-screen auth experience feel premium while keeping the layout simple and fast to scan.',
-      solution: 'Use strong contrast, balanced spacing, and a focused structure that makes the brand feel memorable.',
-      techStack: ['Next.js', 'Tailwind CSS', 'TypeScript'],
-      keyFeatures: ['Brand-led layout', 'Responsive composition', 'Clean auth states', 'Simple conversion flow'],
-      designProcess: 'Started from the brand tone, then refined spacing, typography, and panel balance until the screen felt calm and intentional.',
-      lessonsLearned: 'Small adjustments in spacing and hierarchy have a large impact on perceived quality.',
-      problem: 'The screen needed to feel modern and trustworthy without becoming visually noisy.',
-      process: 'I iterated on layout balance, reduced unnecessary elements, and tuned the visual rhythm.',
-      outcome: 'The final result reads as a premium login experience that is easy to extend into future auth flows.',
-    },
-  },
-  {
-    id: 10,
-    title: 'CruisePoint Indonesia',
-    desc: 'Designed to improve user engagement and showcase tourism services effectively.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    category: 'Landing Page',
-    img: '/assets/projects/cruisePoint-preview.png',
-    year: '2024',
-    demoUrl: 'https://syfaarizal.github.io/cruishpoint-indonesia/',
-    sourceUrl: 'https://github.com/syfaarizal/cruishpoint-indonesia',
-    detail: {
-      overview: 'A landing page designed for CruisePoint Indonesia with a simple commercial story and clear brand cues.',
-      challenge: 'Present a travel service in a way that feels credible, tidy, and easy to navigate on mobile.',
-      solution: 'Use a clean hero, structured sections, and direct calls to action that keep the page easy to scan.',
-      techStack: ['HTML', 'CSS', 'JavaScript'],
-      keyFeatures: ['Responsive layout', 'Service highlights', 'Direct CTA flow', 'Mobile-friendly structure'],
-      designProcess: 'The page was shaped around readability first, then refined with spacing and visual accents to keep it professional.',
-      lessonsLearned: 'Travel and service landing pages work best when they stay clear and avoid over-decoration.',
-      problem: 'The page needed to communicate trust and service value without a heavy interface.',
-      process: 'I kept the layout focused, improved hierarchy, and adjusted the flow for responsive browsing.',
-      outcome: 'The result is a straightforward landing page that feels polished and business-ready.',
-    },
+      overview:
+        'FocusForge is a personal focus app for Android that turns a to-do list into actual focused time. Pick a task, set a duration, and the app locks you into the session until the timer ends — no accounts, no backend, no cloud sync, everything stays on the device. The web version is live as a demo, while the native build ships as a signed release APK through GitHub Actions.',
+      challenge:
+        'Most focus apps are either a plain timer with no accountability or a bloated productivity suite that demands onboarding, subscriptions, and a constant internet connection. The challenge was building something that actually keeps a person on task — the app has to be fast, work fully offline, survive being backgrounded without losing timer accuracy, and be able to physically prevent the user from abandoning the session on a phone full of distractions.',
+      solution:
+        'Built the app in React 19 and wrapped it as a native Android app with Capacitor 8, keeping the entire codebase local-first with data persisted to localStorage. Solved timer drift by storing a start timestamp plus accumulated pause time instead of counting ticks, and solved session abandonment by shipping a native Focus Lock: a custom Capacitor plugin that disables the Android back button, keeps the screen on, and optionally enables Android screen pinning to block Home and Recents. A signed release APK is produced automatically by a GitHub Actions workflow.',
+      techStack: [
+        'React 19',
+        'Vite',
+        'Capacitor 8',
+        'Capacitor Local Notifications',
+        'Capacitor Share & Filesystem',
+        'Lucide React',
+        'Custom Capacitor Plugin (Java)',
+        'GitHub Actions',
+        'localStorage'
+      ],
+      keyFeatures: [
+        'Work Time timer with task selection, duration presets, pause, and early finish',
+        'Focus Lock session screen with the Android back button disabled',
+        'Android screen pinning to block Home and Recents',
+        '5-second hold emergency exit with confirmation, session logged as cancelled',
+        'Task list with categories (Work, Study, Personal, Other), time targets, and notes',
+        'Tracker and history with daily, weekly, and monthly totals and a goal ring',
+        'Category filters, per-item delete with undo, and clear all',
+        'Stats screen with 7-day, 30-day, and custom ranges, bar chart, and period comparison',
+        'Session completion rate and time-per-category breakdowns',
+        'JSON backup and CSV export through the system share sheet',
+        'Local notification fired when a session ends',
+        'Fully offline with no account or backend'
+      ],
+      designProcess:
+        'Design started from the core loop — pick, set, lock — and every screen was shaped around keeping the user inside that loop rather than adding more features. The visual direction is a dark, minimal interface with a single glowing accent, so the timer is always the focal point and nothing competes with it. The Focus Lock screen deliberately strips away navigation: one number, one status, one way out that requires holding a button for five seconds. Stats and tracker views were designed to read as a reflection on the day rather than a dashboard of numbers.',
+      lessonsLearned:
+        'The biggest lesson was that "native" features are a separate engineering discipline from the React app itself. Writing a custom Capacitor plugin in Java taught me how the WebView boundary really works, and how a CI patch script can inject a native module into a generated Android project without committing the whole Android tree to Git. On the frontend side, learning to derive statistics from a session list instead of storing aggregates separately — and to persist time as timestamps rather than counters — made the app resilient to backgrounding and WebView pauses in ways that a naive implementation would not be.',
+      problem:
+        'Focus tools usually fail in one of two directions: they are too weak to create real commitment, or they are too heavy to start using. On top of that, timer-based apps are notoriously inaccurate once the app is backgrounded, and most web apps cannot do anything about an Android user simply pressing Home.',
+      process:
+        'I built the React interface in Vite with a small external store using useSyncExternalStore, persisted to localStorage, keeping all statistics derived from the session list rather than duplicated. For the timer, I stored a start timestamp with accumulated pause time so it stays correct when the app is backgrounded, and finalizes sessions that ended in the background the moment the app returns. For Focus Lock, I wrote a custom Capacitor plugin in Java wrapping startLockTask() and FLAG_KEEP_SCREEN_ON, and wrote a patch script that registers it in the generated Android project so no Android project files need to be committed. Finally, I set up a GitHub Actions workflow that builds the web app, generates the Android project, icons and splash, then builds and signs a release APK.',
+      outcome:
+        'The result is a working Android focus app that is genuinely hard to abandon — the screen stays on, the back button does nothing, and leaving early requires a deliberate five-second hold. It installs directly as a signed APK with no account, no backend, and no network requirement, while the web build remains available as a live demo. The project strengthened my skills in React Native-adjacent mobile architecture, native plugin interop, CI-driven release pipelines, and designing software around commitment rather than convenience.'
+    }
   }
 ]
 
