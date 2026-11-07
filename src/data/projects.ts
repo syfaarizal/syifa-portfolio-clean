@@ -217,7 +217,7 @@ export const projects: Project[] = [
     title: 'RasaKita — Modern Food & Beverage Ecommerce',
     desc: 'A modern ecommerce website for food & beverage businesses with responsive design, product catalog, and conversion-focused user experience.',
     tags: ['Next.js 15', 'TypeScript', 'Tailwind CSS v4', 'Framer Motion'],
-    category: 'Ecommerce',
+    category: 'Web Development / Ecommerce',
     img: '/assets/projects/rasakita-preview.png',
     year: '2026',
     demoUrl: 'https://rasa-kita-ten.vercel.app/',
@@ -277,7 +277,7 @@ export const projects: Project[] = [
     title: 'Klinik Sehat — Modern Healthcare Clinic Website',
     desc: 'A modern healthcare clinic website with responsive design, doctor directory, medical services, health articles, and a seamless appointment experience.',
     tags: ['Next.js 15', 'TypeScript', 'Tailwind CSS v4', 'Framer Motion'],
-    category: 'Healthcare',
+    category: 'Web Development / Healthcare',
     img: '/assets/projects/klinik-sehat-preview.png',
     year: '2026',
     demoUrl: 'https://kliniksehat.vercel.app/',
@@ -341,7 +341,7 @@ export const projects: Project[] = [
       'Tailwind CSS v4',
       'Framer Motion'
     ],
-    category: 'Restaurant',
+    category: 'Web Development / Restaurant',
     img: '/assets/projects/kopinusa-preview.png',
     year: '2026',
     demoUrl: 'https://kopinusa.vercel.app/',
@@ -406,7 +406,7 @@ export const projects: Project[] = [
       'Tailwind CSS v4',
       'Framer Motion'
     ],
-    category: 'Hotel',
+    category: 'Web Development / Hotel',
     img: '/assets/projects/luxora-preview.png',
     year: '2026',
     demoUrl: 'https://hotelluxora.vercel.app/',
@@ -585,6 +585,71 @@ export const projects: Project[] = [
         'I built the React interface in Vite with a small external store using useSyncExternalStore, persisted to localStorage, keeping all statistics derived from the session list rather than duplicated. For the timer, I stored a start timestamp with accumulated pause time so it stays correct when the app is backgrounded, and finalizes sessions that ended in the background the moment the app returns. For Focus Lock, I wrote a custom Capacitor plugin in Java wrapping startLockTask() and FLAG_KEEP_SCREEN_ON, and wrote a patch script that registers it in the generated Android project so no Android project files need to be committed. Finally, I set up a GitHub Actions workflow that builds the web app, generates the Android project, icons and splash, then builds and signs a release APK.',
       outcome:
         'The result is a working Android focus app that is genuinely hard to abandon — the screen stays on, the back button does nothing, and leaving early requires a deliberate five-second hold. It installs directly as a signed APK with no account, no backend, and no network requirement, while the web build remains available as a live demo. The project strengthened my skills in React Native-adjacent mobile architecture, native plugin interop, CI-driven release pipelines, and designing software around commitment rather than convenience.'
+    }
+  },
+  {
+    id: 10,
+    title: 'Mall Permata Dian Anyar — Resident Catalog PWA',
+    desc: 'A resident-oriented catalog PWA for a housing complex, where UMKM sellers publish their products and orders are handed off through structured WhatsApp messages instead of a custom order database.',
+    tags: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS v4',
+      'Supabase',
+      'PWA'
+    ],
+    category: 'Web Development / E-Commerce',
+    img: '/assets/projects/mpda-preview.png',
+    year: '2026',
+    demoUrl: 'https://mall-pda.vercel.app/',
+    sourceUrl: 'https://github.com/syfaarizal/mall-permata-dian-anyar',
+    detail: {
+      overview:
+        'Mall Permata Dian Anyar is a catalog PWA built for the residents and small business owners of the Dian Anyar housing complex. Sellers open their own shops, publish photographed products, and mark stock as ready or sold out. Buyers browse a photo-first catalog, filter by what is available right now, keep a cart per store, and complete checkout by sending a structured WhatsApp message to the seller. There is deliberately no order table in the database — the system is a catalog and discovery layer, and the actual transaction stays on WhatsApp where the seller and buyer already live.',
+      challenge:
+        'Small vendors in the complex were selling through scattered WhatsApp group chats and informal posts. The catalog was effectively unusable: product photos scrolled away, prices and availability drifted between messages, new arrivals were impossible to find, and a buyer could not tell which of the dozens of sellers was actually open today. On top of that, a shared housing complex means the platform has to handle real privacy concerns — addresses, phone numbers, and delivery locations for specific households — and it has to work for residents who are not technical, on phones with limited connectivity, without asking them to adopt yet another account system.',
+      solution:
+        'Built the catalog as an installable PWA with React, Vite, TypeScript, and Tailwind CSS v4 on Supabase for Postgres, Auth, and file storage. Products are photo-first, searchable, and filterable by a "Ready sekarang" state so buyers see only what is actually available today. Each store keeps its own cart, and checkout composes a consistent, scannable WhatsApp message with items, total, payment method, and delivery address — so the seller receives a structured order without the platform ever needing to store one. Authentication uses a custom phone-number-plus-PIN scheme mapped to internal Supabase email accounts, and all access rules are enforced in the database through Row Level Security, triggers, and security-definer functions rather than hidden only in the UI.',
+      techStack: [
+        'React 19',
+        'Vite',
+        'TypeScript',
+        'Tailwind CSS v4',
+        'React Router',
+        'TanStack Query',
+        'Supabase (PostgreSQL, Auth, Storage)',
+        'Supabase Row Level Security',
+        'Supabase Edge Functions',
+        'vite-plugin-pwa',
+        'Vitest',
+        'Vercel'
+      ],
+      keyFeatures: [
+        'Installable PWA with offline banner and lazy-loaded routes',
+        'Maroon-and-gold themed resident catalog, photo-first browsing',
+        'Search and "Ready sekarang" (available right now) filtering',
+        'Store pages with cover, opening hours, and delivery area',
+        'Per-store shopping carts',
+        'Structured WhatsApp checkout messages and a QRIS payment page',
+        'Seller panel: open a shop, shop settings, photographed products, ready/sold-out toggles, open/close business',
+        'Store approval workflow with admin confirmation',
+        'Resident registration, login, delivery addresses, and protected routes',
+        'Phone number + 6-digit PIN authentication with invitation codes',
+        'Admin panel for stores, users, community settings, categories, phone verification, and PIN resets',
+        'Three admin roles: owner, community admin, and operational admin',
+        'Optional scheduled daily stock reset via pg_cron',
+        'Prepared migration path from PIN auth to phone OTP'
+      ],
+      designProcess:
+        'The design was shaped around the assumption that residents open this on their phone, standing in a kitchen, deciding what to order in the next ten minutes. That ruled out dense catalogs and long forms: the home screen leads with a large search field and photos, current delivery address, and category chips, and the "Ready sekarang" filter is a first-class control rather than a buried option. The visual identity uses a maroon-and-gold theme sourced from a single design-token file so the whole community platform reads as one place. The seller side deliberately shares the same components and spacing rhythm as the buyer side, so a vendor can post a product without learning a second interface.',
+      lessonsLearned:
+        'The most valuable lesson was that access control is a database concern, not a UI concern. Building the permission matrix in PostgreSQL — RLS policies, triggers, and security-definer functions — taught me to enforce rules where they cannot be bypassed, and to keep the UI matrix and the server matrix in sync deliberately rather than letting them drift. Designing the custom phone-and-PIN login was another lesson in thinking about what a real community needs versus what an off-the-shelf auth provider offers, and in being honest about its limits: a six-digit PIN is genuinely weak, and the mitigation had to come from rate limiting, invitation codes, and admin approval rather than pretending otherwise. Above all, the no-order-table decision proved that a product does not need to own the transaction to own the experience — being a good catalog and a good handoff is enough.',
+      problem:
+        'UMKM sellers around the complex were selling through WhatsApp group chats, which is flexible for quick conversations but not for commerce. Posts got buried, prices and stock status drifted, product photos were hard to browse, buyers had to message every seller individually to ask what was available, and there was no way to discover a new seller or a new product. At the same time, a community platform handling household addresses and phone numbers needed a trusted, permissioned environment rather than an open marketplace.',
+      process:
+        'I built the foundation first — a maroon-and-gold theme with a single token source, PWA support, and unit-tested pure functions for phone handling, store status, WhatsApp message formatting, and address formatting. Then I designed the database with ordered SQL migrations covering schema, admin functions, and RLS plus storage policies, seeding initial categories and the media bucket. On top of that I implemented the account layer: resident registration with invitation codes, phone-plus-PIN login mapped to internal email accounts, delivery addresses, session handling, and a RequireAuth route guard. The seller panel came next with shop creation, settings, photo-first product management, ready/sold-out toggles, and an approval workflow feeding the admin verification step. For buyers I built the photo-centric home screen, store pages, search, the availability filter, subscriptions, per-store carts, and the structured WhatsApp checkout with a QRIS page. Finally I added the admin panel for stores, users, community settings, categories, phone verification, and PIN resets — backed by a three-tier role matrix — plus polish: shop covers, PWA install prompts, an offline banner, an error boundary, lazy-loaded routes, and an optional pg_cron job for automatic morning stock resets.',
+      outcome:
+        'The result is a working resident catalog that replaces scrolling through group chats with a searchable, photo-first storefront where buyers can filter to what is actually available right now and check out in a couple of taps via WhatsApp. Sellers manage their own shops and stock without help, and every admin action is enforced by the database rather than the interface. Beyond the catalog itself, the project delivered a full Supabase-native stack — RLS, triggers, security-definer functions, Edge Functions, and scheduled jobs — plus a hard lesson in what a community platform owes its users in terms of privacy and trust.'
     }
   }
 ]
