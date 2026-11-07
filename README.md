@@ -2,7 +2,7 @@
 
 Personal portfolio website — a single-page site with dedicated Projects and Blog sections, code-split per route, built with **React 18 + TypeScript + Tailwind CSS** and deployed on **Vercel**.
 
-Live site: [syifa-arizal.site](https://syifa-arizal.site/)
+Live site: [syifaarizal.my.id](https://www.syifaarizal.my.id/)
 
 ## 🚀 Quick Start
 
